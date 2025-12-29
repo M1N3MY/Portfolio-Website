@@ -85,69 +85,101 @@
                         </section>
                     </div>
 
-                    <!-- overview -->
-                    <div class="content-border">
-                        <section class="flex-row content text p">
-                            <div>
-                                <h3 class="content-header flex-column">Overview</h3>
-                                <ul class="list">
-                                    <li>I think the best way of visualizing the core layout of the server is by using the apartment or hotel analogy. </li>
-                                    <li>Receptionist (Caddy) → Caddy listens for requests on port 80 and 443 from .home domains listed in the Caddyfile.</li>
-                                    <li class="indent">It knows where to send requests because of the container name and port listed with each .home domain (reverse proxy container_name:port).</li>
-                                    <li class="indent">(In Pi-hole, there's local DNS records for each of my .home domains pointing towards my network's local IP)</li>
-                                    <li>Elevator (srm_network) → My Docker network, srm_network, connects all of my containers together. Allowing them to communicate with each other.</li>
-                                    <li>Docker Containers (Apartment/Hotel Room) → All of my containers are self contained, they can only be contacted through their port number. Similar to a door. Otherwise, they operate separately from each other.</li>
-                                </ul>
-                                <h3 class="content-header">HTTPS</h3>
-                                <ul class="list">
-                                    <li>All of my domains use HTTPS instead of HTTP because Caddy internally signs each of my domains using its own private certificate authority (CA).</li>
-                                    <li>By default, the browser won't trust the certificate. So I have used root.crt to install config profiles on all of my main devices.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <img src="../images/ubuntu-server-map.jpg" width="259.5px" height="437px">
-                            </div>
-                        </section>
-                    </div>
-
-                    <!-- docker containers -->
                     <div class="content-border">
                         <section class="content text p">
-                            <h3 class="content-heading">
-                                Docker Containers
-                            </h3>
+                            <h3 class="content-header">Overview</h3>
                             <ul class="list">
-                                <li>Type of volume: named.</li>
-                                <li class="indent">What does this mean? Docker manages my permissions, I must access my data by using docker exec commands. Even though it's stored in /var/lib/docker. Also, the volume is created when I first setup my container since it's defined in my docker compose file.</li>
-                                <li>Docker containers are a huge security plus. But the biggest benefit for me is that it allows me to easily manage all of my services.</li>
-                                <li class="indent">If I want to check logs, all I have to do is run this command: docker logs [container_name].</li>
-                                <li class="indent">The configuration for the service are all within the docker compose file.</li>
-                                <li class="indent">And updating is as simple as pulling a new image.</li>
+                                <li>192.168.0.0/24 → home network subnet</li>
+                                <li>10.8.8.1/32 → Wireguard server IP</li>
+                                <li>Pi-hole → DNS + DHCP server</li>
+                                <li>Wireguard → split tunneling</li>
+                                <li class="indent">Allowed IPs: 192.168.0.0/24 (subnet) + 10.8.8.x (specific peer's wireguard ip)</li>
                             </ul>
                         </section>
                     </div>
 
+                    <!-- pi-hole -->
                     <div class="content-border">
                         <section class="content text p">
-                            <h3 class="content-heading">SteamCMD + Rust Server</h3>
+                            <h3 class="content-header">Pi-hole → DNS + DHCP</h3>
                             <ul class="list">
-                                <li>(This feels kind of out of place since it's a video game server, but I'm going to focus on the server side of things. In the future, I think it would be cool to provide information on how to setup a Rust server for others though.)</li>
-                                <li>For SteamCMD I followed the documentation: created a steam user and followed the instructions under 'manually'.</li>
-                                <li>Everytime I want to work on the Rust server, I use sudo su - steam to login as the steam user.</li>
-                                <li class="indent">This provides me with what feels like a server within my actual server, but it's just a user folder in the home directory that can only be accessed by that user.</li>
-                                <li>Layout: /home/steam/rust.</li>
+                                <li>Pi-hole is a DNS sinkhole. It resolves, or hands out the IP addresses of whitelisted domains.
+                                <li class="indent"> Meanwhile, blocked domains are sunk by routing them to a non-routable IP address (e.g. 0.0.0.0).</li>
+                                <li>In my case, I use several blocklists which list out specific domains to block.  
+                                <li class="indent">The blocklists I used are HaGeZi's Light , Adguard DNS Filter, Oisd (Big), someonewhocares.org (Dan Pollock).</li>
+                                <li>Pi-hole also acts as my DHCP server for all of my devices except for my servers, which rely on my router.</li>
+                                <li>It also resolves all of my .home domains to 192.168.0.3, or my Ubuntu server.</li>
                             </ul>
+                        </section>
+                    </div>
+
+                    <!-- DHCP -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">DHCP</h3>
+                            <ul class="list">
+                                <li>Setup of DHCP on my network:</li>
+                                <li class="indent">Router: 192.168.0.2 to 192.168.0.3 → servers.</li>
+                                <li class="indent">Pi-hole: 192.168.0.100 to 192.168.0.254 → rest of devices.</li>
+                                <li>Both of my servers are statically configured within their netplan and the actual router settings, so their IP should never change.</li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <!-- WireGuard -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">WireGuard</h3>
+                            <ul class="list">
+                                <li>Analogy: WireGuard port is like a Skyrim barred door. Except, it's actually possible to get through (without commands). While the tunnel is the hallway leading up to the door on both sides.</li>
+                                <li class="indent">You may be able to see the door (WireGuard's port), but it can only be opened from the other side.</li>
+                                <li class="indent">Nobody will answer and the door will remain shut if you're not authorized to open it.</li>
+                                <li>WireGuard won't answer if somebody tries to scan the port.</li>
+                                <li class="indent">Private (device) key must pair with the public (server) key.</li>
+                                <li>For example, if I want to reach one of my .home domains from my phone...</li>
+                                <li class="indent">Phone makes a request to Pi-hole, which resolves the .home domain to 192.168.0.3.</li>
+                                <li class="indent">Pi-hole sends the IP back to my phone.</li>
+                                <li class="indent">Phone uses the IP to make a request to the Ubuntu server.</li>
+                                <li class="indent">Server sends data back to the phone.</li>
+                                <li class="indent">WireGuard knows what to encrypt and send through the tunnel because of what's defined in the allowed IPs.</li> 
+                                <li>In terms of my actual configuration, I have configurations for all of my devices like my phone, laptop, etc.. Their WireGuard IPs increment from the server IP (10.8.8.1). So for example, my phone is 10.8.8.2.</li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <!-- vocabulary -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">Terms</h3>
+                            <ul class="list">
+                                <li>For anyone who isn't as tech savvy, or anyone else, here's a short recap of some of the things I discussed.</li>
+                                <li>Subnet: a specific range of IPs on a network.</li>
+                                <li>Domain host system (DNS): a system which allows IP addresses to be easily identifiable by pairing host names.</li>
+                                <li>Pihole: a DNS sinkhole which resolves, or hands out IP addresses to a specific domain.</li>
+                                <li>DNS sinkhole: DNS server which "sinks" specific domains by resolving them to non-routable IPs, or IPs that are a dead end.</li>
+                                <li>Dynamic host configuration protocol (DHCP): automatically assigns IP addresses within a specific range to devices on a network.</li>
+                                <li>Wireguard: a VPN service which solely uses UDP. Compared to let's say OpenVPN, it's newer.</li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <!-- Resources/Links -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">Re(sources)</h3>
+                            <a href="https://docs.pi-hole.net/">Pihole Documentation</a>
+                            <a href="https://en.wikipedia.org/wiki/DNS_sinkhole">https://en.wikipedia.org/wiki/DNS_sinkhole</a>
+                            <a href="https://docs.pi-hole.net/guides/vpn/wireguard/server/">For anyone interested, this is the WireGuard guide I followed</a>
                         </section>
                     </div>
                 </main>
-
 
 
                 <!-- right sidebar -->
                 <nav class="sidebar scrollable">
                     <div class="sidebar-border">
                         <section class="right-sidebar">
-                            <!--<h3 class="sidebar-header"></h3>-->
+                            <!--<h3 class="sidebar-header"></h3>*/-->
                             <img class="gif" src="https://momg.neocities.org/gifs/i-51402.gif" width="100px" height="150px"> 
                         </section>
                     </div>
@@ -175,7 +207,7 @@
                 </nav>
 
 
-            </div> <!-- end of main container -->
+            </div> <!-- end of main container-->
 
 
             <!-- footer -->
@@ -185,8 +217,6 @@
             </footer>
 
 
-        </div> <!-- end of wrapper -->
-
-
+        </div> <!-- end of wrapper-->
     </body>
 </html>
