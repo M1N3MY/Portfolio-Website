@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <title>Sarah's Catalog</title>
+    </head> 
+    
+    <style>
+        body {
+            background-color: #060409 !important;
+        }
+
+        .wrapper {
+            background-color: #060409 !important;
+        }
+        
+        .site-header, .top-nav-button {
+            color: #f29910 !important;
+        }
+
+        .top-nav-button:hover {
+            color: rgb(255, 115, 0) !important;
+        }
+
+        .sidebar-border, .content-border {
+            border: 5px solid #0f0b08 !important;
+            background-image: url("https://cdn.esahubble.org/archives/images/thumb700x/heic0611b.jpg") !important;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .footer-text {
+            color: #faf8e5;
+        }
+    </style>
+    <body> 
+        <!-- header: title and top nav bar -->
+        <header>
+            <h1 class="site-header">Sarah's Catalog</h1>  
+            <!-- top nav bar -->
+            <nav class="top-nav">
+                <a href="../home.html" class="button top-nav-button">Home</a>
+                <a href="projects.html" class="button top-nav-button">Projects</a>
+                <a href="links.html" class="button top-nav-button">Links</a>
+            </nav>  
+        </header>
+
+
+        <!-- wraps the main container -->
+        <div class="wrapper"> 
+            <!-- main container: left sidebar, middle, right sidebar --> 
+            <div class="main-container">
+
+
+                <!-- left sidebar -->
+                <nav class="sidebar">
+                    <div class="sidebar-border">
+                        <section class="left-sidebar">
+                            <div class="nav-images">
+                                <a href="../pages/gallery.html" class="button side-nav-button"><img src="../images/gallery.png"></a>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="sidebar-border">
+                        <section class="left-sidebar">
+                            <div class="nav-doors">
+                                <a href="../pages/bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
+                                <a href="../pages/door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
+                            </div>
+                        </section>
+                    </div>
+                </nav>
+
+
+                <!-- middle: main content -->
+                <main class="middle">
+                    <!-- disclaimer -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <p>Disclaimer: I am not an expert. The following information is based on my experience and understanding. Research was done beforehand to make sure I'm not getting things wrong.</p>
+                        </section>
+                    </div>
+
+                    <!-- overview -->
+                    <div class="content-border">
+                        <section class="flex-row content text p">
+                            <div>
+                                <h3 class="content-header flex-column">Overview</h3>
+                                <ul class="list">
+                                    <li>I think the best way of visualizing the core layout of the server is by using the apartment or hotel analogy. </li>
+                                    <li>Receptionist (Caddy) → Caddy listens for requests on port 80 and 443 from .home domains listed in the Caddyfile.</li>
+                                    <li class="indent">It knows where to send requests because of the container name and port listed with each .home domain (reverse proxy container_name:port).</li>
+                                    <li class="indent">(In Pi-hole, there's local DNS records for each of my .home domains pointing towards my network's local IP)</li>
+                                    <li>Elevator (srm_network) → My Docker network, srm_network, connects all of my containers together. Allowing them to communicate with each other.</li>
+                                    <li>Docker Containers (Apartment/Hotel Room) → All of my containers are self contained, they can only be contacted through their port number. Similar to a door. Otherwise, they operate separately from each other.</li>
+                                </ul>
+                                <h3 class="content-header">HTTPS</h3>
+                                <ul class="list">
+                                    <li>All of my domains use HTTPS instead of HTTP because Caddy internally signs each of my domains using its own private certificate authority (CA).</li>
+                                    <li>By default, the browser won't trust the certificate. So I have used root.crt to install config profiles on all of my main devices.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <img src="../images/ubuntu-server-map.jpg" width="259.5px" height="437px">
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- docker containers -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-heading">
+                                Docker Containers
+                            </h3>
+                            <ul class="list">
+                                <li>Type of volume: named.</li>
+                                <li class="indent">What does this mean? Docker manages my permissions, I must access my data by using docker exec commands. Even though it's stored in /var/lib/docker. Also, the volume is created when I first setup my container since it's defined in my docker compose file.</li>
+                                <li>Docker containers are a huge security plus. But the biggest benefit for me is that it allows me to easily manage all of my services.</li>
+                                <li class="indent">If I want to check logs, all I have to do is run this command: docker logs [container_name].</li>
+                                <li class="indent">The configuration for the service are all within the docker compose file.</li>
+                                <li class="indent">And updating is as simple as pulling a new image.</li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-heading">SteamCMD + Rust Server</h3>
+                            <ul class="list">
+                                <li>(This feels kind of out of place since it's a video game server, but I'm going to focus on the server side of things. In the future, I think it would be cool to provide information on how to setup a Rust server for others though.)</li>
+                                <li>For SteamCMD I followed the documentation: created a steam user and followed the instructions under 'manually'.</li>
+                                <li>Everytime I want to work on the Rust server, I use sudo su - steam to login as the steam user.</li>
+                                <li class="indent">This provides me with what feels like a server within my actual server, but it's just a user folder in the home directory that can only be accessed by that user.</li>
+                                <li>Layout: /home/steam/rust.</li>
+                            </ul>
+                        </section>
+                    </div>
+                </main>
+
+
+
+                <!-- right sidebar -->
+                <nav class="sidebar scrollable">
+                    <div class="sidebar-border">
+                        <section class="right-sidebar">
+                            <!--<h3 class="sidebar-header"></h3>-->
+                            <img class="gif" src="https://momg.neocities.org/gifs/i-51402.gif" width="100px" height="150px"> 
+                        </section>
+                    </div>
+
+                    <div class="sidebar-border">
+                        <section class="right-sidebar">
+                            <!--<h3 class="sidebar-header"></h3>*/-->
+                            <img class="gif" src="https://momg.neocities.org/gifs/i-31910.gif" width="50px" height="50px">
+                        </section>
+                    </div>
+
+                    <div class="sidebar-border">
+                        <section class="right-sidebar">
+                            <!--<h3 class="sidebar-header"></h3>*/-->
+                            <img class="gif" src="https://momg.neocities.org/gifs/i-78883.gif" width="50px" height="50px">
+                        </section>
+                    </div>
+
+                    <div class="sidebar-border">
+                        <section class="right-sidebar">
+                            <!--<h3 class="sidebar-header"></h3>*/-->
+                            <img class="gif" src="https://momg.neocities.org/gifs/i-49714.gif" width="53" height="46">
+                        </section>
+                    </div>
+                </nav>
+
+
+            </div> <!-- end of main container -->
+
+
+            <!-- footer -->
+            <footer class="footer footer-text">
+                <p>Thanks for visiting!</p>
+                <img src="../images/cat-0491.gif" width="30" height="30"> 
+            </footer>
+
+
+        </div> <!-- end of wrapper -->
+
+
+    </body>
+</html>
