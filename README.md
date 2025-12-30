@@ -1,0 +1,1 @@
+Unfortunately, all of my past commits were erased when I tried force pushing new updates while trying to sync my VSCode workspace with the Github repo. But my website contains all of my major updates. 
