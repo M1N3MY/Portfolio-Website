@@ -27,6 +27,17 @@
                 font-size: 20px;
             }
 
+            .flex-row { 
+                display: flex;
+                flex-direction: row;
+            }
+
+            .flex-end {
+                display: flex;
+                align-items: flex-end;
+                margin-top: auto;
+            }
+
             /* HEADERS */
             .site-header { 
             color: #202a44;  
@@ -34,7 +45,7 @@
             text-align: center;
             padding: 10px;
             margin: auto;
-            }                  
+            }  
             
             /* LAYOUT */
             .middle {
@@ -42,3 +53,5 @@
                 flex-direction: row;
                 gap: 50px;
             }
+
+    
