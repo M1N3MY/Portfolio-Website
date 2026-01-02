@@ -131,18 +131,16 @@
                         <section class="content text p">
                             <h3 class="content-header">WireGuard</h3>
                             <ul class="list">
-                                <li>Analogy: WireGuard port is like a Skyrim barred door. Except, it's actually possible to get through without commands. While the tunnel is the hallway leading up to the door on both sides. And the </li>
-                                <li class="indent">You may be able to see the door (WireGuard's port), but it can only be opened from the other side.</li>
-                                <li class="indent">Nobody will answer and the door will remain shut if you're not authorized to open it.</li>
+                                <li>The WireGuard peer IPs increment from the server IP (10.8.8.1). So for example, my phone is 10.8.8.2 and so on.</li>
+                                <li>FreeDNS is my DDNS provider. I use a cron script to update my public IP for my domain because my router doesn't include FreeDNS.</li>
+                                <li>I do split tunneling because all I need it to do is to be able to tap into my home network when I'm away from home.</li>
                                 <li>WireGuard won't answer if somebody tries to scan the port.</li>
                                 <li class="indent">Private (device) key must pair with the public (server) key.</li>
-                                <li>When I use an authorized device, it'll pass a request through the WireGuard port to my Pi-hole, and resolve an IP address. Then loop back to the device and WireGuard server.</li>
                                 <li>For example, if I want to reach one of my .home domains from my phone...</li>
                                 <li class="indent">Phone sends request through WG tunnel to Pi-hole, which resolves the .home domain to 192.168.0.3.</li>
                                 <li class="indent">Pi-hole then sends this back through the tunnel to my device, who sends it to my Ubuntu server.</li>
                                 <li class="indent">Then, the server sends to Wireguard, who encrypts data and sends it through tunnel back to my device.</li>
                                 <li>Device → Pi-hole → (tunnel) → Device → Ubuntu server → Wireguard → (tunnel) → device.</li>
-                                <li>In terms of my actual configuration, I have configurations for all of my devices like my phone, laptop, etc.. Their WireGuard IPs increment from the server IP (10.8.8.1). So for example, my phone is 10.8.8.2.</li>
                             </ul>
                         </section>
                     </div>
@@ -159,6 +157,7 @@
                                 <li>DNS sinkhole: DNS server which "sinks" specific domains by resolving them to non-routable IPs, or IPs that are a dead end.</li>
                                 <li>Dynamic host configuration protocol (DHCP): automatically assigns IP addresses within a specific range to devices on a network.</li>
                                 <li>Wireguard: a VPN service which solely uses UDP. Compared to let's say OpenVPN, it's newer.</li>
+                                <li>Dynamic DNS (DDNS): service which updates the public IP for a specific domain</li>
                             </ul>
                         </section>
                     </div>
