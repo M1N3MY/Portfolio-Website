@@ -19,7 +19,7 @@ body {
     overflow-y: scroll;
     border: 2px solid #96726c;
     border-radius: 10px;
-    background-color: #182126;
+    background-color: #1e282e;
     padding: 10px;
     width: 100%;
     height: auto;
@@ -80,6 +80,7 @@ iframe {
 }
 
 .links {
+    color: #edebd5;
     text-decoration: none;
 }
 
@@ -187,7 +188,7 @@ iframe {
     margin: 0 auto;
     border: 2px solid #96726c;
     border-radius: 5px;
-    background-color: #182126;
+    background-color: #1e282e;
     padding: 10px;
 }
 
@@ -199,7 +200,7 @@ iframe {
     margin: 0 auto;
     border: 2px solid #96726c;
     border-radius: 5px;
-    background-color: #182126;
+    background-color: #1e282e;
     padding: 5px;
 }
 
