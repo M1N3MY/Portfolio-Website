@@ -6,7 +6,7 @@ body, ul, li, h1, h2, h3 { /* removes default browser css */
 body {
     display: flex;
     flex-direction: column;
-    background-color: #060614;
+    background-color: #8f1203;
     font-family: monospace;
     font-weight: 500;
     width: 100%
@@ -17,9 +17,9 @@ body {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    border: 2px solid #faf8e5;
+    border: 2px solid #fbad00;
     border-radius: 10px;
-    background-color: #faf8e5;
+    background-color: #f88601;
     padding: 10px;
     width: 100%;
     height: auto;
@@ -43,7 +43,7 @@ body {
 }
 
 .text {
-    color: #202a44;
+    color: #edebd5;
     font-size: 20px;
 }
 
@@ -62,7 +62,7 @@ iframe {
     justify-content: center;
     align-items: center;
     background-image: url("../images/blue-orange-tiles.jpg");
-    border: 5px solid #fbad00;
+    border: 5px solid #0000b2;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
@@ -139,7 +139,7 @@ iframe {
     width: 300px;
     height: 300px;
     flex-shrink: 0; /* no shrinking */
-    border: 5px solid #fbad00;
+    border: 5px solid #0000b2;
     border-radius: 10px;
     background-image: url("../images/blue-orange-tiles.jpg");
     background-size: cover;
@@ -184,9 +184,9 @@ iframe {
     width: 250px;
     height: 250px;
     margin: 0 auto;
-    border-style: 2px solid #faf8e5;
+    border: 2px solid #fbad00;
     border-radius: 5px;
-    background-color: #faf8e5;
+    background-color: #9dc3ec;
     padding: 10px;
 }
 
@@ -196,9 +196,9 @@ iframe {
     width: 250px;
     height: 250px;
     margin: 0 auto;
-    border: 2px solid #faf8e5;
+    border: 2px solid #fbad00;
     border-radius: 5px;
-    background-color: #faf8e5;
+    background-color: #9dc3ec;
     padding: 5px;
 }
 
@@ -208,7 +208,7 @@ iframe {
     flex-direction: column;
     width: 90%;
     height: 90%;
-    background-color: #f42d02;
+    background-color: #f55b00;
     gap: 20px;
     padding: 5px;
     margin: 0 auto 100px;
