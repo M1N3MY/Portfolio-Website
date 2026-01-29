@@ -6,9 +6,10 @@ body, ul, li, h1, h2, h3 { /* removes default browser css */
 body {
     display: flex;
     flex-direction: column;
-    background-color: #f7b6b4;
+    background-color: #512b2d;
     font-family: monospace;
     font-weight: 500;
+    min-height: 100vh;
     width: 100%
 }
 
@@ -17,11 +18,11 @@ body {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    border: 2px solid #faf8e5;
+    border: 2px solid #96726c;
     border-radius: 10px;
-    background-color: #faf8e5;
+    background-color: #182126;
     padding: 10px;
-    width: 90%;
+    width: 100%;
     height: auto;
     box-sizing: border-box
 }
@@ -37,13 +38,13 @@ body {
 }
 
 .footer-text {
-    color: #0d0e20;
+    color: #182126;
     font-size: 20px;
     padding-left: 10px; 
 }
 
 .text {
-    color: #202a44;
+    color: #faf8e5;
     font-size: 20px;
 }
 
@@ -61,8 +62,8 @@ iframe {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("../images/cherry-blossom.jpg");
-    border: 5px solid #8fc1de;
+    background-image: url("../images/dark-cherry-blossom.jpg");
+    border: 5px solid #322a2a;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
@@ -98,7 +99,7 @@ iframe {
 
 /* HEADERS */
 .site-header { 
-    color: #9e0232;  
+    color: #f6dbd4;  
     border-radius: 10px;
     text-align: center;
     font-size: 45px;
@@ -106,12 +107,12 @@ iframe {
 }
 
 .content-header {
-    color: #0d0e20;
+    color: #faf8e5;
     font-weight: bold;
 }
 
 .sidebar-header {
-    color: #0d0e20;
+    color: #faf8e5;
     font-weight: bold; 
 }
 
@@ -123,13 +124,13 @@ iframe {
     background-color: transparent;
     text-decoration: none;
     font-size: 25px;
-    color: #9e0232;
+    color: #f6dbd4;
     padding: 10px; 
     cursor: pointer;
 }
 
 .top-nav-button:hover {
-    color: #781727;
+    color: #c28e85;
 }
 
 .sidebar-border {
@@ -139,9 +140,9 @@ iframe {
     width: 300px;
     height: 300px;
     flex-shrink: 0; /* no shrinking */
-    border: 5px solid #8fc1de;
+    border: 5px solid #322a2a;
     border-radius: 10px;
-    background-image: url("../images/cherry-blossom.jpg");
+    background-image: url("../images/dark-cherry-blossom.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -185,9 +186,9 @@ iframe {
     width: 250px;
     height: 250px;
     margin: 0 auto;
-    border-style: 2px solid #faf8e5;
+    border: 2px solid #96726c;
     border-radius: 5px;
-    background-color: #faf8e5;
+    background-color: #182126;
     padding: 10px;
 }
 
@@ -197,9 +198,9 @@ iframe {
     width: 250px;
     height: 250px;
     margin: 0 auto;
-    border: 2px solid #faf8e5;
+    border: 2px solid #96726c;
     border-radius: 5px;
-    background-color: #faf8e5;
+    background-color: #182126;
     padding: 5px;
 }
 
@@ -209,11 +210,10 @@ iframe {
     flex-direction: column;
     width: 90%;
     height: 90%;
-    background-color: #b6d7ea;
+    background-color: #a93e33;
     gap: 20px;
     padding: 5px;
     margin: 0 auto;
-    overflow-x: hidden;
 }
 
 .main-container {
