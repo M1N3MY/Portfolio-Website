@@ -6,11 +6,10 @@ body, ul, li, h1, h2, h3 { /* removes default browser css */
 body {
     display: flex;
     flex-direction: column;
-    background-color: #512b2d;
+    background-color: #262528;
     font-family: monospace;
     font-weight: 500;
-    min-height: 100vh;
-    width: 100%
+    width: 100%;
 }
 
 /* COMPONENTS */
@@ -24,7 +23,7 @@ body {
     padding: 10px;
     width: 100%;
     height: auto;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .button {
@@ -99,7 +98,7 @@ iframe {
 
 /* HEADERS */
 .site-header { 
-    color: #f6dbd4;  
+    color: #f5d3ca;  
     border-radius: 10px;
     text-align: center;
     font-size: 45px;
@@ -124,7 +123,7 @@ iframe {
     background-color: transparent;
     text-decoration: none;
     font-size: 25px;
-    color: #f6dbd4;
+    color: #f5d3ca;
     padding: 10px; 
     cursor: pointer;
 }
@@ -213,7 +212,7 @@ iframe {
     background-color: #a93e33;
     gap: 20px;
     padding: 5px;
-    margin: 0 auto;
+    margin: 0 auto 100px;
 }
 
 .main-container {
@@ -259,7 +258,7 @@ iframe {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    height: 350px;
+    gap: 15px;
+    height: 400px;
     text-decoration: none;
 }

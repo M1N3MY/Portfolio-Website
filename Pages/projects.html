@@ -10,15 +10,25 @@
     
     <style>
         body {
-            background-color: #060409 !important;
+            background-color: #000000 !important;
+        }
+
+        .content {
+            border: 2px solid #151714 !important;
+            background-color: #060603 !important;
+        }
+
+        .left-sidebar, .right-sidebar {
+            border: 2px solid #151714 !important;
+            background-color: #060603 !important;
         }
 
         .wrapper {
-            background-color: #060409 !important;
+            background-color: #010101 !important;
         }
         
-        .site-header, .top-nav-button {
-            color: #f29910 !important;
+        .site-header, .top-nav-button { 
+            color: #f99b36 !important;
         }
 
         .top-nav-button:hover {
@@ -26,7 +36,7 @@
         }
 
         .sidebar-border, .content-border {
-            border: 5px solid #201913 !important;
+            border: 5px solid #0a0c07 !important;
             background-image: url("https://cdn.esahubble.org/archives/images/thumb700x/heic0611b.jpg") !important;
             background-size: cover;
             background-position: center;
@@ -78,31 +88,27 @@
                         <!-- main content -->
                         <!-- ubuntu server card -->
                         <a href="ubuntu-server.html" class="project content text p">
-                            <section>
-                                <h3 class="content-header">Ubuntu Server</h3>
-                                <ul>
-                                    <li>Media Server</li>
-                                    <li>Docker</li>
-                                    <li>Caddy → reverse proxy + HTTPS</li>
-                                    <li>Rust Server</li>
-                                </ul>
-                                <img src="../images/ubuntu-server.png">
-                            </section>
+                            <h3 class="content-header">Ubuntu Server</h3>
+                            <ul>
+                                <li>Media Server</li>
+                                <li>Docker</li>
+                                <li>Caddy → reverse proxy + HTTPS</li>
+                                <li>Rust Server</li>
+                            </ul>
+                            <img src="../images/ubuntu-server.png">
                         </a>
                     </div>
 
                     <!-- pihole server wireguard card -->
                     <div class="content-border" style="height:410px;">
-                        <a href="piguard-server.html" class="project content updates text p">
-                            <section">
-                                <h3 class="content-header">Pi-hole WireGuard Server</h3>
-                                <ul>
-                                    <li>Pihole DNS + DHCP</li>
-                                    <li>Wireguard → split tunneling</li>
-                                    <li>DDNS Shell Script</li>
-                                </ul>
-                                <img src="../images/pihole-server.png" width="150px" height="40px">
-                            </section>
+                        <a href="piguard-server.html" class="project content text p">
+                            <h3 class="content-header">Pi-hole WireGuard Server</h3>
+                            <ul>
+                                <li>Pihole DNS + DHCP</li>
+                                <li>Wireguard → split tunneling</li>
+                                <li>DDNS Shell Script</li>
+                            </ul>
+                            <img src="../images/pihole-server.png" width="150px" height="40px">
                         </a>
                     </div>
                 </main>

@@ -211,8 +211,7 @@ iframe {
     background-color: #f42d02;
     gap: 20px;
     padding: 5px;
-    margin: 0 auto;
-    overflow-x: hidden;
+    margin: 0 auto 100px;
 }
 
 .main-container {
