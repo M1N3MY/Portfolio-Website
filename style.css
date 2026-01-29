@@ -43,7 +43,7 @@ body {
 }
 
 .text {
-    color: #faf8e5;
+    color: #edebd5;
     font-size: 20px;
 }
 
@@ -106,12 +106,12 @@ iframe {
 }
 
 .content-header {
-    color: #faf8e5;
+    color: #edebd5;
     font-weight: bold;
 }
 
 .sidebar-header {
-    color: #faf8e5;
+    color: #edebd5;
     font-weight: bold; 
 }
 
