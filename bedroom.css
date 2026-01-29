@@ -6,7 +6,7 @@ body, ul, li, h1, h2, h3 { /* removes default browser css */
 body {
     display: flex;
     flex-direction: column;
-    background-color: #8f1203;
+    background-color: #392326;
     font-family: monospace;
     font-weight: 500;
     width: 100%
@@ -17,13 +17,13 @@ body {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    border: 2px solid #fbad00;
+    border: 2px solid #fab874;
     border-radius: 10px;
-    background-color: #f88601;
+    background-color: #f1f6b4; 
     padding: 10px;
     width: 100%;
     height: auto;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .button {
@@ -37,13 +37,13 @@ body {
 }
 
 .footer-text {
-    color: #060614;
+    color: #07090a;
     font-size: 20px;
     padding-left: 10px; 
 }
 
 .text {
-    color: #edebd5;
+    color: #07090a;
     font-size: 20px;
 }
 
@@ -61,8 +61,8 @@ iframe {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("../images/blue-orange-tiles.jpg");
-    border: 5px solid #0000b2;
+    background-image: url("../images/chinese-lantern.jpg");
+    border: 5px solid #fab874;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
@@ -98,7 +98,7 @@ iframe {
 
 /* HEADERS */
 .site-header { 
-    color: #ef3b52;  
+    color: #fab874;  
     border-radius: 10px;
     text-align: center;
     font-size: 45px;
@@ -106,12 +106,12 @@ iframe {
 }
 
 .content-header {
-    color: #0d0e20;
+    color: #07090a;
     font-weight: bold;
 }
 
 .sidebar-header {
-    color: #0d0e20;
+    color: #07090a;
     font-weight: bold; 
 }
 
@@ -123,13 +123,13 @@ iframe {
     background-color: transparent;
     text-decoration: none;
     font-size: 25px;
-    color: #ef3b52;
+    color: #fab874;
     padding: 10px; 
     cursor: pointer;
 }
 
 .top-nav-button:hover {
-    color: #781727;
+    color: #f5793f;
 }
 
 .sidebar-border {
@@ -139,9 +139,9 @@ iframe {
     width: 300px;
     height: 300px;
     flex-shrink: 0; /* no shrinking */
-    border: 5px solid #0000b2;
+    border: 5px solid #fab874;
     border-radius: 10px;
-    background-image: url("../images/blue-orange-tiles.jpg");
+    background-image: url("../images/chinese-lantern.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -184,9 +184,9 @@ iframe {
     width: 250px;
     height: 250px;
     margin: 0 auto;
-    border: 2px solid #fbad00;
+    border: 2px solid #f59e3f;
     border-radius: 5px;
-    background-color: #9dc3ec;
+    background-color: #f1f6b4;
     padding: 10px;
 }
 
@@ -196,9 +196,9 @@ iframe {
     width: 250px;
     height: 250px;
     margin: 0 auto;
-    border: 2px solid #fbad00;
+    border: 2px solid #f59e3f;
     border-radius: 5px;
-    background-color: #9dc3ec;
+    background-color: #f6e5b4;
     padding: 5px;
 }
 
@@ -208,7 +208,7 @@ iframe {
     flex-direction: column;
     width: 90%;
     height: 90%;
-    background-color: #f55b00;
+    background-color: #fa5737;
     gap: 20px;
     padding: 5px;
     margin: 0 auto 100px;
