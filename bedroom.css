@@ -6,7 +6,7 @@ body, ul, li, h1, h2, h3 { /* removes default browser css */
 body {
     display: flex;
     flex-direction: column;
-    background-color: #392326;
+    background-color: #2b2d26;
     font-family: monospace;
     font-weight: 500;
     width: 100%
@@ -17,9 +17,9 @@ body {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    border: 2px solid #fab874;
+    border: 2px solid #786d66;
     border-radius: 10px;
-    background-color: #f1f6b4; 
+    background-color: #4f3d38; 
     padding: 10px;
     width: 100%;
     height: auto;
@@ -37,13 +37,13 @@ body {
 }
 
 .footer-text {
-    color: #07090a;
+    color: #2a2722;
     font-size: 20px;
     padding-left: 10px; 
 }
 
 .text {
-    color: #07090a;
+    color: #faf8e5;
     font-size: 20px;
 }
 
@@ -61,8 +61,8 @@ iframe {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("../images/chinese-lantern.jpg");
-    border: 5px solid #fab874;
+    background-image: url("../images/cloud.jpg");
+    border: 5px solid #312e29;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
@@ -98,7 +98,7 @@ iframe {
 
 /* HEADERS */
 .site-header { 
-    color: #fab874;  
+    color: #cf7f4d;  
     border-radius: 10px;
     text-align: center;
     font-size: 45px;
@@ -106,12 +106,12 @@ iframe {
 }
 
 .content-header {
-    color: #07090a;
+    color: #faf8e5;
     font-weight: bold;
 }
 
 .sidebar-header {
-    color: #07090a;
+    color: #faf8e5;
     font-weight: bold; 
 }
 
@@ -123,13 +123,13 @@ iframe {
     background-color: transparent;
     text-decoration: none;
     font-size: 25px;
-    color: #fab874;
+    color: #cf7f4d;
     padding: 10px; 
     cursor: pointer;
 }
 
 .top-nav-button:hover {
-    color: #f5793f;
+    color: #bb764b;
 }
 
 .sidebar-border {
@@ -139,9 +139,9 @@ iframe {
     width: 300px;
     height: 300px;
     flex-shrink: 0; /* no shrinking */
-    border: 5px solid #fab874;
+    border: 5px solid #312e29;
     border-radius: 10px;
-    background-image: url("../images/chinese-lantern.jpg");
+    background-image: url("../images/cloud.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -184,9 +184,9 @@ iframe {
     width: 250px;
     height: 250px;
     margin: 0 auto;
-    border: 2px solid #f59e3f;
+    border: 2px solid #786d66;
     border-radius: 5px;
-    background-color: #f1f6b4;
+    background-color: #4f3d38;
     padding: 10px;
 }
 
@@ -196,9 +196,9 @@ iframe {
     width: 250px;
     height: 250px;
     margin: 0 auto;
-    border: 2px solid #f59e3f;
+    border: 2px solid #786d66;
     border-radius: 5px;
-    background-color: #f6e5b4;
+    background-color: #4f3d38;
     padding: 5px;
 }
 
@@ -208,7 +208,7 @@ iframe {
     flex-direction: column;
     width: 90%;
     height: 90%;
-    background-color: #fa5737;
+    background-color: #cf7f4d;
     gap: 20px;
     padding: 5px;
     margin: 0 auto 100px;

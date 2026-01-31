@@ -10,11 +10,12 @@ body {
     padding-top: 50px;
     min-height: 100vh;
     font-family: monospace;
+    background-image: url("/images/nightskystar.gif");
 }
 
 /* COMPONENTS */
 .text {
-    color: #47524d;
+    color: #faf8e5;
     font-size: 20px;
 }
 .button {
@@ -22,20 +23,20 @@ body {
     flex-direction: column;
     text-align: center;
     text-decoration: none;
-    background-color: #47524d;
-    color: #dee0e0;
+    background-color: #bf57ac;
+    color: #040254;
     border-radius: 5px;
     width: fit-content;
     padding: 10px;
 }
 
 .button:hover {
-    background-color: #d0d1d1;
-    color: #47524d;
+    background-color: #8180fc;
+    color: #040254;
 }
 
 .heading {
-    color: #47524d;
+    color: #faf8e5;
     text-align: center;
 }
 
@@ -46,10 +47,8 @@ body {
     width: 90%;
     max-width: 450px;
     max-height: auto;
-    border: 5px solid #cbd0ce;
-    background-image: url("/images/white.jpg");
-    background-size: cover;
-    background-position: center;
+    border: 5px solid #bf57ac;
+    background-color: #262c7c;
 }
 
 .splash {
