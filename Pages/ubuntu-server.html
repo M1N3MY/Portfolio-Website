@@ -90,11 +90,41 @@
                         </section>
                     </div>
 
+                    <!-- storage -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">Storage</h3>
+                            <ul class="list">
+                                <li>Root and boot partions (SSD), and hard drive are automatically mounted using the fstab file.</li>
+                                <li class="indent">Hard drive is mounted to a folder called miso in the mnt directory.</li>
+                                <li>Hard drive allocates space for a swap file.</li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <!-- permissions -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">Permissions</h3>
+                            <ul class="list">
+                                <li>(There's an image in the information section about permissions for reference)</li>
+                                <li>I tend to avoid using permissions for group and others unless I have to.</li>
+                                <li class="indent">For example, if I need permission to access the directory (execute).</li>
+                                <li>Miso → 751</li>
+                                <li>Docker → 750</li>
+                                <li class="indent">Container Folders → 700</li>
+                                <li class="indent">Docker Compose → 660</li>
+                                <li class="indent">Caddyfile → 644</li>
+                                <li>Media → 750</li>
+                            </ul>
+                        </section>
+                    </div>
+
                     <!-- overview -->
                     <div class="content-border">
                         <section class="flex-row content text p">
                             <div>
-                                <h3 class="content-header flex-column">Overview</h3>
+                                <h3 class="content-header">Layout</h3>
                                 <ul class="list">
                                     <li>I think the best way of visualizing the core layout of the server is by using the apartment or hotel analogy. </li>
                                     <li>Receptionist (Caddy) → Caddy listens for requests on port 80 and 443 from .home domains listed in the Caddyfile.</li>
@@ -118,9 +148,7 @@
                     <!-- docker containers -->
                     <div class="content-border">
                         <section class="content text p">
-                            <h3 class="content-heading">
-                                Docker Containers
-                            </h3>
+                            <h3 class="content-header">Docker Containers</h3>
                             <ul class="list">
                                 <li>Type of volume: named.</li>
                                 <li class="indent">What does this mean? Docker manages my permissions, I must access my data by using docker exec commands. Even though it's stored in /var/lib/docker. Also, the volume is created when I first setup my container since it's defined in my docker compose file.</li>
@@ -128,13 +156,15 @@
                                 <li class="indent">If I want to check logs, all I have to do is run this command: docker logs [container_name].</li>
                                 <li class="indent">The configuration for the service are all within the docker compose file.</li>
                                 <li class="indent">And updating is as simple as pulling a new image.</li>
+                                <li>Also have directory called docker with folders for each containers in /mnt/miso where I edit my config files.</li>
                             </ul>
                         </section>
                     </div>
 
+                    <!-- steamcmd rust server-->
                     <div class="content-border">
                         <section class="content text p">
-                            <h3 class="content-heading">SteamCMD + Rust Server</h3>
+                            <h3 class="content-header">SteamCMD + Rust Server</h3>
                             <ul class="list">
                                 <li>(This feels kind of out of place since it's a video game server, but I'm going to focus on the server side of things. In the future, I think it would be cool to provide information on how to setup a Rust server for others though.)</li>
                                 <li>For SteamCMD I followed the documentation: created a steam user and followed the instructions under 'manually'.</li>
@@ -144,9 +174,19 @@
                             </ul>
                         </section>
                     </div>
+
+                    <div class="content-border">
+                        <section class="content text p" style="gap:10px;">
+                            <h3>Information + Terms</h3>
+                            <ul class="list">
+                                <li>Fstab: a configuration file, located in /etc/fstab, which is used to automate the mounting of pesistent storage and swap space at boot.</li>
+                                <li class="indent">Persistent storage: storage that is non-volatile, or able to retain it's data even there isn't any power.</li>
+                                <li>Swap file: a file which acts as a placeholder for allocated space used by the RAM when it's at full capacity.</li>
+                            </ul>
+                            <a href="https://www.reddit.com/r/linux/comments/ayditr/chmod_cheatsheet/"><img src="../images/permissions.png" width="400px"></a>
+                        </section>
+                    </div>
                 </main>
-
-
 
                 <!-- right sidebar -->
                 <nav class="sidebar scrollable">
