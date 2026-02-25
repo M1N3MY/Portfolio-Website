@@ -148,8 +148,10 @@
                                 <li>Plugins:</li>
                                 <li class="indent">caddy-l4 → provides protection for non-web services (e.g. databases, game servers, ssh).</li>
                                 <li class="indent">transform-encoder → makes reading the logs easier for CrowdSec by explicitly labeling the following fields: IP, Timestamp, Method, and User-Agent. </li>
-                                <li class="indent">caddy-crowdsec-bouncer → caddy stores a database of blocked users, and checks before TCP handshake is finished.</li>
+                                <li class="indent">caddy-crowdsec-bouncer → Caddy stores CrowdSec's decision list in RAM, and checks before TCP handshake is finished.</li>
                                 <li>Crowdsec</li>
+                                <li class="indent">Uses an acquis.yaml file to pull data from Caddy through the Docker Socket, and the systems logs. So it can parse the data for any suspicious users and update its decision list.</li>
+                                <li class="indent">The decision list is a list of blocked users. </li>
                                 
                             </ul>
                         </section>
@@ -160,9 +162,26 @@
                         <section class="content text p">
                             <h3 class="content-header">Docker Containers</h3>
                             <ul class="list">
+                                <li>Recently, I did a serious overhaul of my server by switching to bind mounts and using specific image versions instead of the latest.</li>
                                 <li>Type of volume: bind.</li>
-                                <li class="indent">Recently, I did a serious overhaul of my server and switched from bind mounts.</li>
+                                <li class="indent">Creates a bridge between a host directory and container directory.</li>
+                                <li class="indent">Permissions are handled by me instead of Docker, and they're not stored within /var/lib/docker.</li>
+                                <li class="indent">For example, my media directoy might be something like /directory/directory/media, but inside of my container it's /library</li>
+                                <li>Switched to specifying the image versions because I found it difficult to look up what version I was using. This along with bind mounts allows creating backups much easier.</li>
+                            </ul>
+                        </section>
+                    </div>
 
+                    <!-- backup -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">Backup</h3>
+                            <ul class="list">
+                                <li>Docker Registry is used to store the container images.</li>
+                                <li class="indent">This doesn't include the volumes, or configuration files (e.g. docker compose, Caddyfile, etc). It only includes the software environment (e.g. OS, dependencies, plugins).</li>
+                                <li class="indent">It's helpful whenever I need to revert to an older image I used.</li>
+                                <li class="indent">It works by creating tags and push them into the registry. Then when I want to revert I would use the tag in the image section of the docker compose.</li>
+                                <li>Still figuring out a system to backup containers, but the plan is to use rsync and a cron script to periodically copy my volumes. Right now, I've done an initial copy of each volume.</li>
                             </ul>
                         </section>
                     </div>
@@ -174,9 +193,8 @@
                             <ul class="list">
                                 <li>(This feels kind of out of place since it's a video game server, but I'm going to focus on the server side of things. In the future, I think it would be cool to provide information on how to setup a Rust server for others though.)</li>
                                 <li>For SteamCMD I followed the documentation: created a steam user and followed the instructions under 'manually'.</li>
-                                <li>Everytime I want to work on the Rust server, I use sudo su - steam to login as the steam user.</li>
+                                <li>Everytime I want to work on the Rust server, I login as the steam user.</li>
                                 <li class="indent">This provides me with what feels like a server within my actual server, but it's just a user folder in the home directory that can only be accessed by that user.</li>
-                                <li>Layout: /home/steam/rust.</li>
                             </ul>
                         </section>
                     </div>
