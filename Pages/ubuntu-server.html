@@ -107,9 +107,12 @@
                             <h3 class="content-header">Permissions</h3>
                             <ul class="list">
                                 <li>(There's an image in the information section about permissions for reference)</li>
-                                <li>No permissions for others.</li>
-                                <li>No permissions for groups (Docker).</li>
-                                <li>Created users and a group for specific services.</li>
+                                <li>Specific containers exist as a user, and belong to a group</li>
+                                <li>These services utilize UID/GID mapping. </li>
+                                <li>Meanwhile, other containers are granted more system privileges than others.</li>
+                                <li>In general, no permissions are granted for others.</li>
+                                <li>Docker conatiners also grant no permissions for groups. (Docker).</li>
+                                <li>The media folder is configured with read and write permissions.</li>
                             </ul>
                         </section>
                     </div>
@@ -121,8 +124,9 @@
                                 <h3 class="content-header">Caddy</h3>
                                 <ul class="list">   
                                     <li>Caddy acts as a reverse proxy, and provides internally signed HTTPS for containers specified in the Caddyfile.</li>
-                                    <li class="indent">All containers have their own .home domain.</li>
-                                    <li>I think the best way of visualizing my Docker setup with Caddy is by using the apartment or hotel analogy. </li>
+                                    <li class="indent">All containers defined in the Caddyfile have their own .home domain.</li>
+                                    <li class="indent">I use a custom build for Caddy to integrate CrowdSec, but that's further explained in the CrowdSec section.</li>
+                                    <li>I feel like the best way of visualizing my Docker setup with Caddy is by using the apartment or hotel analogy. </li>
                                     <li>Receptionist (Caddy) → Caddy listens for requests on port 80 and 443 from containers listed in the Caddyfile.</li>
                                     <li class="indent">(In Pi-hole, there's local DNS records for each of the .home domains pointing towards my network's local IP)</li>
                                     <li>Elevator (srm_network) → The Docker network, srm_network, connects all of my containers together. Allowing them to communicate with each other.</li>
@@ -131,6 +135,7 @@
                                 <h3 class="content-header">HTTPS</h3>
                                 <ul class="list">
                                     <li>All of the domains use HTTPS instead of HTTP because Caddy internally signs each of my domains using its own private certificate authority (CA).</li>
+                                    <li class="indent">Providing end-to-end encryption without having to expose services to the internet.</li>
                                 </ul>
                             </div>
                             <div>
@@ -144,16 +149,15 @@
                         <section class="content text p">
                             <h3 class="content-header">CrowdSec</h3>
                             <ul class="list">
-                                <li>Customized Caddy using a builder image, xcaddy, and plugins. Allowing Caddy to become a receptionist and bouncer at the same time.</li>
+                                <li>Customized Caddy using a builder image, xcaddy, and plugins to intregate with CrowdSec. Allowing Caddy to become a receptionist and bouncer at the same time.</li>
                                 <li class="indent">xcaddy compiles the image and plugins to create a single binary.</li>
                                 <li>Plugins:</li>
-                                <li class="indent">caddy-l4 → provides protection for non-web services (e.g. databases, game servers, ssh).</li>
-                                <li class="indent">transform-encoder → makes reading the logs easier for CrowdSec by explicitly labeling the following fields: IP, Timestamp, Method, and User-Agent. </li>
-                                <li class="indent">caddy-crowdsec-bouncer → Caddy stores CrowdSec's decision list in RAM, and checks before TCP handshake is finished.</li>
+                                <li class="indent">caddy-l4: provides protection for non-web services (e.g. databases, game servers, ssh), or layer 4. Allowing filtering before the TCP handshake finishes.</li>
+                                <li class="indent">transform-encoder: makes reading the logs easier for CrowdSec by explicitly labeling fields such as IP, Timestamp, Method, and User-Agent. </li>
+                                <li class="indent">caddy-crowdsec-bouncer: Caddy stores CrowdSec's decision list in RAM, and filters out any malicious traffic.</li>
                                 <li>Crowdsec</li>
-                                <li class="indent">Uses an acquis.yaml file to pull data from Caddy through the Docker Socket, and the systems logs. So it can parse the data for any suspicious users and update its decision list.</li>
-                                <li class="indent">The decision list is a list of blocked users. </li>
-                                
+                                <li class="indent">Utilizes an acquis.yaml file to pull data from Caddy, and the system logs.</li>
+                                <li class="indent">Updating its decision list, or list of blocked IPs, when it detects malicious traffic.</li>
                             </ul>
                         </section>
                     </div>
@@ -163,12 +167,15 @@
                         <section class="content text p">
                             <h3 class="content-header">Docker Containers</h3>
                             <ul class="list">
-                                <li>Recently, I did a serious overhaul of my server by switching to bind mounts and using specific image versions instead of the latest.</li>
+                                <li>(Recently, I did a serious overhaul of my server by switching to bind mounts and using specific image versions instead of the latest.)</li>
                                 <li>Type of volume: bind.</li>
-                                <li class="indent">Creates a bridge between a host directory and container directory.</li>
+                                <li class="indent">Creates a bridge between the host directory and container directory.</li>
                                 <li class="indent">Permissions are handled by me instead of Docker, and they're not stored within /var/lib/docker.</li>
-                                <li class="indent">For example, my media directory might be something like /directory/directory/media, but inside of my container it's /library</li>
-                                <li>Switched to specifying the image versions because I found it difficult to look up what version I was using. This along with bind mounts allows creating backups much easier.</li>
+                                <li class="indent">For example, the media directory might look like /directory/directory/media, but inside of the container it's /data. So the bridge exists between the media and data directory.</li>
+                                <li>Switched to specifying the image versions because I found it difficult to look up what version I was using.</li>
+                                <li class="indent">I try to use the most recent stable version for each container.</li>
+                                <li class="indent">This makes backup and version control much easier.</li>
+                                <li class="indent">Configured Diun to check for updates.</li>
                             </ul>
                         </section>
                     </div>
@@ -180,8 +187,8 @@
                             <ul class="list">
                                 <li>Docker Registry is used to store the container images.</li>
                                 <li class="indent">This doesn't include the volumes, or configuration files (e.g. docker compose, Caddyfile, etc). It only includes the software environment (e.g. OS, dependencies, plugins).</li>
-                                <li class="indent">It's helpful whenever I need to revert to an older image I used.</li>
-                                <li class="indent">It works by creating tags and push them into the registry. Then when I want to revert I would use the tag in the image section of the docker compose.</li>
+                                <li class="indent">It's helpful whenever I need to revert to an older image.</li>
+                                <li class="indent">It works by creating tags and push them into the registry. Then when I want to revert, I replace the image version with the tag in the docker compose.</li>
                                 <li>Still figuring out a system to backup containers, but the plan is to use rsync and a cron script to periodically copy my volumes. Right now, I've done an initial copy of each volume.</li>
                             </ul>
                         </section>
