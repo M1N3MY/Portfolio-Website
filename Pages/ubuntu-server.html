@@ -95,7 +95,7 @@
                         <section class="content text p">
                             <h3 class="content-header">Storage</h3>
                             <ul class="list">
-                                <li>Root and boot partions (SSD), and hard drive are automatically mounted on startup using the fstab file.</li>
+                                <li>Root and boot partitons (SSD), and hard drive are automatically mounted on startup using the fstab file.</li>
                                 <li class="indent">Hard drive allocates space for a swap file.</li>
                             </ul>
                         </section>
@@ -114,7 +114,7 @@
                         </section>
                     </div>
 
-                    <!-- overview -->
+                    <!-- caddy -->
                     <div class="content-border">
                         <section class="flex-row content text p">
                             <div>
@@ -139,6 +139,7 @@
                         </section>
                     </div>
 
+                    <!-- crowdsec -->
                     <div class="content-border">
                         <section class="content text p">
                             <h3 class="content-header">CrowdSec</h3>
@@ -166,7 +167,7 @@
                                 <li>Type of volume: bind.</li>
                                 <li class="indent">Creates a bridge between a host directory and container directory.</li>
                                 <li class="indent">Permissions are handled by me instead of Docker, and they're not stored within /var/lib/docker.</li>
-                                <li class="indent">For example, my media directoy might be something like /directory/directory/media, but inside of my container it's /library</li>
+                                <li class="indent">For example, my media directory might be something like /directory/directory/media, but inside of my container it's /library</li>
                                 <li>Switched to specifying the image versions because I found it difficult to look up what version I was using. This along with bind mounts allows creating backups much easier.</li>
                             </ul>
                         </section>
@@ -204,8 +205,8 @@
                         <section class="content text p" style="gap:10px;">
                             <h3>Information + Terms</h3>
                             <ul class="list">
-                                <li>Fstab: a configuration file, located in /etc/fstab, which is used to automate the mounting of pesistent storage and swap space at boot.</li>
-                                <li class="indent">Persistent storage: storage that is non-volatile, or able to retain it's data even there isn't any power.</li>
+                                <li>Fstab: a configuration file, located in /etc/fstab, which is used to automate the mounting of persistent storage and swap space at boot.</li>
+                                <li class="indent">Persistent storage: storage that is non-volatile, or able to retain its data even when there isn't any power.</li>
                                 <li>Swap file: a file which acts as a placeholder for allocated space used by the RAM when it's at full capacity.</li>
                             </ul>
                             <a href="https://www.reddit.com/r/linux/comments/ayditr/chmod_cheatsheet/"><img src="../images/permissions.png" width="400px"></a>
