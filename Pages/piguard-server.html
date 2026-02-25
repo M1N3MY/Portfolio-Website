@@ -86,20 +86,7 @@
                     <!-- disclaimer -->
                     <div class="content-border">
                         <section class="content text p">
-                            <p>Disclaimer: I am not an expert. The following information is based on my experience and understanding. Research was done beforehand to make sure I'm not getting things wrong.</p>
-                        </section>
-                    </div>
-
-                    <div class="content-border">
-                        <section class="content text p">
-                            <h3 class="content-header">Overview</h3>
-                            <ul class="list">
-                                <li>192.168.0.0/24 → home network subnet</li>
-                                <li>10.8.8.1/32 → Wireguard server IP</li>
-                                <li>Pi-hole → DNS + DHCP server</li>
-                                <li>Wireguard → split tunneling</li>
-                                <li class="indent">Allowed IPs: 192.168.0.0/24 (subnet) + 10.8.8.x (specific peer's wireguard ip)</li>
-                            </ul>
+                            <p>Disclaimer: I am not an expert. The following information is based on my experience and understanding. Research was done beforehand to make sure I'm not getting things wrong. WIP</p>
                         </section>
                     </div>
 
@@ -118,25 +105,12 @@
                         </section>
                     </div>
 
-                    <!-- DHCP -->
-                    <div class="content-border">
-                        <section class="content text p">
-                            <h3 class="content-header">DHCP</h3>
-                            <ul class="list">
-                                <li>Setup of DHCP on my network:</li>
-                                <li class="indent">Router: 192.168.0.2 to 192.168.0.3 → servers.</li>
-                                <li class="indent">Pi-hole: 192.168.0.100 to 192.168.0.254 → rest of devices.</li>
-                                <li>Both of my servers are statically configured within their netplan and the actual router settings, so their IP should never change.</li>
-                            </ul>
-                        </section>
-                    </div>
-
                     <!-- WireGuard -->
                     <div class="content-border">
                         <section class="content text p">
                             <h3 class="content-header">WireGuard</h3>
                             <ul class="list">
-                                <li>The WireGuard peer IPs increment from the server IP (10.8.8.1). So for example, my phone is 10.8.8.2 and so on.</li>
+                                <li>The WireGuard peer IPs increment from the server IP. So for example, my phone is 10.8.8.2 and so on.</li>
                                 <li>FreeDNS is my DDNS provider. I use a cron script to update my public IP for my domain because my router doesn't include FreeDNS.</li>
                                 <li>I do split tunneling because all I need it to do is to be able to tap into my home network when I'm away from home.</li>
                                 <li>WireGuard won't answer if somebody tries to scan the port.</li>

@@ -95,9 +95,8 @@
                         <section class="content text p">
                             <h3 class="content-header">Storage</h3>
                             <ul class="list">
-                                <li>Root and boot partions (SSD), and hard drive are automatically mounted using the fstab file.</li>
-                                <li class="indent">Hard drive is mounted to a folder called miso in the mnt directory.</li>
-                                <li>Hard drive allocates space for a swap file.</li>
+                                <li>Root and boot partions (SSD), and hard drive are automatically mounted on startup using the fstab file.</li>
+                                <li class="indent">Hard drive allocates space for a swap file.</li>
                             </ul>
                         </section>
                     </div>
@@ -108,14 +107,9 @@
                             <h3 class="content-header">Permissions</h3>
                             <ul class="list">
                                 <li>(There's an image in the information section about permissions for reference)</li>
-                                <li>I tend to avoid using permissions for group and others unless I have to. Even though I'm listed as owner and group for everything in the miso directory.</li>
-                                <li class="indent">For example, if I need permission to access the directory (execute).</li>
-                                <li>Miso → 751</li>
-                                <li>Docker → 750</li>
-                                <li class="indent">Container Folders → 700</li>
-                                <li class="indent">Docker Compose → 660</li>
-                                <li class="indent">Caddyfile → 640</li>
-                                <li>Media → 750</li>
+                                <li>No permissions for others.</li>
+                                <li>No permissions for groups (Docker).</li>
+                                <li>Created users and a group for specific services.</li>
                             </ul>
                         </section>
                     </div>
@@ -124,19 +118,19 @@
                     <div class="content-border">
                         <section class="flex-row content text p">
                             <div>
-                                <h3 class="content-header">Layout</h3>
-                                <ul class="list">
-                                    <li>I think the best way of visualizing the core layout of the server is by using the apartment or hotel analogy. </li>
-                                    <li>Receptionist (Caddy) → Caddy listens for requests on port 80 and 443 from .home domains listed in the Caddyfile.</li>
-                                    <li class="indent">It knows where to send requests because of the container name and port listed with each .home domain (reverse proxy container_name:port).</li>
-                                    <li class="indent">(In Pi-hole, there's local DNS records for each of my .home domains pointing towards my network's local IP)</li>
-                                    <li>Elevator (srm_network) → My Docker network, srm_network, connects all of my containers together. Allowing them to communicate with each other.</li>
-                                    <li>Docker Containers (Apartment/Hotel Room) → All of my containers are self contained, they can only be contacted through their port number. Similar to a door. Otherwise, they operate separately from each other.</li>
+                                <h3 class="content-header">Caddy</h3>
+                                <ul class="list">   
+                                    <li>Caddy acts as a reverse proxy, and provides internally signed HTTPS for containers specified in the Caddyfile.</li>
+                                    <li class="indent">All containers have their own .home domain.</li>
+                                    <li>I think the best way of visualizing my Docker setup with Caddy is by using the apartment or hotel analogy. </li>
+                                    <li>Receptionist (Caddy) → Caddy listens for requests on port 80 and 443 from containers listed in the Caddyfile.</li>
+                                    <li class="indent">(In Pi-hole, there's local DNS records for each of the .home domains pointing towards my network's local IP)</li>
+                                    <li>Elevator (srm_network) → The Docker network, srm_network, connects all of my containers together. Allowing them to communicate with each other.</li>
+                                    <li>Docker Containers (Apartment/Hotel Room) → All of the containers are self contained, they can only be contacted through their port number. Similar to a door. Otherwise, they operate separately from each other.</li>
                                 </ul>
                                 <h3 class="content-header">HTTPS</h3>
                                 <ul class="list">
-                                    <li>All of my domains use HTTPS instead of HTTP because Caddy internally signs each of my domains using its own private certificate authority (CA).</li>
-                                    <li>By default, the browser won't trust the certificate. So I have used root.crt to install config profiles on all of my main devices.</li>
+                                    <li>All of the domains use HTTPS instead of HTTP because Caddy internally signs each of my domains using its own private certificate authority (CA).</li>
                                 </ul>
                             </div>
                             <div>
@@ -145,18 +139,30 @@
                         </section>
                     </div>
 
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">CrowdSec</h3>
+                            <ul class="list">
+                                <li>Customized Caddy using a builder image, xcaddy, and plugins. Allowing Caddy to become a receptionist and bouncer at the same time.</li>
+                                <li class="indent">xcaddy compiles the image and plugins to create a single binary. Integrating Caddy with Crowdsec to turn Caddy into a receptionist and bouncer</li>
+                                <li>Plugins:</li>
+                                <li class="indent">caddy-l4 → provides protection for non-web services (e.g. databases, game servers, ssh).</li>
+                                <li class="indent">transform-encoder → makes reading the logs easier for CrowdSec by explicitly labeling the following fields: IP, Timestamp, Method, and User-Agent. </li>
+                                <li class="indent">caddy-crowdsec-bouncer → caddy stores a database of blocked users, and checks before TCP handshake is finished.</li>
+                                <li>Crowdsec</li>
+                                
+                            </ul>
+                        </section>
+                    </div>
+
                     <!-- docker containers -->
                     <div class="content-border">
                         <section class="content text p">
                             <h3 class="content-header">Docker Containers</h3>
                             <ul class="list">
-                                <li>Type of volume: named.</li>
-                                <li class="indent">What does this mean? Docker manages my permissions, I must access my data by using docker exec commands. Even though it's stored in /var/lib/docker. Also, the volume is created when I first setup my container since it's defined in my docker compose file.</li>
-                                <li>Docker containers are a huge security plus. But the biggest benefit for me is that it allows me to easily manage all of my services.</li>
-                                <li class="indent">If I want to check logs, all I have to do is run this command: docker logs [container_name].</li>
-                                <li class="indent">The configuration for the service are all within the docker compose file.</li>
-                                <li class="indent">And updating is as simple as pulling a new image.</li>
-                                <li>Also have directory called docker with folders for each containers in /mnt/miso where I edit my config files.</li>
+                                <li>Type of volume: bind.</li>
+                                <li class="indent">Recently, I did a serious overhaul of my server and switched from bind mounts.</li>
+
                             </ul>
                         </section>
                     </div>
