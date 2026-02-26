@@ -129,13 +129,13 @@
                         <section class="content text p">
                             <h3 class="content-header">WireGuard</h3>
                             <ul class="list">
-                                <li>For secure remote access, I utilize Wireguard.</li>
+                                <li>For secure remote access, I utilize WireGuard.</li>
                                 <li>FreeDNS is the DDNS provider.</li>
                                 <li class="indent">A cron script updates my public IP to bypass my router's lack of support for FreeDNS.</li>
                                 <li>Split tunneling allows me to preserve bandwidth since it's configured to only allow the WireGuard peer and home subnet.</li>
                                 <li>PostUp and PostDown rules:
                                 <li class="indent">Bridges traffic between the WireGuard tunnel and home LAN.</li>
-                                <li class="indent">Masquerades Wireguard IPs with my home network's public IP and server's private IP so it can access the internet and local LAN</li>
+                                <li class="indent">Masquerades WireGuard IPs with my home network's public IP and server's private IP so it can access the internet and local LAN</li>
                                 <li class="indent">Cleans up rules whenever the WireGuard interface is removed.</li>
                             </ul>
                         </section>
@@ -152,7 +152,7 @@
                                 <li>Pihole: a DNS sinkhole which resolves, or hands out IP addresses to a specific domain.</li>
                                 <li>DNS sinkhole: DNS server which "sinks" specific domains by resolving them to non-routable IPs, or IPs that are a dead end.</li>
                                 <li>Dynamic host configuration protocol (DHCP): automatically assigns IP addresses within a specific range to devices on a network.</li>
-                                <li>Wireguard: a VPN service which solely uses UDP. Compared to let's say OpenVPN, it's newer.</li>
+                                <li>WireGuard: a VPN service which solely uses UDP. Compared to let's say OpenVPN, it's newer.</li>
                                 <li>Dynamic DNS (DDNS): service which updates the public IP for a specific domain</li>
                             </ul>
                         </section>
