@@ -67,7 +67,7 @@
                             <div class="nav-images">
                                 <a href="../pages/gallery.html" class="button side-nav-button"><img src="../images/gallery.png"></a>
                             </div>
-                        </section>
+                        </section> 
                     </div>
 
                     <div class="sidebar-border">
@@ -86,21 +86,40 @@
                     <!-- disclaimer -->
                     <div class="content-border">
                         <section class="content text p">
-                            <p>Disclaimer: I am not an expert. The following information is based on my experience and understanding. Research was done beforehand to make sure I'm not getting things wrong. WIP</p>
+                            <p>Disclaimer: I am not an expert. The following information is based on my experience and understanding. Research was done beforehand to make sure I'm not getting things wrong.</p>
+                        </section>
+                    </div>
+
+                    <!-- storage -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">Storage</h3>
+                            <ul class="list">
+                                <li>Root and boot partitons (SSD) are automatically mounted on startup using the fstab file.</li>
+                                <li class="indent">The root partition allocates space for a swap file.</li>
+                            </ul>
                         </section>
                     </div>
 
                     <!-- pi-hole -->
                     <div class="content-border">
                         <section class="content text p">
-                            <h3 class="content-header">Pi-hole → DNS + DHCP</h3>
+                            <h3 class="content-header">Pi-hole</h3>
                             <ul class="list">
-                                <li>Pi-hole is a DNS sinkhole. It resolves, or hands out the IP addresses of whitelisted domains.
-                                <li class="indent"> Meanwhile, blocked domains are sunk by routing them to a non-routable IP address (e.g. 0.0.0.0).</li>
-                                <li>In my case, I use several blocklists which list out specific domains to block.  
-                                <li class="indent">The blocklists I used are HaGeZi's Light , Adguard DNS Filter, Oisd (Big), someonewhocares.org (Dan Pollock).</li>
-                                <li>Pi-hole also acts as my DHCP server for all of my devices except for my servers, which rely on my router.</li>
-                                <li>It also resolves all of my .home domains to 192.168.0.3, or my Ubuntu server.</li>
+                                <li>Pi-hole is used as a DNS sinkhole and DHCP server for my entire network.
+                                <li>DNS:</li>
+                                <li class="indent">Upstream: Google and Cloudflare (IPv4) + local DNS records → resolve domains.</li>
+                                <li class="indent">Blocklists → sink domains.</li>
+                                <li>Blocklists:  
+                                <li class="indent">HaGeZi Multi Light</li>
+                                <li class="indent">Adguard Base Filter</li>
+                                <li class="indent">OISD (Big)</li>
+                                <li class="indent">someonewhocares.org/host (Dan Pollock)</li>
+                                <li>DHCP:</li>
+                                <li>Pi-hole handles DHCP for all devices while the primary router handles my two servers and downstairs router, which is used as an access point (AP).</li>
+                                <li class="indent">The DHCP servers don't conflict with each other because the primary router's range is restricted to the devices specified above.</li>
+                                <li class="indent">I do this to ensure my servers and router will retain their IPs if I ever have to completely reconfigure the Pi-hole.</li>
+                                <li class="indent">(Servers' IPs are already configured via Netplan)</li>
                             </ul>
                         </section>
                     </div>
@@ -110,16 +129,14 @@
                         <section class="content text p">
                             <h3 class="content-header">WireGuard</h3>
                             <ul class="list">
-                                <li>The WireGuard peer IPs increment from the server IP. So for example, my phone is 10.8.8.2 and so on.</li>
-                                <li>FreeDNS is my DDNS provider. I use a cron script to update my public IP for my domain because my router doesn't include FreeDNS.</li>
-                                <li>I do split tunneling because all I need it to do is to be able to tap into my home network when I'm away from home.</li>
-                                <li>WireGuard won't answer if somebody tries to scan the port.</li>
-                                <li class="indent">Private (device) key must pair with the public (server) key.</li>
-                                <li>For example, if I want to reach one of my .home domains from my phone...</li>
-                                <li class="indent">Phone sends request through WG tunnel to Pi-hole, which resolves the .home domain to 192.168.0.3.</li>
-                                <li class="indent">Pi-hole then sends this back through the tunnel to my device, who sends it to my Ubuntu server.</li>
-                                <li class="indent">Then, the server sends to Wireguard, who encrypts data and sends it through tunnel back to my device.</li>
-                                <li>Device → Pi-hole → (tunnel) → Device → Ubuntu server → Wireguard → (tunnel) → device.</li>
+                                <li>For secure remote access, I utilize Wireguard.</li>
+                                <li>FreeDNS is the DDNS provider.</li>
+                                <li class="indent">A cron script updates my public IP to bypass my router's lack of support for FreeDNS.</li>
+                                <li>Split tunneling allows me to preserve bandwidth since it's configured to only allow the WireGuard peer and home subnet.</li>
+                                <li>PostUp and PostDown rules:
+                                <li class="indent">Bridges traffic between the WireGuard tunnel and home LAN.</li>
+                                <li class="indent">Masquerades Wireguard IPs with my home network's public IP and server's private IP so it can access the internet and local LAN</li>
+                                <li class="indent">Cleans up rules whenever the WireGuard interface is removed.</li>
                             </ul>
                         </section>
                     </div>
