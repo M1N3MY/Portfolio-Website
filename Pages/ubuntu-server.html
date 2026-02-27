@@ -111,7 +111,7 @@
                                 <li class="indent">These containers utilize UID/GID mapping. </li>
                                 <li>Meanwhile, other containers are granted more system privileges than the rest.</li>
                                 <li>In general, no permissions are granted for others.</li>
-                                <li>Docker conatiners also grant no permissions for groups. (Docker).</li>
+                                <li>Docker containers also grant no permissions for groups. (Docker).</li>
                                 <li>The media folder is configured with read and write permissions.</li>
                             </ul>
                         </section>
@@ -135,7 +135,7 @@
                                 <h3 class="content-header">HTTPS</h3>
                                 <ul class="list">
                                     <li>All of the domains use HTTPS instead of HTTP because Caddy internally signs each of my domains using its own private certificate authority (CA).</li>
-                                    <li class="indent">Providing end-to-end encryption without having to expose services to the internet.</li>
+                                    <li class="indent">This provides end-to-end encryption without having to expose services to the internet.</li>
                                 </ul>
                             </div>
                             <div>
@@ -149,7 +149,7 @@
                         <section class="content text p">
                             <h3 class="content-header">CrowdSec</h3>
                             <ul class="list">
-                                <li>Customized Caddy using a builder image, xcaddy, and plugins to intregate with CrowdSec. Allowing Caddy to become a receptionist and bouncer at the same time.</li>
+                                <li>Customized Caddy using a builder image, xcaddy, and plugins to integrate with CrowdSec. Allowing Caddy to become a receptionist and bouncer at the same time.</li>
                                 <li class="indent">xcaddy compiles the image and plugins to create a single binary.</li>
                                 <li>Plugins:</li>
                                 <li class="indent">caddy-l4: provides protection for non-web services (e.g. databases, game servers, ssh), or layer 4. Allowing filtering before the TCP handshake finishes.</li>
@@ -172,7 +172,7 @@
                                 <li class="indent">Creates a bridge between the host directory and container directory.</li>
                                 <li class="indent">Permissions are handled by me instead of Docker, and they're not stored within /var/lib/docker.</li>
                                 <li class="indent">For example, the media directory might look like /directory/directory/media, but inside of the container it's /data. So the bridge exists between the media and data directory.</li>
-                                <li>Switched to specifying the image versions because I found it difficult to look up what version I was using.</li>
+                                <li>Switched to specifying the image versions because I found it difficult to identify what version I was using.</li>
                                 <li class="indent">I try to use the most recent stable version for each container.</li>
                                 <li class="indent">This makes backup and version control much easier.</li>
                                 <li class="indent">Configured Diun to check for updates.</li>
@@ -201,7 +201,7 @@
                             <ul class="list">
                                 <li>(This feels kind of out of place since it's a video game server, but I'm going to focus on the server side of things. In the future, I think it would be cool to provide information on how to setup a Rust server for others though.)</li>
                                 <li>For SteamCMD I followed the documentation: created a steam user and followed the instructions under 'manually'.</li>
-                                <li>Everytime I want to work on the Rust server, I login as the steam user.</li>
+                                <li>Every time I want to work on the Rust server, I login as the steam user.</li>
                                 <li class="indent">This provides me with what feels like a server within my actual server, but it's just a user folder in the home directory that can only be accessed by that user.</li>
                             </ul>
                         </section>

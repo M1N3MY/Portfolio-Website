@@ -95,7 +95,7 @@
                         <section class="content text p">
                             <h3 class="content-header">Storage</h3>
                             <ul class="list">
-                                <li>Root and boot partitons (SSD) are automatically mounted on startup using the fstab file.</li>
+                                <li>Root and boot partitions (SSD) are automatically mounted on startup using the fstab file.</li>
                                 <li class="indent">The root partition allocates space for a swap file.</li>
                             </ul>
                         </section>
@@ -106,17 +106,17 @@
                         <section class="content text p">
                             <h3 class="content-header">Pi-hole</h3>
                             <ul class="list">
-                                <li>Pi-hole is used as a DNS sinkhole and DHCP server for my entire network.
+                                <li>Pi-hole is used as a DNS sinkhole and DHCP server for my entire network.</li>
                                 <li>DNS:</li>
                                 <li class="indent">Upstream: Google and Cloudflare (IPv4) + local DNS records → resolve domains.</li>
                                 <li class="indent">Blocklists → sink domains.</li>
-                                <li>Blocklists:  
+                                <li>Blocklists:</li>
                                 <li class="indent">HaGeZi Multi Light</li>
                                 <li class="indent">Adguard Base Filter</li>
                                 <li class="indent">OISD (Big)</li>
                                 <li class="indent">someonewhocares.org/host (Dan Pollock)</li>
                                 <li>DHCP:</li>
-                                <li>Pi-hole handles DHCP for all devices while the primary router handles my two servers and downstairs router, which is used as an access point (AP).</li>
+                                <li>Pi-hole handles DHCP for all devices, while the primary router handles my two servers and downstairs router, which is used as an access point (AP).</li>
                                 <li class="indent">The DHCP servers don't conflict with each other because the primary router's range is restricted to the devices specified above.</li>
                                 <li class="indent">I do this to ensure my servers and router will retain their IPs if I ever have to completely reconfigure the Pi-hole.</li>
                                 <li class="indent">(Servers' IPs are already configured via Netplan)</li>
@@ -134,9 +134,9 @@
                                 <li class="indent">A cron script updates my public IP to bypass my router's lack of support for FreeDNS.</li>
                                 <li>Split tunneling allows me to preserve bandwidth since it's configured to only allow the WireGuard peer and home subnet.</li>
                                 <li>PostUp and PostDown rules:
-                                <li class="indent">Bridges traffic between the WireGuard tunnel and home LAN.</li>
-                                <li class="indent">Masquerades WireGuard IPs with my home network's public IP or server's private IP so it can access the internet and local LAN</li>
-                                <li class="indent">Cleans up rules whenever the WireGuard interface is removed.</li>
+                                <li class="indent">Bridge traffic between the WireGuard tunnel and home LAN.</li>
+                                <li class="indent">Masquerade WireGuard IPs with my home network's public IP or server's private IP so it can access the internet and local LAN</li>
+                                <li class="indent">Clean up rules whenever the WireGuard interface is removed.</li>
                             </ul>
                         </section>
                     </div>
@@ -148,8 +148,8 @@
                             <ul class="list">
                                 <li>For anyone who isn't as tech savvy, or anyone else, here's a short recap of some of the things I discussed.</li>
                                 <li>Subnet: a specific range of IPs on a network.</li>
-                                <li>Domain host system (DNS): a system which allows IP addresses to be easily identifiable by pairing host names.</li>
-                                <li>Pihole: a DNS sinkhole which resolves, or hands out IP addresses to a specific domain.</li>
+                                <li>Domain name system (DNS): a system which allows IP addresses to be easily identifiable by pairing host names.</li>
+                                <li>Pi-hole: a DNS sinkhole which resolves, or hands out IP addresses to a specific domain.</li>
                                 <li>DNS sinkhole: DNS server which "sinks" specific domains by resolving them to non-routable IPs, or IPs that are a dead end.</li>
                                 <li>Dynamic host configuration protocol (DHCP): automatically assigns IP addresses within a specific range to devices on a network.</li>
                                 <li>WireGuard: a VPN service which solely uses UDP. Compared to let's say OpenVPN, it's newer.</li>
