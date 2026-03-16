@@ -123,9 +123,8 @@
                             <div>
                                 <h3 class="content-header">Caddy</h3>
                                 <ul class="list">   
-                                    <li>Caddy acts as a reverse proxy, and provides internally signed HTTPS for containers specified in the Caddyfile.</li>
-                                    <li class="indent">All containers defined in the Caddyfile have their own .home domain.</li>
-                                    <li class="indent">I use a custom build for Caddy to integrate CrowdSec, but that's further explained in the CrowdSec section.</li>
+                                    <li>Caddy acts as a reverse proxy and provides internally signed HTTPS for all containers specified in the Caddyfile within srm_network.</li>
+                                    <li class="indent">All of the containers defined in the Caddyfile have their own .home domain.</li>
                                     <li>I feel like the best way of visualizing my Docker setup with Caddy is by using the apartment or hotel analogy. </li>
                                     <li>Receptionist (Caddy) → Caddy listens for requests on port 80 and 443 from containers listed in the Caddyfile.</li>
                                     <li class="indent">(In Pi-hole, there's local DNS records for each of the .home domains pointing towards my network's local IP)</li>
@@ -149,15 +148,12 @@
                         <section class="content text p">
                             <h3 class="content-header">CrowdSec</h3>
                             <ul class="list">
-                                <li>Customized Caddy using a builder image, xcaddy, and plugins to integrate with CrowdSec. Allowing Caddy to become a receptionist and bouncer at the same time.</li>
-                                <li class="indent">xcaddy compiles the image and plugins to create a single binary.</li>
-                                <li>Plugins:</li>
-                                <li class="indent">caddy-l4: provides protection for non-web services (e.g. databases, game servers, ssh), or layer 4. Allowing filtering before the TCP handshake finishes.</li>
-                                <li class="indent">transform-encoder: makes reading the logs easier for CrowdSec by explicitly labeling fields such as IP, Timestamp, Method, and User-Agent. </li>
-                                <li class="indent">caddy-crowdsec-bouncer: Caddy stores CrowdSec's decision list in RAM, and filters out any malicious traffic.</li>
-                                <li>Crowdsec</li>
-                                <li class="indent">Utilizes an acquis.yaml file to pull data from Caddy, and the system logs.</li>
-                                <li class="indent">Updating its decision list, or list of blocked IPs, when it detects malicious traffic.</li>
+                                <li>CrowdSec processes logs from auth.log, and makes decisions based on suspicious activity related to things like failed SSH attempts.</li>
+                                <li class="indent">An acquis.yaml file is used to direct it to the the auth.log</li>
+                                <li class="indent">Utilizing CrowdSec means it'll list IPs that should be banned in the decision list, but it doesn't mean it'll actually ban.</li>
+                                <li class="indent">That's why I've begun to implement CrowdSec's Firewall Bouncer.</li>
+                                <li>CrowdSec Firewall Bouncer is installed on the host machine, or this server. It's not in a Docker container.</li>
+                                <li class="indent">The Firewall Bouncer will automatically ban IPs on the decision list, and community blocklist (CAPI)</li>
                             </ul>
                         </section>
                     </div>
@@ -188,7 +184,7 @@
                                 <li>Docker Registry is used to store the container images.</li>
                                 <li class="indent">This doesn't include the volumes, or configuration files (e.g. docker compose, Caddyfile, etc). It only includes the software environment (e.g. OS, dependencies, plugins).</li>
                                 <li class="indent">It's helpful whenever I need to revert to an older image.</li>
-                                <li class="indent">It works by creating tags and push them into the registry. Then when I want to revert, I replace the image version with the tag in the docker compose.</li>
+                                <li class="indent">It works by creating tags and pushing them into the registry. Then when I want to revert, I replace the image version with the tag in the docker compose.</li>
                                 <li>Still figuring out a system to backup containers, but the plan is to use rsync and a cron script to periodically copy my volumes. Right now, I've done an initial copy of each volume.</li>
                             </ul>
                         </section>
