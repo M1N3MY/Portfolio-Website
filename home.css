@@ -1,0 +1,324 @@
+body, ul, li, h1, h2, h3 { /* removes default browser css */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #262528;
+    font-family: monospace;
+    font-weight: 500;
+}
+
+                                                            /* COMPONENTS */
+.content {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    border: 2px solid #96726c;
+    border-radius: 10px;
+    background-color: #1e282e;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.button {
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.scrollable {
+    overflow-y: scroll;
+}
+
+.footer-text {
+    color: #182126;
+    font-size: 20px;
+    padding-left: 10px; 
+}
+
+.text {
+    color: #edebd5;
+    font-size: 20px;
+}
+
+.centered {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+.content-border {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/dark-cherry-blossom.jpg");
+    border: 5px solid #322a2a;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    width: 100%; 
+    height: auto; 
+    padding: 17px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.blinkies {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding: 5px;
+}
+
+.links {
+    color: #edebd5;
+    text-decoration: none;
+}
+
+.flex-row { 
+    display: flex;
+    flex-direction: row;
+}
+
+.list {
+    padding: 25px;
+}
+
+.indent {
+    margin-left: 50px;
+}
+
+                                                            /* HEADERS */
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 10;;
+
+}
+                                                        
+.site-name { 
+    color: #f5d3ca;  
+    font-size: 45px;
+}
+
+.content-header {
+    color: #edebd5;
+    font-weight: bold;
+}
+
+.sidebar-header {
+    color: #edebd5;
+    font-weight: bold; 
+}
+
+                                                            /* NAVIGATION COMPONENTS */
+.top-nav-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 25px;
+    color: #f5d3ca;
+    padding: 10px; 
+    cursor: pointer;
+}
+
+.top-nav-btn:hover {
+    color: #c28e85;
+}
+
+.sidebar-border {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 5px solid #322a2a;
+    border-radius: 10px;
+    background-image: url("../images/dark-cherry-blossom.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 17px;
+}
+
+.nav-images {
+    display: flex;
+    flex-direction: row;
+    overflow-x: wrap;
+    gap: 10px;
+}
+
+.nav-doors {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; 
+}
+
+                                                            /* NAVIGATION */ 
+                    
+.top-nav-btns {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    width: 90%;
+    padding: 5px;
+    margin: auto;
+}
+
+.sidebar {
+  display: flex;
+  flex-shrink: 0; /* no shrinking */
+  flex-direction: column; /* vertical display -> column */
+  gap: 10px; /* between rows and columns... */
+  box-sizing: border-box;
+}
+
+.left-sidebar {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border: 2px solid #96726c;
+    border-radius: 10px;
+    background-color: #1e282e;
+    padding: 5px;
+    gap: 20px;
+}
+
+.right-sidebar {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border: 2px solid #96726c;
+    border-radius: 5px;
+    background-color: #1e282e;
+    padding: 5px;
+}
+
+                                                            /* CORE LAYOUT*/
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #a93e33;
+    gap: 20px;
+    padding: 5px;
+    margin: 0 auto; 
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 25px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+                                                            /* GRID */
+.grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+}
+
+.row-1 {                                                    /* row 1 */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.r1-c1, .r1-c3 { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0px 200px;
+}
+
+.r1-c2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 50px 0px 50px;
+}
+
+/*.r1-c3 {
+    display: flex;
+    flex-direction: row;
+}
+*/
+
+.row-2 {                                                     /* row 2 */
+    display: flex;
+    flex-direction: row;
+}
+
+.r2-c1, .r2-c3 {
+    display: flex;
+    flex-direction: column;
+    gap: 200px 0px;
+}
+
+.r2-c2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 10px 0px 10px;
+}
+
+/*
+.r2-c3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+*/
+                                                            /* SPECIAL PAGES */
+.updates {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+}
+
+.art {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    height: 400px;
+    text-decoration: none;
+}

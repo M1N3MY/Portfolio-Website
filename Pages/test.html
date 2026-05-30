@@ -1,64 +1,147 @@
-<!-- (⓿_⓿) -->
+<!-- (￣_,￣ ) -->
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../test.css">
+        <link rel="stylesheet" type="text/css" href="../styles.css">
         <link rel="icon" type="image/png" href="images/favicon.png">
         <title>Sarah's Catalog</title>
     </head> 
     <body> 
-        <!-- header: title + top nav bar -->
-        <header>
-            <h1 class="site-header">Sarah's Catalog</h1>
-            <!-- top nav bar -->
-            <nav class="top-nav">
-                <a href="../index.html" class="button top-nav-button">Home</a>
-            </nav>    
-        </header>
+        <!--  
+            GRID: a 3 row grid with a varying amount of columns 
+                ROW 1: header
+                ROW 2: wrapper
+                ROW 3: area underneath wrapper
+                ( this also includes empty margin space)
+
+            ROW 1 (row-1): contains the site header, top nav buttons
+                row 1 column 1 (r1c1): (open space)
+                row 1 column 2 (r1c2): site name + top nav buttons        
+                row 1 column 3 (r1c3): (open space)     
+        -->
+        <div class="grid">
+            <div class="row-1">
+                <!-- ROW 1 COLUMN 1 -->
+                <div class="r1-c1">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                </div> 
+
+                <!--  ROW 1 COLUMN 2 -->
+                <div class="r1-c2">
+                    <!-- HEADER: site name + top nav buttons -->
+                    <header>
+                        <h1 class="site-name">Sarah's Catalog</h1>
+
+                        <!-- TOP NAV BUTTONS -->
+                        <nav class = top-nav-btns>
+                            <a href="../new-home.html" class="button top-nav-btn">Home</a>
+                            <a href="projects.html" class="button top-nav-btn">Projects</a>
+                            <a href="pages/links.html" class="button top-nav-btn">Links</a>
+                        </nav>    
+                    </header>
+                </div> 
+                
+                <!-- ROW 1 COLUMN 3 -->
+                <div class="r1-c3">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                </div> 
+            </div> <!-- END OF ROW 1 -->
 
 
-        <!-- wraps the main container -->
-        <div class="wrapper">  
-            <!-- main container: left sidebar, middle, right sidebar --> 
-            <div class="main-container">
+            <!-- 
+                ROW 2 (row-2): contains the wrapper
+                    row 2 column 1 (r2c1): (open space)
+                    row 2 column 2 (r2c2): wrapper + main container        
+                    row 2 column 3 (r2c3): (open space)
+            -->
+            <div class="row-2">
+                <!-- ROW 2 COLUMN 1 -->
+                <div class="r2-c1">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                </div> 
+                
+                <!-- ROW 2 COLUMN 2-->
+                <div class="r2-c2">
+                    <!-- WRAPPER: wraps the main container -->
+                    <div class="wrapper">  
+                        <!-- MAIN CONTAINER: sidebars, main content (middle), footer --> 
+                        <main>
+                            <!-- LEFT SIDEBAR -->
+                            <nav class="sidebar">
+                                <div class="sidebar-border">
+                                    <section class="left-sidebar">
+                                        <div class="nav-images">
+                                            <a href="../pages/gallery.html" class="button side-nav-button"><img src="../images/gallery.png"></a>
+                                        </div>
 
-                <!-- left sidebar -->
-                <nav class="sidebar">
-                    <div class="sidebar-border">
-                        <section class="left-sidebar">
-                            <a href="../pages/gallery.html" class="button side-nav-button"><img src="../images/gallery.png"></a>
-                        </section>
-                    </div>
-                    <div class="sidebar-border">
-                        <section class="left-sidebar">
-                            <a href="../pages/door.html" class="button side-nav-button"><img src="../images/door.png"></a>
-                        </section>
-                    </div>
-                </nav>
+                                        <div class="nav-doors">
+                                            <a href="../pages/bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
+                                            <a href="../pages/door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
+                                        </div>
+                                    </section>
+                                </div>
+                            </nav> <!-- END OF LEFT SIDEBAR -->
 
-                <!-- middle: main content -->
-                <main class="middle">
-                    <div class="content-border">
-                        <section class="content text p">
-                        <p>This is a page where I test out things out before implementing them onto the actual site. </p>
-                    </section>
-                    </div>
-                </main>
+                            <!-- MIDDLE: main content -->
+                            <div class="middle">
+                                <div class="content-border">
+                                    <section class="content text p">
+                                        "YOU ARE ON THE TESTING PAGE Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                    </section>
+                                </div>
+                            </div> <!-- END OF MIDDLE -->
+                            <!-- RIGHT SIDEBAR -->
+                            <nav class="sidebar">
+                                <div class="sidebar-border">
+                                    <section class= "right-sidebar">
+                                        <img src="../images/cat-0491.gif" width="50" height="50">
+                                    </section>
+                                </div>
+                            </nav> 
+                    </main> <!-- END OF MAIN CONTAINER -->
 
-                <!-- right sidebar -->
-                <nav class="sidebar">
-                    <div class="sidebar-border">
-                        <section class="right-sidebar">
-                            <!--<h3 class="sidebar-header"></h3>*/-->
-                            <img class="gif" src="https://momg.neocities.org/gifs/i-51402.gif" width="100px" height="150px"> 
-                        </section>
-                    </div>
-                </nav>
+                        <!-- FOOTER -->
+                        <footer class="footer footer-text">
+                            <p>Thanks for visiting!</p>
+                            <img src="../images/cat-0491.gif" width="30" height="30"> 
+                        </footer> <!-- END OF FOOTER--> 
+                    </div> <!-- end of wrapper -->
+                </div> <!-- (end of row 2 column 2)-->
 
+            <!-- ROW 2 COLUMN 3 -->
+            <div class="r2-c3">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                    <img src="../images/cat-0491.gif" width="50" height="50">
+                </div>                 
+            </div> <!-- END OF ROW 2 -->
 
-            </div> <!-- end of main container-->
-        </div> <!-- end of wrapper -->
+            <!-- 
+                ROW 3: area underneath the wrapper  
+            -->
+            <div class="row-3"></div> <!-- END OF ROW 3 -->
+        </div> <!-- END OF GRID -->
     </body>
 </html>
