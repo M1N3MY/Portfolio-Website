@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body, ul, li, h1, h2, h3 { /* removes default browser css */
     margin: 0;
     padding: 0;
@@ -6,6 +10,8 @@ body, ul, li, h1, h2, h3 { /* removes default browser css */
 body {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
     background-color: #262528;
     font-family: monospace;
     font-weight: 500;
@@ -15,14 +21,12 @@ body {
 .content {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    /* overflow-y: scroll; maybe? */ 
     border: 2px solid #96726c;
     border-radius: 10px;
     background-color: #1e282e;
     padding: 10px;
-    width: 100%;
     height: auto;
-    box-sizing: border-box;
 }
 
 .button {
@@ -65,11 +69,8 @@ iframe {
     border-radius: 10px;
     background-size: cover;
     background-position: center;
-    width: 100%; 
     height: auto; 
     padding: 17px;
-    box-sizing: border-box;
-    flex-shrink: 0;
 }
 
 .blinkies {
@@ -178,7 +179,6 @@ header {
   flex-shrink: 0; /* no shrinking */
   flex-direction: column; /* vertical display -> column */
   gap: 10px; /* between rows and columns... */
-  box-sizing: border-box;
 }
 
 .left-sidebar {
@@ -188,28 +188,21 @@ header {
     border: 2px solid #96726c;
     border-radius: 10px;
     background-color: #1e282e;
-    min-width:55px;
-    max-width: 55px;
     align-items: center;
     padding: 5px;
     gap: 15px 10px;
     flex-wrap: wrap;
-    box-sizing: border-box;
 }
 
 .right-sidebar {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 0 auto;
     border: 2px solid #96726c;
     border-radius: 5px;
     background-color: #1e282e;
-    min-width: 65px;
-    max-width: 65px;
-    gap: 15px 10px;
     padding: 5px;
     flex-wrap: wrap;
-    box-sizing: border-box;
 }
 
                                                             /* CORE LAYOUT*/
@@ -219,6 +212,7 @@ header {
     justify-content: center;
     align-items: center;
     background-color: #a93e33;
+    width: 100%;
     gap: 20px;
     padding: 5px;
     margin: 0 auto; 
@@ -227,7 +221,6 @@ header {
 main {
     display: flex;
     flex-direction: row;
-    box-sizing: border-box;
 }
 
 .middle {
@@ -236,7 +229,6 @@ main {
     padding: 10px;
     gap: 25px;
     margin: 0 auto;
-    box-sizing: border-box;
 }
 
 .footer {
@@ -251,9 +243,10 @@ main {
 .grid {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    margin: 25px;
 }
 
 .row-1 {                                                    /* row 1 */
@@ -268,12 +261,17 @@ main {
     flex-direction: row;
     justify-content: center;
     gap: 0px 200px;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 
 .r1-c2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
     padding: 0px 50px 0px 50px;
 }
 
@@ -298,7 +296,6 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    min-width: 1500px;
     padding: 0px 10px 0px 10px;
 }
 
