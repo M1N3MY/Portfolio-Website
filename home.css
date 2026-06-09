@@ -21,11 +21,11 @@ body {
 .content {
     display: flex;
     flex-direction: column;
-    /* overflow-y: scroll; maybe? */ 
     border: 2px solid #96726c;
     border-radius: 10px;
     background-color: #1e282e;
     padding: 10px;
+    width: 100%;
     height: auto;
 }
 
@@ -192,6 +192,7 @@ header {
     padding: 5px;
     gap: 15px 10px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .right-sidebar {
@@ -203,6 +204,8 @@ header {
     background-color: #1e282e;
     padding: 5px;
     flex-wrap: wrap;
+    width: 100%;
+    gap: 15px 10px;
 }
 
                                                             /* CORE LAYOUT*/
