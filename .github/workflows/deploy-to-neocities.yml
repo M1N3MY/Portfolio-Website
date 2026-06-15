@@ -1,0 +1,30 @@
+name: DEPLOY TO NEOCITIES
+
+# workflow triggered by pushing into the main repo branch
+on:
+  push:
+    branches: 
+      - main
+
+# cancels old deployments when there's a new one
+concurrency: # prevent concurrent deploys doing strange things
+  group: deploy-to-neocities
+  cancel-in-progress: true
+
+
+jobs:
+  deploy: # name of the job
+    runs-on: ubuntu-latest # latest ubuntu runner 
+    
+    steps:
+    - name: COPY INTO ACTION RUNNER 
+      uses: actions/checkout@v6 # copies repo into the action runner 
+        
+    - name: UPDATE WEBSITE
+      uses: bcomnes/deploy-to-neocities@v3 # uploads root folder to neocities using API key
+      with:
+        api_key: ${{ secrets.NEOCITIES_API_TOKEN }}
+        cleanup: false
+        neocities_supporter: false # set this to true if you have a supporter account and want to bypass unsuported files filter.
+        preview_before_deploy: true # print a deployment plan prior to waiting for files to upload.
+        dist_dir: .
