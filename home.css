@@ -1,3 +1,5 @@
+                                                            /* ＼(((￣(￣(￣▽￣)￣)￣)))／ */
+
 * {
     box-sizing: border-box;
 }
@@ -317,7 +319,6 @@ main {
     margin: 0 auto;
     gap: 50px;
     padding-top: 10px;
-
 }
                                                             /* SPECIAL PAGES */
 .updates {
@@ -342,3 +343,11 @@ main {
     height: 400px;
     text-decoration: none;
 }
+
+                                                            /* DEVICES 
+
+@media (max-width: 395px) {
+    .row-1, .row-2 {
+        
+    }
+}    */    
