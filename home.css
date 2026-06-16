@@ -102,13 +102,12 @@ iframe {
 header {
     display: flex;
     flex-direction: column;
-    gap: 10;;
-
 }
                                                         
 .site-name { 
     color: #f5d3ca;  
     font-size: 45px;
+    margin: auto;
 }
 
 .content-header {
@@ -125,7 +124,6 @@ header {
 .top-nav-btn {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     background-color: transparent;
     text-decoration: none;
     font-size: 25px;
@@ -248,34 +246,33 @@ main {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    justify-content: center;
     align-items: center;
 }
 
 .row-1 {                                                    /* row 1 */
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 10px;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 25%;
+    max-width: 1140px;  
+    min-width: 1140px;
+    margin: 0 auto;
+    padding-bottom: 10px;
 }
 
 .r1-c1, .r1-c3 { 
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 0px 100px;
-    flex-shrink: 0;
-    flex-grow: 0;
+    gap: 50px;
 }
 
 .r1-c2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-grow: 1;
-    flex-shrink: 1;
     min-width: 0;
-    padding: 0px 50px 0px 50px;
+    width: 50%;
 }
 
 /*.r1-c3 {
@@ -287,30 +284,41 @@ main {
 .row-2 {                                                     /* row 2 */
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1140px;  
+    min-width: 1140px; 
+    margin: 0 auto;
 }
 
 .r2-c1, .r2-c3 {
     display: flex;
     flex-direction: column;
-    gap: 100px 0px;
-    padding: 25px;
+    justify-content: space-around;
+    gap: 50px;
 }
 
 .r2-c2 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 0px 10px 0px 10px;
+    max-width: 1000px;
 }
 
-/*
-.r2-c3 {
+.row-3 {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 1140px;
+    min-width: 1140px;
+    margin: 0 auto;
+    gap: 50px;
+    padding-top: 10px;
+
 }
-*/
                                                             /* SPECIAL PAGES */
 .updates {
     display: flex;
