@@ -1,13 +1,13 @@
+<!-- (˘･_･˘) -->
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta name="viewport" content="width=1140"> 
+        <link rel="stylesheet" type="text/css" href="../home.css">
         <link rel="icon" type="image/png" href="images/favicon.png">
         <title>Sarah's Catalog</title>
     </head> 
-    
     <style>
         body {
             background-color: #080808 !important;
@@ -22,11 +22,11 @@
             background-color: #080808 !important;
         }
         
-        .site-header, .top-nav-button { 
+        .site-name, .top-nav-btn { 
             color: #E67E22 !important;
         }
 
-        .top-nav-button:hover {
+        .top-nav-btn:hover {
             color: rgb(255, 115, 0) !important;
         }
 
@@ -39,237 +39,254 @@
 
         .footer-text {
             color: #faf8e5 !important;
-        }
+        }  
     </style>
     <body> 
-        <!-- header: title and top nav bar -->
-        <header>
-            <h1 class="site-header">Sarah's Catalog</h1>  
-            <!-- top nav bar -->
-            <nav class="top-nav">
-                <a href="../home.html" class="button top-nav-button">Home</a>
-                <a href="/Pages/projects.html" class="button top-nav-button">Projects</a>
-                <a href="/Pages/links.html" class="button top-nav-button">Links</a>
-            </nav>  
-        </header>
+        <!--  
+            GRID: a 3 row grid with a varying amount of columns 
+                ROW 1: header
+                ROW 2: wrapper
+                ROW 3: area underneath wrapper
+                ( this also includes empty margin space)
+
+            ROW 1 (row-1): contains the site header, top nav buttons
+                row 1 column 1 (r1c1): (open space)
+                row 1 column 2 (r1c2): site name + top nav buttons        
+                row 1 column 3 (r1c3): (open space)     
+        -->
+        <div class="grid">
+            <div class="row-1">
+                <!-- ROW 1 COLUMN 1 -->
+                <div class="r1-c1">
+                    <!-- ADD GIFS OR IMAGES HERE -->                    
+                </div>  
+
+                <!--  ROW 1 COLUMN 2 -->
+                <div class="r1-c2">
+                    <!-- HEADER: site name + top nav buttons -->
+                    <header>
+                        <h1 class="site-name">Sarah's Catalog</h1>
+                        <!-- TOP NAV BUTTONS -->
+                        <nav class="top-nav-btns">
+                            <a href="../home.html" class="button top-nav-btn">Home</a>
+                            <a href="projects.html" class="button top-nav-btn">Projects</a>
+                            <a href="links.html" class="button top-nav-btn">Links</a>
+                        </nav>    
+                    </header>
+                </div>  
+                
+                <!-- ROW 1 COLUMN 3 -->
+                <div class="r1-c3">
+                    <!-- ADD GIFS OR IMAGES HERE -->
+                </div> 
+            </div> <!-- END OF ROW 1 -->
 
 
-        <!-- wraps the main container -->
-        <div class="wrapper"> 
-            <!-- main container: left sidebar, middle, right sidebar --> 
-            <div class="main-container">
+            <!-- 
+                ROW 2 (row-2): contains the wrapper
+                    row 2 column 1 (r2c1): (open space)
+                    row 2 column 2 (r2c2): wrapper + main container        
+                    row 2 column 3 (r2c3): (open space)
+            -->
+            <div class="row-2">
+                <!-- ROW 2 COLUMN 1 -->
+                <div class="r2-c1">
+                    <!-- ADD GIFS OR IMAGES HERE -->
+                </div> 
+                
+                <!-- ROW 2 COLUMN 2-->
+                <div class="r2-c2">
+                    <!-- WRAPPER: wraps the main container -->
+                    <div class="wrapper">  
+                        <!-- MAIN CONTAINER: sidebars, main content (middle), footer --> 
+                        <main>
+                            <!-- LEFT SIDEBAR -->
+                            <nav class="sidebar">
+                                <div class="sidebar-border">
+                                    <section class="left-sidebar">
+                                        <a href="gallery.html" class="button side-nav-button"><img src="../images/gallery.png" width="43px" height="44px"></a>
+                                        <a href="bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
+                                        <a href="door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
+                                    </section>
+                                </div>
+                            </nav>  <!-- END OF LEFT SIDEBAR -->
+
+                            <!-- MIDDLE: main content -->
+                            <div class="middle">
+                                <!-- Disclaimer -->
+                                <div class="content-border">
+                                    <section class="content text p">
+                                        <p>Disclaimer: I am not an expert. The following information is based on my experience and understanding. Research was done beforehand to make sure I'm not getting things wrong.</p>
+                                    </section>
+                                </div>
+
+                                <!-- Storage -->
+                                <div class="content-border">
+                                    <section class="content text p">
+                                        <h3 class="content-header">Storage</h3>
+                                        <ul class="list">
+                                            <li>Root and boot partitons (SSD), and hard drive are automatically mounted on startup using the fstab file.</li>
+                                            <li class="indent">Hard drive allocates space for a swap file.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+
+                                <!-- Permissions -->
+                                <div class="content-border">
+                                    <section class="content text p">
+                                        <h3 class="content-header">Permissions</h3>
+                                        <ul class="list">
+                                            <li>(There's an image in the information section about permissions for reference)</li>
+                                            <li>Specific containers exist as a user, and belong to a group</li>
+                                            <li class="indent">These containers utilize UID/GID mapping. </li>
+                                            <li>Meanwhile, other containers are granted more system privileges than the rest.</li>
+                                            <li>In general, no permissions are granted for others.</li>
+                                            <li>Three bash scripts are dedicated to updating ownership and permissions for the script and log, media, and Docker container directories.</li>
+                                            <li class="indent">These scripts are automated with Cron.</li>
+                                            <li class="indent">They're configured the scripts to append their output to a log file.</li>
+                                            <li class="indent">And scheduled to run at every hour, but spaced out by 5 minutes. So the second and third script will run at the 5 and 10 minute mark at each hour. 
+                                        </ul>
+                                    </section>
+                                </div>
+
+                                <!-- Caddy -->
+                                <div class="content-border">
+                                    <section class="flex-row content text p">
+                                        <div>
+                                            <h3 class="content-header">Caddy</h3>
+                                            <ul class="list">   
+                                                <li>Caddy acts as a reverse proxy and provides internally signed HTTPS for all containers specified in the Caddyfile within srm_network.</li>
+                                                <li class="indent">All of the containers defined in the Caddyfile have their own .home domain.</li>
+                                                <li>I feel like the best way of visualizing my Docker setup with Caddy is by using the apartment or hotel analogy. </li>
+                                                <li>Receptionist (Caddy)</li>
+                                                <li class="indent">Caddy listens for requests on port 80 and 443 from containers listed in the Caddyfile.</li>
+                                                <li class="indent">(In Pi-hole, there's local DNS records for each of the .home domains pointing towards my network's local IP)</li>
+                                                <li>Elevator (srm_network)</li>
+                                                <li class="indent">The Docker network, srm_network, connects all of my containers together. Allowing them to communicate with each other.</li>
+                                                <li>Docker Containers (Apartment/Hotel Room)</li>
+                                                <li class="indent">All of the containers are self contained, they can only be contacted through their port number. Similar to a door. Otherwise, they operate separately from each other.</li>
+                                            </ul>
+                                            <h3 class="content-header">HTTPS</h3>
+                                            <ul class="list">
+                                                <li>All of the domains use HTTPS instead of HTTP because Caddy internally signs each of my domains using its own private certificate authority (CA).</li>
+                                                <li class="indent">This provides end-to-end encryption without having to expose services to the internet.</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <img src="../images/ubuntu-server-map.jpg" width="259.5px" height="437px">
+                                        </div>
+                                    </section>
+                                </div>
+
+                                <!-- CrowdSec -->
+                                <div class="content-border">
+                                    <section class="content text p">
+                                        <h3 class="content-header">CrowdSec</h3>
+                                        <ul class="list">
+                                            <li>CrowdSec processes logs from auth.log, and makes decisions based on suspicious activity related to things like failed SSH attempts.</li>
+                                            <li class="indent">An acquis.yaml file is used to direct it to the the auth.log</li>
+                                            <li class="indent">Utilizing CrowdSec means it'll list IPs that should be banned in the decision list, but it doesn't mean it'll actually ban.</li>
+                                            <li class="indent">That's why I've implemented CrowdSec's Firewall Bouncer.</li>
+                                            <li>CrowdSec Firewall Bouncer is installed on the host machine, or this server. It's not in a Docker container.</li>
+                                            <li class="indent">The Firewall Bouncer ban IPs on the decision list and community blocklist (CAPI) by adding it to the nftables.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+
+                                <!-- Docker -->
+                                <div class="content-border">
+                                    <section class="content text p">
+                                        <h3 class="content-header">Docker Containers</h3>
+                                        <ul class="list">
+                                            <li>(At the beginning of the year, I did a serious overhaul of my server by switching to bind mounts and using specific image versions instead of the latest.)</li>
+                                            <li>Type of volume: bind.</li>
+                                            <li class="indent">Creates a bridge between the host directory and container directory.</li>
+                                            <li class="indent">Permissions are handled by me instead of Docker, and they're not stored within /var/lib/docker.</li>
+                                            <li class="indent">For example, the media directory might look like /directory/directory/media, but inside of the container it's /data. So the bridge exists between the media and data directory.</li>
+                                            <li>Switched to specifying the image versions because I found it difficult to identify what version I was using.</li>
+                                            <li class="indent">I try to use the most recent stable version for each container.</li>
+                                            <li class="indent">This makes backup and version control much easier.</li>
+                                            <li class="indent">Configured Diun to check for updates.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+
+                                <!-- Backup -->
+                                <div class="content-border">
+                                    <section class="content text p">
+                                        <h3 class="content-header">Backup</h3>
+                                        <ul class="list">
+                                            <li>Docker Registry is used to store the container images.</li>
+                                            <li class="indent">This doesn't include the volumes, or configuration files (e.g. docker compose, Caddyfile, etc). It only includes the software environment (e.g. OS, dependencies, plugins).</li>
+                                            <li class="indent">It's helpful whenever I need to revert to an older image, especially if the version was deleted.</li>
+                                            <li class="indent">It works by creating tags and pushing them into the registry. Then when I want to revert, I replace the image version with the tag in the docker compose.</li>
+                                            <li>I utilized a bash script with Cron to create an efficient backup system.</li>
+                                            <li class="indent">Rsync reduces redundant data and disk space by only copying new changes while also mirroring the unchanged data. </li>
+                                            <li class="indent">If the backup folder isn't empty, it'll either copy with rsync or create a hard link if there's no change.</li>
+                                            <li class="indent">This script is scheduled to run at 7am everyday.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+
+                                <!-- SteamCMD -->
+                                <div class="content-border">
+                                    <section class="content text p">
+                                        <h3 class="content-header">SteamCMD + Rust Server</h3>
+                                        <ul class="list">
+                                            <li>(This feels kind of out of place since it's a video game server, but I'm going to focus on the server side of things. In the future, I think it would be cool to provide information on how to setup a Rust server for others though.)</li>
+                                            <li>For SteamCMD I followed the documentation: created a steam user and followed the instructions under 'manually'.</li>
+                                            <li>Every time I want to work on the Rust server, I login as the steam user.</li>
+                                            <li class="indent">This provides me with what feels like a server within my actual server, but it's just a user folder in the home directory that can only be accessed by that user.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+
+                                <!-- Terms -->
+                                <div class="content-border">
+                                    <section class="content text p" style="gap:10px;">
+                                        <h3>Information + Terms</h3>
+                                        <ul class="list">
+                                            <li>Fstab: a configuration file, located in /etc/fstab, which is used to automate the mounting of persistent storage and swap space at boot.</li>
+                                            <li class="indent">Persistent storage: storage that is non-volatile, or able to retain its data even when there isn't any power.</li>
+                                            <li>Swap file: a file which acts as a placeholder for allocated space used by the RAM when it's at full capacity.</li>
+                                            <li>Cron: a Unix utility which automates the execution of cron jobs at specified interval, or time in the crontab.</li>
+                                        </ul>
+                                        <a href="https://www.reddit.com/r/linux/comments/ayditr/chmod_cheatsheet/"><img src="../images/permissions.png" width="400px"></a>
+                                    </section>
+                                </div>
+                            </div> <!-- END OF MIDDLE -->
+
+                            <!-- RIGHT SIDEBAR -->
+                            <nav class="sidebar">
+                                <div class="sidebar-border">
+                                    <section class= "right-sidebar">
+                                        <!-- ADD RIGHT SIDEBAR CONTENT HERE-->
+                                    </section>
+                                </div>
+                            </nav> 
+                        </main> <!-- END OF MAIN CONTAINER -->
+
+                        <!-- FOOTER -->
+                        <footer class="footer footer-text">
+                            <p>Thanks for visiting!</p>
+                            <img src="../images/cat-0491.gif" width="30" height="30"> 
+                        </footer> <!-- END OF FOOTER--> 
+                    </div> <!-- end of wrapper -->
+                </div> <!-- (end of row 2 column 2)-->
+
+                <!-- ROW 2 COLUMN 3 -->
+                <div class="r2-c3">
+                    <!-- ADD GIFS OR IMAGES HERE -->
+                </div> 
+            </div><!-- END OF ROW 2 -->
 
 
-                <!-- left sidebar -->
-                <nav class="sidebar">
-                    <div class="sidebar-border">
-                        <section class="left-sidebar">
-                            <div class="nav-images">
-                                <a href="/Pages/gallery.html" class="button side-nav-button"><img src="../images/gallery.png"></a>
-                            </div>
-                        </section>
-                    </div>
-
-                    <div class="sidebar-border">
-                        <section class="left-sidebar">
-                            <div class="nav-doors">
-                                <a href="/Pages/bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
-                                <a href="/Pages/door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
-                            </div>
-                        </section>
-                    </div>
-                </nav>
-
-
-                <!-- middle: main content -->
-                <main class="middle">
-                    <!-- disclaimer -->
-                    <div class="content-border">
-                        <section class="content text p">
-                            <p>Disclaimer: I am not an expert. The following information is based on my experience and understanding. Research was done beforehand to make sure I'm not getting things wrong.</p>
-                        </section>
-                    </div>
-
-                    <!-- storage -->
-                    <div class="content-border">
-                        <section class="content text p">
-                            <h3 class="content-header">Storage</h3>
-                            <ul class="list">
-                                <li>Root and boot partitons (SSD), and hard drive are automatically mounted on startup using the fstab file.</li>
-                                <li class="indent">Hard drive allocates space for a swap file.</li>
-                            </ul>
-                        </section>
-                    </div>
-
-                    <!-- permissions -->
-                    <div class="content-border">
-                        <section class="content text p">
-                            <h3 class="content-header">Permissions</h3>
-                            <ul class="list">
-                                <li>(There's an image in the information section about permissions for reference)</li>
-                                <li>Specific containers exist as a user, and belong to a group</li>
-                                <li class="indent">These containers utilize UID/GID mapping. </li>
-                                <li>Meanwhile, other containers are granted more system privileges than the rest.</li>
-                                <li>In general, no permissions are granted for others.</li>
-                                <li>Three bash scripts are dedicated to updating ownership and permissions for the script and log, media, and Docker container directories.</li>
-                                <li class="indent">These scripts are automated with Cron.</li>
-                                <li class="indent">They're configured the scripts to append their output to a log file.</li>
-                                <li class="indent">And scheduled to run at every hour, but spaced out by 5 minutes. So the second and third script will run at the 5 and 10 minute mark at each hour. 
-                            </ul>
-                        </section>
-                    </div>
-
-                    <!-- caddy -->
-                    <div class="content-border">
-                        <section class="flex-row content text p">
-                            <div>
-                                <h3 class="content-header">Caddy</h3>
-                                <ul class="list">   
-                                    <li>Caddy acts as a reverse proxy and provides internally signed HTTPS for all containers specified in the Caddyfile within srm_network.</li>
-                                    <li class="indent">All of the containers defined in the Caddyfile have their own .home domain.</li>
-                                    <li>I feel like the best way of visualizing my Docker setup with Caddy is by using the apartment or hotel analogy. </li>
-                                    <li>Receptionist (Caddy)</li>
-                                    <li class="indent">Caddy listens for requests on port 80 and 443 from containers listed in the Caddyfile.</li>
-                                    <li class="indent">(In Pi-hole, there's local DNS records for each of the .home domains pointing towards my network's local IP)</li>
-                                    <li>Elevator (srm_network)</li>
-                                    <li class="indent">The Docker network, srm_network, connects all of my containers together. Allowing them to communicate with each other.</li>
-                                    <li>Docker Containers (Apartment/Hotel Room)</li>
-                                    <li class="indent">All of the containers are self contained, they can only be contacted through their port number. Similar to a door. Otherwise, they operate separately from each other.</li>
-                                </ul>
-                                <h3 class="content-header">HTTPS</h3>
-                                <ul class="list">
-                                    <li>All of the domains use HTTPS instead of HTTP because Caddy internally signs each of my domains using its own private certificate authority (CA).</li>
-                                    <li class="indent">This provides end-to-end encryption without having to expose services to the internet.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <img src="../images/ubuntu-server-map.jpg" width="259.5px" height="437px">
-                            </div>
-                        </section>
-                    </div>
-
-                    <!-- crowdsec -->
-                    <div class="content-border">
-                        <section class="content text p">
-                            <h3 class="content-header">CrowdSec</h3>
-                            <ul class="list">
-                                <li>CrowdSec processes logs from auth.log, and makes decisions based on suspicious activity related to things like failed SSH attempts.</li>
-                                <li class="indent">An acquis.yaml file is used to direct it to the the auth.log</li>
-                                <li class="indent">Utilizing CrowdSec means it'll list IPs that should be banned in the decision list, but it doesn't mean it'll actually ban.</li>
-                                <li class="indent">That's why I've implemented CrowdSec's Firewall Bouncer.</li>
-                                <li>CrowdSec Firewall Bouncer is installed on the host machine, or this server. It's not in a Docker container.</li>
-                                <li class="indent">The Firewall Bouncer ban IPs on the decision list and community blocklist (CAPI) by adding it to the nftables.</li>
-                            </ul>
-                        </section>
-                    </div>
-
-                    <!-- docker containers -->
-                    <div class="content-border">
-                        <section class="content text p">
-                            <h3 class="content-header">Docker Containers</h3>
-                            <ul class="list">
-                                <li>(At the beginning of the year, I did a serious overhaul of my server by switching to bind mounts and using specific image versions instead of the latest.)</li>
-                                <li>Type of volume: bind.</li>
-                                <li class="indent">Creates a bridge between the host directory and container directory.</li>
-                                <li class="indent">Permissions are handled by me instead of Docker, and they're not stored within /var/lib/docker.</li>
-                                <li class="indent">For example, the media directory might look like /directory/directory/media, but inside of the container it's /data. So the bridge exists between the media and data directory.</li>
-                                <li>Switched to specifying the image versions because I found it difficult to identify what version I was using.</li>
-                                <li class="indent">I try to use the most recent stable version for each container.</li>
-                                <li class="indent">This makes backup and version control much easier.</li>
-                                <li class="indent">Configured Diun to check for updates.</li>
-                            </ul>
-                        </section>
-                    </div>
-
-                    <!-- backup -->
-                    <div class="content-border">
-                        <section class="content text p">
-                            <h3 class="content-header">Backup</h3>
-                            <ul class="list">
-                                <li>Docker Registry is used to store the container images.</li>
-                                <li class="indent">This doesn't include the volumes, or configuration files (e.g. docker compose, Caddyfile, etc). It only includes the software environment (e.g. OS, dependencies, plugins).</li>
-                                <li class="indent">It's helpful whenever I need to revert to an older image, especially if the version was deleted.</li>
-                                <li class="indent">It works by creating tags and pushing them into the registry. Then when I want to revert, I replace the image version with the tag in the docker compose.</li>
-                                <li>I utilized a bash script with Cron to create an efficient backup system.</li>
-                                <li class="indent">Rsync reduces redundant data and disk space by only copying new changes while also mirroring the unchanged data. </li>
-                                <li class="indent">If the backup folder isn't empty, it'll either copy with rsync or create a hard link if there's no change.</li>
-                                <li class="indent">This script is scheduled to run at 7am everyday.</li>
-                            </ul>
-                        </section>
-                    </div>
-
-                    <!-- steamcmd rust server-->
-                    <div class="content-border">
-                        <section class="content text p">
-                            <h3 class="content-header">SteamCMD + Rust Server</h3>
-                            <ul class="list">
-                                <li>(This feels kind of out of place since it's a video game server, but I'm going to focus on the server side of things. In the future, I think it would be cool to provide information on how to setup a Rust server for others though.)</li>
-                                <li>For SteamCMD I followed the documentation: created a steam user and followed the instructions under 'manually'.</li>
-                                <li>Every time I want to work on the Rust server, I login as the steam user.</li>
-                                <li class="indent">This provides me with what feels like a server within my actual server, but it's just a user folder in the home directory that can only be accessed by that user.</li>
-                            </ul>
-                        </section>
-                    </div>
-
-                    <!-- terms -->
-                    <div class="content-border">
-                        <section class="content text p" style="gap:10px;">
-                            <h3>Information + Terms</h3>
-                            <ul class="list">
-                                <li>Fstab: a configuration file, located in /etc/fstab, which is used to automate the mounting of persistent storage and swap space at boot.</li>
-                                <li class="indent">Persistent storage: storage that is non-volatile, or able to retain its data even when there isn't any power.</li>
-                                <li>Swap file: a file which acts as a placeholder for allocated space used by the RAM when it's at full capacity.</li>
-                                <li>Cron: a Unix utility which automates the execution of cron jobs at specified interval, or time in the crontab.</li>
-                            </ul>
-                            <a href="https://www.reddit.com/r/linux/comments/ayditr/chmod_cheatsheet/"><img src="../images/permissions.png" width="400px"></a>
-                        </section>
-                    </div>
-                </main>
-
-                <!-- right sidebar -->
-                <nav class="sidebar scrollable">
-                    <div class="sidebar-border">
-                        <section class="right-sidebar">
-                            <!--<h3 class="sidebar-header"></h3>-->
-                            <img class="gif" src="https://momg.neocities.org/gifs/i-51402.gif" width="100px" height="150px"> 
-                        </section>
-                    </div>
-
-                    <div class="sidebar-border">
-                        <section class="right-sidebar">
-                            <!--<h3 class="sidebar-header"></h3>*/-->
-                            <img class="gif" src="https://momg.neocities.org/gifs/i-31910.gif" width="50px" height="50px">
-                        </section>
-                    </div>
-
-                    <div class="sidebar-border">
-                        <section class="right-sidebar">
-                            <!--<h3 class="sidebar-header"></h3>*/-->
-                            <img class="gif" src="https://momg.neocities.org/gifs/i-78883.gif" width="50px" height="50px">
-                        </section>
-                    </div>
-
-                    <div class="sidebar-border">
-                        <section class="right-sidebar">
-                            <!--<h3 class="sidebar-header"></h3>*/-->
-                            <img class="gif" src="https://momg.neocities.org/gifs/i-49714.gif" width="53" height="46">
-                        </section>
-                    </div>
-                </nav>
-
-
-            </div> <!-- end of main container -->
-
-
-            <!-- footer -->
-            <footer class="footer footer-text">
-                <p>Thanks for visiting!</p>
-                <img src="../images/cat-0491.gif" width="30" height="30"> 
-            </footer>
-
-
-        </div> <!-- end of wrapper -->
-
-
+            <!-- 
+                ROW 3: area underneath the wrapper  
+            -->
+            <div class="row-3">
+                <!-- ADD GIFS OR IMAGES HERE -->
+            </div> <!-- END OF ROW 3 -->
+        </div> <!-- END OF GRID -->
     </body>
 </html>

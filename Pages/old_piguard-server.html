@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <title>Sarah's Catalog</title>
+    </head> 
+    
+    <style>
+        body {
+            background-color: #080808 !important;
+        }
+
+        .content, .left-sidebar, .right-sidebar {
+            border: 2px solid #080808 !important;
+            background-color: #0e0d0d;
+        }
+
+        .wrapper {
+            background-color: #080808 !important;
+        }
+        
+        .site-header, .top-nav-button { 
+            color: #E67E22 !important;
+        }
+
+        .top-nav-button:hover {
+            color: rgb(255, 115, 0) !important;
+        }
+
+        .sidebar-border, .content-border {
+            border: 5px solid #060606 !important;
+            background-image: url("https://cdn.esahubble.org/archives/images/thumb700x/heic0611b.jpg") !important;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .footer-text {
+            color: #faf8e5 !important;
+        }
+    </style>
+    <body> 
+        <!-- header: title and top nav bar -->
+        <header>
+            <h1 class="site-header">Sarah's Catalog</h1>  
+            <!-- top nav bar -->
+            <nav class="top-nav">
+                <a href="../home.html" class="button top-nav-button">Home</a>
+                <a href="/Pages/projects.html" class="button top-nav-button">Projects</a>
+                <a href="/Pages/links.html" class="button top-nav-button">Links</a>
+            </nav>  
+        </header>
+
+
+        <!-- wraps the main container -->
+        <div class="wrapper"> 
+            <!-- main container: left sidebar, middle, right sidebar --> 
+            <div class="main-container">
+
+
+                <!-- left sidebar -->
+                <nav class="sidebar">
+                    <div class="sidebar-border">
+                        <section class="left-sidebar">
+                            <div class="nav-images">
+                                <a href="/Pages/gallery.html" class="button side-nav-button"><img src="../images/gallery.png"></a>
+                            </div>
+
+                            <div class="nav-doors">
+                                <a href="/Pages/bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
+                                <a href="/Pages/door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
+                            </div>
+                        </section>
+                    </div>
+                </nav>
+
+
+                <!-- middle: main content -->
+                <main class="middle">
+                    <!-- disclaimer -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <p>Disclaimer: I am not an expert. The following information is based on my experience and understanding. Research was done beforehand to make sure I'm not getting things wrong.</p>
+                        </section>
+                    </div>
+
+                    <!-- storage -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">Storage</h3>
+                            <ul class="list">
+                                <li>Root and boot partitions (SSD) are automatically mounted on startup using the fstab file.</li>
+                                <li class="indent">The root partition allocates space for a swap file.</li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <!-- pi-hole -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">Pi-hole</h3>
+                            <ul class="list">
+                                <li>Pi-hole is used as a DNS sinkhole and DHCP server for my entire network.</li>
+                                <li>DNS:</li>
+                                <li class="indent">Upstream: Google and Cloudflare (IPv4) + local DNS records → resolve domains.</li>
+                                <li class="indent">Blocklists → sink domains.</li>
+                                <li>Blocklists:</li>
+                                    <li class="indent">Steven Black</li>
+                                    <li class="indent">HaGeZi Multi Light</li>
+                                    <li class="indent">Adguard Base Filter</li>
+                                    <li class="indent">OISD (Big)</li>
+                                    <li class="indent">someonewhocares.org/host (Dan Pollock)</li>
+                                    <li class="indent">KADhosts</li>
+                                    <li class="indent">FadeMind Spam</li>
+                                    <li class="indent">WaLLy3K Static</li>
+                                    <li class="indent">WindowsSpyBlocker</li>
+                                    <li class="indent">Perflyst SmartTV-AGH</li>
+                                <li>DHCP:</li>
+                                <li>Pi-hole handles DHCP for all devices, while the primary router handles my two servers and downstairs router, which is used as an access point (AP).</li>
+                                <li class="indent">The DHCP servers don't conflict with each other because the primary router's range is restricted to the devices specified above.</li>
+                                <li class="indent">I do this to ensure my servers and router will retain their IPs if I ever have to completely reconfigure the Pi-hole.</li>
+                                <li class="indent">(Servers' IPs are already configured via Netplan)</li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <!-- WireGuard -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">WireGuard</h3>
+                            <ul class="list">
+                                <li>For secure remote access, I utilize WireGuard.</li>
+                                <li>FreeDNS is the DDNS provider.</li>
+                                <li class="indent">A cron script updates my public IP to bypass my router's lack of support for FreeDNS.</li>
+                                <li>Split tunneling allows me to preserve bandwidth since it's configured to only allow the WireGuard peer and home subnet.</li>
+                                <li>PostUp and PostDown rules:
+                                <li class="indent">Bridge traffic between the WireGuard tunnel and home LAN.</li>
+                                <li class="indent">Masquerade WireGuard IPs with my home network's public IP or server's private IP so it can access the internet and local LAN</li>
+                                <li class="indent">Clean up rules whenever the WireGuard interface is removed.</li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <!-- vocabulary -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">Terms</h3>
+                            <ul class="list">
+                                <li>For anyone who isn't as tech savvy, or anyone else, here's a short recap of some of the things I discussed.</li>
+                                <li>Subnet: a specific range of IPs on a network.</li>
+                                <li>Domain name system (DNS): a system which allows IP addresses to be easily identifiable by pairing host names.</li>
+                                <li>Pi-hole: a DNS sinkhole which resolves, or hands out IP addresses to a specific domain.</li>
+                                <li>DNS sinkhole: DNS server which "sinks" specific domains by resolving them to non-routable IPs, or IPs that are a dead end.</li>
+                                <li>Dynamic host configuration protocol (DHCP): automatically assigns IP addresses within a specific range to devices on a network.</li>
+                                <li>WireGuard: a VPN service which solely uses UDP. Compared to let's say OpenVPN, it's newer.</li>
+                                <li>Dynamic DNS (DDNS): service which updates the public IP for a specific domain</li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <!-- Resources/Links -->
+                    <div class="content-border">
+                        <section class="content text p">
+                            <h3 class="content-header">Re(sources)</h3>
+                            <a href="https://docs.pi-hole.net/">Pihole Documentation</a>
+                            <a href="https://en.wikipedia.org/wiki/DNS_sinkhole">https://en.wikipedia.org/wiki/DNS_sinkhole</a>
+                            <a href="https://docs.pi-hole.net/guides/vpn/wireguard/server/">For anyone interested, this is the WireGuard guide I followed</a>
+                        </section>
+                    </div>
+                </main>
+
+
+                <!-- right sidebar -->
+                <nav class="sidebar scrollable">
+                    <div class="sidebar-border">
+                        <section class="right-sidebar">
+                            <!--<h3 class="sidebar-header"></h3>*/-->
+                            <img class="gif" src="https://momg.neocities.org/gifs/i-51402.gif" width="100px" height="150px"> 
+                        </section>
+                    </div>
+
+                    <div class="sidebar-border">
+                        <section class="right-sidebar">
+                            <!--<h3 class="sidebar-header"></h3>*/-->
+                            <img class="gif" src="https://momg.neocities.org/gifs/i-31910.gif" width="50px" height="50px">
+                        </section>
+                    </div>
+
+                    <div class="sidebar-border">
+                        <section class="right-sidebar">
+                            <!--<h3 class="sidebar-header"></h3>*/-->
+                            <img class="gif" src="https://momg.neocities.org/gifs/i-78883.gif" width="50px" height="50px">
+                        </section>
+                    </div>
+
+                    <div class="sidebar-border">
+                        <section class="right-sidebar">
+                            <!--<h3 class="sidebar-header"></h3>*/-->
+                            <img class="gif" src="https://momg.neocities.org/gifs/i-49714.gif" width="53" height="46">
+                        </section>
+                    </div>
+                </nav>
+
+
+            </div> <!-- end of main container-->
+
+
+            <!-- footer -->
+            <footer class="footer footer-text">
+                <p>Thanks for visiting!</p>
+                <img src="../images/cat-0491.gif" width="30" height="30"> 
+            </footer>
+
+
+        </div> <!-- end of wrapper-->
+    </body>
+</html>

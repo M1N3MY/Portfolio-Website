@@ -9,7 +9,45 @@
         <title>Sarah's Catalog</title>
     </head> 
     <style>
-        
+        body {
+            background-color: #323c45 !important;
+        }
+
+        .text, .links, .content-header, .sidebar-header {
+            color: #2e373c !important;
+        }
+
+        .content, .left-sidebar, .right-sidebar {
+            border: 2px solid #eeefea !important; 
+            background-color: #a2a9c1 !important; 
+        }
+
+        .links:hover {
+            color: #191f22 !important;
+        }
+
+        .site-header, .top-nav-button {
+            color: #cfd7e2 !important;
+        }
+
+        .top-nav-button:hover {
+            color: #b4c0ce !important;
+        }
+
+        .wrapper {
+            background-color: #4a5b75 !important;
+        }
+
+        .sidebar-border, .content-border {
+            background-image: url("../images/snow.jpg") !important;
+            border: 5px solid rgb(66, 72, 91) !important;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .footer-text {
+            color: #242c34;
+        } 
     </style>
     <body> 
         <!--  
@@ -39,9 +77,9 @@
                         <!-- TOP NAV BUTTONS -->
                         <nav class="top-nav-btns">
                             <a href="../home.html" class="button top-nav-btn">Home</a>
-                            <a href="/Pages/projects.html" class="button top-nav-btn">Projects</a>
-                            <a href="/Pages/links.html" class="button top-nav-btn">Links</a>
-                        </nav>    
+                            <a href="projects.html" class="button top-nav-btn">Projects</a>
+                            <a href="links.html" class="button top-nav-btn">Links</a>
+                        </nav>   
                     </header>
                 </div>  
                 
@@ -74,19 +112,45 @@
                             <nav class="sidebar">
                                 <div class="sidebar-border">
                                     <section class="left-sidebar">
-                                        <a href="/Pages/gallery.html" class="button side-nav-button"><img src="../images/gallery.png" width="43px" height="44px"></a>
-                                        <a href="/Pages/bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
-                                        <a href="/Pages/door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
+                                        <a href="gallery.html" class="button side-nav-button"><img src="../images/gallery.png" width="43px" height="44px"></a>
+                                        <a href="bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
+                                        <a href="door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
                                     </section>
                                 </div>
                             </nav>  <!-- END OF LEFT SIDEBAR -->
 
                             <!-- MIDDLE: main content -->
                             <div class="middle">
-                                <!-- Website Art -->
+                                <!-- page info -->
                                 <div class="content-border">
-                                    <section class="content text">
-                                        <!-- ADD CONTENT HERE-->
+                                    <section class="content text p">
+                                        <p> The following page includes links to any images and art I used. Plus some cool sites and resources.</p>
+                                    </section>
+                                </div>
+                                
+                                <!-- credits -->
+                                <div class="content-border">
+                                    <section class="content text p" style="gap:2px;">
+                                        <h3 class="content-header">Images + GIFs</h3>
+                                        <a class="links" href="https://textures.neocities.org/tex/pattern-and-prints/">splash page background</a>
+                                        <a class="links" href="https://unsplash.com/photos/a-bunch-of-flowers-that-are-on-a-tree-TDXahvDHXLs">home sidebar + content border </a>
+                                        <a class="links" href="https://cdn.esahubble.org/archives/images/thumb700x/heic0611b.jpg">project sidebar + content border</a>
+                                        <a class="links" href="https://unsplash.com/photos/white-and-black-mountain-under-blue-and-white-sky-at-daytime-XgocbQbdO9s">links sidebar + content border</a>
+                                        <a class="links" href="https://unsplash.com/photos/a-red-and-orange-wallpaper-with-a-floral-design-q0GUMkYUmds">gallery sidebar + content border</a>
+                                        <a class="links" href="https://unsplash.com/photos/white-clouds-and-blue-sky-during-daytime--7EBIvSTG-k">bedroom sidebar + content border</a>
+                                        <div class="blinkies">
+                                            <a  href="https://momg.neocities.org/"><img alt="Visit the Gif Gallery!" src="https://momg.neocities.org/site-images/momg-badge.gif"></a>
+                                            <a href="https://pixelsea.neocities.org/"><img src="../images/pixelsea-badge.gif"></a>
+                                            <a href="https://textures.neocities.org/"><img src="../images/texturetown_badge.gif"></a>
+                                        </div>
+                                    </section>
+                                </div>
+
+                                <!-- super cool links -->
+                                <div class="content-border">
+                                    <section class="content text p">
+                                        <h3 class="content-header">Cool Links</h3>
+                                        <a class="links" href="https://github.com/M1N3MY/Portfolio-Website">website's github repo</a>
                                     </section>
                                 </div>
                             </div> <!-- END OF MIDDLE -->
