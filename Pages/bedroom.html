@@ -1,9 +1,10 @@
+<!-- (˘･_･˘) -->
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta name="viewport" content="width=1140"> 
+        <link rel="stylesheet" type="text/css" href="../home.css">
         <link rel="icon" type="image/png" href="images/favicon.png">
         <title>Sarah's Catalog</title>
     </head> 
@@ -50,110 +51,147 @@
         }
     </style>
     <body> 
-        <!-- header: title and top nav bar -->
-        <header>
-            <h1 class="site-header">Sarah's Catalog</h1>  
-            <!-- top nav bar -->
-            <nav class="top-nav">
-                <a href="../home.html" class="button top-nav-button">Home</a>
-            </nav>  
-        </header>
+        <!--  
+            GRID: a 3 row grid with a varying amount of columns 
+                ROW 1: header
+                ROW 2: wrapper
+                ROW 3: area underneath wrapper
+                ( this also includes empty margin space)
+
+            ROW 1 (row-1): contains the site header, top nav buttons
+                row 1 column 1 (r1c1): (open space)
+                row 1 column 2 (r1c2): site name + top nav buttons        
+                row 1 column 3 (r1c3): (open space)     
+        -->
+        <div class="grid">
+            <div class="row-1">
+                <!-- ROW 1 COLUMN 1 -->
+                <div class="r1-c1">
+                    <!-- ADD GIFS OR IMAGES HERE -->                    
+                </div>  
+
+                <!--  ROW 1 COLUMN 2 -->
+                <div class="r1-c2">
+                    <!-- HEADER: site name + top nav buttons -->
+                    <header>
+                        <h1 class="site-name">Sarah's Catalog</h1>
+                        <!-- TOP NAV BUTTONS -->
+                        <nav class="top-nav-btns">
+                            <a href="../home.html" class="button top-nav-btn">Home</a>
+                        </nav>    
+                    </header>
+                </div>  
+                
+                <!-- ROW 1 COLUMN 3 -->
+                <div class="r1-c3">
+                    <!-- ADD GIFS OR IMAGES HERE -->
+                </div> 
+            </div> <!-- END OF ROW 1 -->
 
 
-        <!-- wraps the main container -->
-        <div class="wrapper"> 
-            <!-- main container: left sidebar, middle, right sidebar --> 
-            <div class="main-container">
+            <!-- 
+                ROW 2 (row-2): contains the wrapper
+                    row 2 column 1 (r2c1): (open space)
+                    row 2 column 2 (r2c2): wrapper + main container        
+                    row 2 column 3 (r2c3): (open space)
+            -->
+            <div class="row-2">
+                <!-- ROW 2 COLUMN 1 -->
+                <div class="r2-c1">
+                    <!-- ADD GIFS OR IMAGES HERE -->
+                </div> 
+                
+                <!-- ROW 2 COLUMN 2-->
+                <div class="r2-c2">
+                    <!-- WRAPPER: wraps the main container -->
+                    <div class="wrapper">  
+                        <!-- MAIN CONTAINER: sidebars, main content (middle), footer --> 
+                        <main>
+                            <!-- LEFT SIDEBAR -->
+                            <nav class="sidebar">
+                                <div class="sidebar-border">
+                                    <section class="left-sidebar">
+                                        <a href="gallery.html" class="button side-nav-button"><img src="../images/gallery.png" width="43px" height="44px"></a>
+                                        <a href="bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
+                                        <a href="door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
+                                    </section>
+                                </div>
+                            </nav>  <!-- END OF LEFT SIDEBAR -->
+
+                            <!-- MIDDLE: main content -->
+                            <div class="middle">
+                                <div class="content-border">
+                                    <section class="content text p">
+                                        <p>This is a more personal corner of this website. I'm not really sure what to put here</p>
+                                    </section>
+                                </div>
+
+                                <div class="content-border">
+                                    <section class="content text" style="align-items: center;">
+                                        <img src="../images/snail-cat.gif" width="512px" height="376px">
+                                    </section>
+                                </div>
+
+                                <div class="content-border">
+                                    <section class="content text" style="align-items: center;">
+                                        <img class="gif" src="https://momg.neocities.org/gifs/i-18380.gif" width="484px" height="318px">
+                                    </section>
+                                </div>
+
+                                <div class="content-border">
+                                    <section class="content text" style="overflow-y: wrap;">
+                                        <h3 class="sidebar-header">✧ Palmer ✧</h3>
+                                            <section style="display: flex; flex-direction: column; overflow-x: scroll;">
+                                                <p>This is my cat Palmer! He is a super cool, adventerous, and unbothered void who isn't afraid of expressing his opinions and needs</p>
+                                                <ul class="list">
+                                                    <li>Domestic long hair</li>
+                                                    <li>Birthday: May 1, 2021</li>
+                                                    <li>Traits: cool, charming, confident, expressive, adventerous, curious</li>
+                                                    <li>Favorite things: chasing, playing fetch, exploring new places, treats (yum yums), warm food, clean paws, head scratches, back pats</li>
+                                                    <li>Palmer knows he's handsome</li>
+                                                </ul>
+                                            </section>
+                                            <section class="scrollable" style="display: flex; flex-direction: row; justify-content: center;">
+                                                <img src="../images/palmer-sleep.jpg" width="200px" height="200px" style="align-items: center;">
+                                                <img src="../images/palmer-side-eye.jpg" width="200px" height="200px" style="align-items: center;">
+                                                <img src="../images/palmer-carpet.jpg" width="200px" height="200px" style="align-items: center;">
+                                            </section>
+                                    </section>
+                                </div>
+                            </div> <!-- END OF MIDDLE -->
+
+                            <!-- RIGHT SIDEBAR -->
+                            <nav class="sidebar">
+                                <div class="sidebar-border">
+                                    <section class="right-sidebar scrollable flex-column text p">
+                                        <!--<h3 class="sidebar-header"></h3>*/-->
+                                        <img class="gif" src="../images/christmas-tree.gif" width="100" height="100"> 
+                                    </section>
+                                </div>
+                            </nav> 
+                        </main> <!-- END OF MAIN CONTAINER -->
+
+                        <!-- FOOTER -->
+                        <footer class="footer footer-text">
+                            <p>Thanks for visiting!</p>
+                            <img src="../images/cat-0491.gif" width="30" height="30"> 
+                        </footer> <!-- END OF FOOTER--> 
+                    </div> <!-- end of wrapper -->
+                </div> <!-- (end of row 2 column 2)-->
+
+                <!-- ROW 2 COLUMN 3 -->
+                <div class="r2-c3">
+                    <!-- ADD GIFS OR IMAGES HERE -->
+                </div> 
+            </div><!-- END OF ROW 2 -->
 
 
-                <!-- left sidebar -->
-                <nav class="sidebar">
-                    <div class="sidebar-border">
-                        <section class="left-sidebar text p">
-                            <div class="nav-images">
-                                <a href="../pages/gallery.html" class="button side-nav-button"><img src="../images/gallery.png"></a>
-                            </div>
-                            <div class="nav-doors">
-                                <a href="../pages/bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
-                                <a href="../pages/door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
-                            </div>
-                        </section>
-                    </div>
-
-                    <div class="sidebar-border">
-                        <section class="right-sidebar scrollable flex-column text p">
-                            <h3 class="sidebar-header">✧ Palmer ✧</h3>
-                            <img src="../images/palmer-carpet.jpg">
-                            <img src="../images/palmer-bath.jpg">
-                            <img src="../images/palmer-window.jpg">
-                            <img src="../images/palmer-sleep.jpg">
-                            <img src="../images/palmer-fancy.jpg">
-                            <img src="../images/palmer-chair.jpg">
-                            <img src="../images/palmer-side-eye.jpg">
-                            <p>This is my cat Palmer! He is a super cool, adventerous, and unbothered void who isn't afraid of expressing his opinions and needs</p>
-                            <ul class="list">
-                                <li>Domestic long hair</li>
-                                <li>Birthday: May 1, 2021</li>
-                                <li>Traits: cool, charming, confident, expressive, adventerous, curious</li>
-                                <li>Favorite things: chasing, playing fetch, exploring new places, treats (yum yums), warm food, clean paws, head scratches, back pats</li>
-                                <li>Palmer knows he's handsome</li>
-                            </ul>
-                        </section>
-                    </div>
-                </nav>
-
-
-                <!-- middle: main content -->
-                <main class="middle">
-                    <div class="content-border">
-                        <section class="content text p">
-                            <p>This is a more personal corner of this website. I'm not really sure what to put here</p>
-                        </section>
-                    </div>
-
-                    <div class="content-border">
-                        <section class="content text p" style="align-items: center;">
-                            <img src="../images/snail-cat.gif" width="512px" height="376px">
-                        </section>
-                    </div>
-
-                    <div class="content-border">
-                        <section class="content text p" style="align-items: center;">
-                            <img class="gif" src="https://momg.neocities.org/gifs/i-18380.gif" width="484px" height="318px">
-                        </section>
-                    </div>
-                </main>
-
-
-                <!-- right sidebar -->
-                <nav class="sidebar scrollable">
-                    <div class="sidebar-border">
-                        <section class="right-sidebar scrollable flex-column text p">
-                            <!--<h3 class="sidebar-header"></h3>*/-->
-                            <img class="gif" src="../images/christmas-tree.gif"> 
-                            <p>I LOVE YEAR ROUND CHRISTMAS TREES</p>
-                        </section>
-                    </div>
-
-                    <div class="sidebar-border">
-                        <section class="right-sidebar">
-                            <!--<h3 class="sidebar-header"></h3>*/-->
-                            <img class="gif" src="https://momg.neocities.org/gifs/i-13300.gif">
-                        </section>
-                    </div>
-                </nav>
-
-
-            </div> <!-- end of main container-->
-
-
-            <!-- footer -->
-            <footer class="footer footer-text">
-                <p>Thanks for visiting!</p>
-                <img src="../images/cat-0491.gif" width="30" height="30"> 
-            </footer>
-
-
-        </div> <!-- end of wrapper-->
+            <!-- 
+                ROW 3: area underneath the wrapper  
+            -->
+            <div class="row-3">
+                <!-- ADD GIFS OR IMAGES HERE -->
+            </div> <!-- END OF ROW 3 -->
+        </div> <!-- END OF GRID -->
     </body>
 </html>
