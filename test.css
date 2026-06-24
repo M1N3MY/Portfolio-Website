@@ -1,3 +1,9 @@
+                                                            /* ＼(((￣(￣(￣▽￣)￣)￣)))／ */
+
+* {
+    box-sizing: border-box;
+}
+
 body, ul, li, h1, h2, h3 { /* removes default browser css */
     margin: 0;
     padding: 0;
@@ -6,24 +12,25 @@ body, ul, li, h1, h2, h3 { /* removes default browser css */
 body {
     display: flex;
     flex-direction: column;
-    background-color: #262528;
+    width: 100%;
+    height: 100%;
+    background-color: #1b1a1e;
     font-family: monospace;
     font-weight: 500;
-    width: 100%;
 }
 
                                                             /* COMPONENTS */
 .content {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
     border: 2px solid #96726c;
     border-radius: 10px;
     background-color: #1e282e;
     padding: 10px;
     width: 100%;
     height: auto;
-    box-sizing: border-box;
+    min-width: 0;
+    overflow-wrap: break-word;
 }
 
 .button {
@@ -66,10 +73,8 @@ iframe {
     border-radius: 10px;
     background-size: cover;
     background-position: center;
-    width: 100%; 
     height: auto; 
-    padding: 20px;
-    box-sizing: border-box;
+    padding: 17px;
 }
 
 .blinkies {
@@ -98,10 +103,13 @@ iframe {
 }
 
                                                             /* HEADERS */
-.site-header { 
+header {
+    display: flex;
+    flex-direction: column;
+}
+                                                        
+.site-name { 
     color: #f5d3ca;  
-    border-radius: 10px;
-    text-align: center;
     font-size: 45px;
     margin: auto;
 }
@@ -117,10 +125,9 @@ iframe {
 }
 
                                                             /* NAVIGATION COMPONENTS */
-.top-nav-button {
+.top-nav-btn {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     background-color: transparent;
     text-decoration: none;
     font-size: 25px;
@@ -129,7 +136,7 @@ iframe {
     cursor: pointer;
 }
 
-.top-nav-button:hover {
+.top-nav-btn:hover {
     color: #c28e85;
 }
 
@@ -142,6 +149,8 @@ iframe {
     background-image: url("../images/dark-cherry-blossom.jpg");
     background-size: cover;
     background-position: center;
+    padding: 17px;
+    
 }
 
 .nav-images {
@@ -154,13 +163,12 @@ iframe {
 .nav-doors {
     display: flex;
     flex-direction: row;
-    margin-top: auto;
-    padding: 0;
-    gap: 10px;
+    gap: 10px; 
 }
 
                                                             /* NAVIGATION */ 
-.top-nav {
+                    
+.top-nav-btns {
     display: flex;
     justify-content: center;
     border-radius: 10px;
@@ -171,10 +179,8 @@ iframe {
 
 .sidebar {
   display: flex;
-  flex-shrink: 0; /* no shrinking */
-  flex-direction: column; /* vertical display -> column */
-  gap: 10px; /* between rows and columns... */
-  box-sizing: border-box;
+  flex-shrink: 0; 
+  flex-direction: column; 
 }
 
 .left-sidebar {
@@ -182,9 +188,15 @@ iframe {
     flex-direction: column;
     margin: 0 auto;
     border: 2px solid #96726c;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #1e282e;
+    align-items: center;
     padding: 5px;
+    gap: 15px 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 0;
+    overflow-wrap: break-word;
 }
 
 .right-sidebar {
@@ -195,24 +207,33 @@ iframe {
     border-radius: 5px;
     background-color: #1e282e;
     padding: 5px;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 15px 10px;
+    min-width: 0;
+    overflow-wrap: break-word;
 }
 
                                                             /* CORE LAYOUT*/
 .wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #a93e33;
-    gap: 20px;
-    padding: 5px;
+    width: 100%;
     margin: 0 auto; 
 }
 
 main {
     display: flex;
     flex-direction: row;
-    box-sizing: border-box;
-    padding: 10px;
-    width: 100%;
+}
+
+.left {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .middle {
@@ -221,7 +242,13 @@ main {
     padding: 10px;
     gap: 25px;
     margin: 0 auto;
-    box-sizing: border-box;
+    max-width: 800px;
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .footer {
@@ -236,57 +263,79 @@ main {
 .grid {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    width: 100%;
+    height: 100%;
     align-items: center;
-    margin: 25px;
 }
 
-.r1 {                                                    /* row 1 */
+.row-1 {                                                    /* row 1 */
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 25%;
+    max-width: 1800px;  
+    min-width: 1800px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.r1-c1, .r1-c3 { 
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.r1-c2 {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 35px;
+    min-width: 0;
+    width: 50%;
 }
 
-.r1-c1 { 
+/*.r1-c3 {
     display: flex;
     flex-direction: row;
-    background-color: purple;  
 }
+*/
 
-.r1-c3 {
+.row-2 {                                                     /* row 2 */
     display: flex;
     flex-direction: row;
-    background-color: pink;
-}
-
-.r2 {                                                     /* row 2 */
-    display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1800px;  
+    min-width: 1800px; 
+    margin: 0 auto;
 }
 
 .r2-c1, .r2-c3 {
     display: flex;
     flex-direction: column;
-    background-color: blue; 
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
 }
 
 .r2-c2 {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
 }
 
-.r3 {                                                     /* row 3 */
+.row-3 {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    background-color: yellow
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1800px;
+    min-width: 1800px;
+    margin: 0 auto;
+    gap: 50px;
+    padding-top: 10px;
 }
-
                                                             /* SPECIAL PAGES */
 .updates {
     display: flex;
@@ -310,3 +359,11 @@ main {
     height: 400px;
     text-decoration: none;
 }
+
+                                                            /* DEVICES 
+
+@media (max-width: 395px) {
+    .row-1, .row-2 {
+        
+    }
+}    */    
