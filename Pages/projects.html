@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=1140"> 
-        <link rel="stylesheet" type="text/css" href="../home.css">
+        <link rel="stylesheet" type="text/css" href="../test.css">
         <link rel="icon" type="image/png" href="images/favicon.png">
         <title>Sarah's Catalog</title>
     </head> 
@@ -100,21 +100,35 @@
                     <div class="wrapper">  
                         <!-- MAIN CONTAINER: sidebars, main content (middle), footer --> 
                         <main>
-                            <!-- LEFT SIDEBAR -->
-                            <nav class="sidebar">
-                                <div class="sidebar-border">
-                                    <section class="left-sidebar">
-                                        <a href="gallery.html" class="button side-nav-button"><img src="../images/gallery.png" width="43px" height="44px"></a>
-                                        <a href="bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
-                                        <a href="door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
-                                    </section>
-                                </div>
-                            </nav>  <!-- END OF LEFT SIDEBAR -->
+                            <!-- Left: left sidebars -->
+                            <div class="left">
+                                <!-- Left Sidebar 1 -->
+                                <nav class="sidebar">
+                                    <div class="sidebar-border">
+                                        <section class="left-sidebar text" style="min-width: 250px; max-width: 250px; height: auto; display: flex;">
+                                            △▼△▼△▼△▼△▼△▼△▼△▼
+                                            △▼△▼△●△●△●△▼△▼△▼
+                                            △▼△▼△●△●△●△▼△▼△▼
+                                        </section>
+                                    </div>
+                                </nav>
+
+                                <!-- Left Sidebar 2 -->
+                                <nav class="sidebar">
+                                    <div class="sidebar-border">
+                                        <section class="left-sidebar text">
+                                            <a href="Pages/gallery.html" class="button side-nav-button"><img src="../images/gallery.png" width="50px" height="51px"></a>
+                                            <a href="Pages/bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
+                                            <a href="Pages/door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
+                                        </section>
+                                    </div>
+                                </nav> 
+                            </div> <!-- END OF LEFT -->
 
                             <!-- MIDDLE: main content -->
                             <div class="middle">
+                                <!-- Ubuntu Server Card -->
                                 <div class="content-border" style="height:410px;">
-                                    <!-- Ubuntu Server Card -->
                                     <a href="ubuntu-server.html" class="project content text p">
                                         <h3 class="content-header">Ubuntu Server</h3>
                                         <ul>
@@ -144,14 +158,27 @@
                                 </div> 
                             </div> <!-- END OF MIDDLE -->
 
-                            <!-- RIGHT SIDEBAR -->
-                            <nav class="sidebar">
-                                <div class="sidebar-border">
-                                    <section class= "right-sidebar">
-                                        <!-- ADD RIGHT SIDEBAR CONTENT HERE-->
-                                    </section>
-                                </div>
-                            </nav> 
+                            <!-- RIGHT: right sidebars -->
+                            <div class="right">
+                                <!-- Right Sidebar 1 -->
+                                <nav class="sidebar">
+                                    <div class="sidebar-border">
+                                        <section class= "right-sidebar">
+                                            <img class="gif" src="https://momg.neocities.org/gifs/i-31910.gif" width="50px" height="50px">
+                                            <img src="../images/rose-bloom.gif" width="50px" height="50px">
+                                        </section>
+                                    </div>
+                                </nav> 
+
+                                <!-- Right Sidebar 2 -->
+                                <nav class="sidebar" style="flex-direction: column;">
+                                    <div class="sidebar-border">
+                                        <section class="left-sidebar" style="min-width: 250px; max-width: 250px;">
+                                            <image src="../images/ilovethenightsky.gif"></image>
+                                        </section> 
+                                    </div>
+                                </nav> 
+                            </div> <!-- END OF RIGHT --> 
                         </main> <!-- END OF MAIN CONTAINER -->
 
                         <!-- FOOTER -->

@@ -1,9 +1,3 @@
-                                                            /* ＼(((￣(￣(￣▽￣)￣)￣)))／ */
-
-* {
-    box-sizing: border-box;
-}
-
 body, ul, li, h1, h2, h3 { /* removes default browser css */
     margin: 0;
     padding: 0;
@@ -12,23 +6,24 @@ body, ul, li, h1, h2, h3 { /* removes default browser css */
 body {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
-    background-color: #1b1a1e;
+    background-color: #262528;
     font-family: monospace;
     font-weight: 500;
+    width: 100%;
 }
 
-                                                            /* COMPONENTS */
+/* COMPONENTS */
 .content {
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
     border: 2px solid #96726c;
     border-radius: 10px;
     background-color: #1e282e;
     padding: 10px;
     width: 100%;
     height: auto;
+    box-sizing: border-box;
 }
 
 .button {
@@ -71,8 +66,10 @@ iframe {
     border-radius: 10px;
     background-size: cover;
     background-position: center;
+    width: 100%; 
     height: auto; 
-    padding: 17px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .blinkies {
@@ -100,14 +97,11 @@ iframe {
     margin-left: 50px;
 }
 
-                                                            /* HEADERS */
-header {
-    display: flex;
-    flex-direction: column;
-}
-                                                        
-.site-name { 
+/* HEADERS */
+.site-header { 
     color: #f5d3ca;  
+    border-radius: 10px;
+    text-align: center;
     font-size: 45px;
     margin: auto;
 }
@@ -122,10 +116,11 @@ header {
     font-weight: bold; 
 }
 
-                                                            /* NAVIGATION COMPONENTS */
-.top-nav-btn {
+/* NAVIGATION COMPONENTS */
+.top-nav-button {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     background-color: transparent;
     text-decoration: none;
     font-size: 25px;
@@ -134,7 +129,7 @@ header {
     cursor: pointer;
 }
 
-.top-nav-btn:hover {
+.top-nav-button:hover {
     color: #c28e85;
 }
 
@@ -142,12 +137,14 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0; /* no shrinking */
     border: 5px solid #322a2a;
     border-radius: 10px;
     background-image: url("../images/dark-cherry-blossom.jpg");
     background-size: cover;
     background-position: center;
-    padding: 17px;
 }
 
 .nav-images {
@@ -160,12 +157,21 @@ header {
 .nav-doors {
     display: flex;
     flex-direction: row;
-    gap: 10px; 
+    margin-top: auto;
+    padding: 0;
+    gap: 10px;
 }
 
-                                                            /* NAVIGATION */ 
-                    
-.top-nav-btns {
+/* NAVIGATION */ 
+/*header {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    min-width: 1100px;
+    margin: 0 auto;
+}*/
+
+.top-nav {
     display: flex;
     justify-content: center;
     border-radius: 10px;
@@ -178,151 +184,71 @@ header {
   display: flex;
   flex-shrink: 0; /* no shrinking */
   flex-direction: column; /* vertical display -> column */
-  gap: 10px; /* between rows and columns... */
+  gap: 20px; /* between rows and columns... */
+  box-sizing: border-box;
 }
 
 .left-sidebar {
     display: flex;
     flex-direction: column;
+    width: 250px;
+    height: 250px;
     margin: 0 auto;
     border: 2px solid #96726c;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #1e282e;
-    align-items: center;
-    padding: 5px;
-    gap: 15px 10px;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 100px
+    padding: 10px;
 }
 
 .right-sidebar {
     display: flex;
     flex-direction: column;
+    width: 250px;
+    height: 250px;
     margin: 0 auto;
     border: 2px solid #96726c;
     border-radius: 5px;
     background-color: #1e282e;
     padding: 5px;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 15px 10px;
-    max-width: 100px
 }
 
-                                                            /* CORE LAYOUT*/
+/* CORE LAYOUT*/
 .wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 90%;
+    height: 90%;
     background-color: #a93e33;
-    width: 100%;
     gap: 20px;
     padding: 5px;
-    margin: 0 auto; 
+    margin: 0 auto 100px;
 }
 
-main {
+.main-container {
     display: flex;
-    flex-direction: row;
+    flex-shrink: 0;
+    gap: 20px;
+    box-sizing: border-box;
 }
 
 .middle {
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    gap: 25px;
+    width: 100%;
     margin: 0 auto;
+    gap: 50px;
+    box-sizing: border-box;
 }
 
 .footer {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
     font-weight: bold;
 }
 
-                                                            /* GRID */
-.grid {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-}
-
-.row-1 {                                                    /* row 1 */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    width: 25%;
-    max-width: 1140px;  
-    min-width: 1140px;
-    margin: 0 auto;
-    padding-bottom: 10px;
-}
-
-.r1-c1, .r1-c3 { 
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-}
-
-.r1-c2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-width: 0;
-    width: 50%;
-}
-
-/*.r1-c3 {
-    display: flex;
-    flex-direction: row;
-}
-*/
-
-.row-2 {                                                     /* row 2 */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-    width: 100%;
-    max-width: 1140px;  
-    min-width: 1140px; 
-    margin: 0 auto;
-}
-
-.r2-c1, .r2-c3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 50px;
-}
-
-.r2-c2 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 1000px;
-}
-
-.row-3 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1140px;
-    min-width: 1140px;
-    margin: 0 auto;
-    gap: 50px;
-    padding-top: 10px;
-}
-                                                            /* SPECIAL PAGES */
+/* SPECIAL PAGES */
 .updates {
     display: flex;
     flex-direction: column;
@@ -345,11 +271,3 @@ main {
     height: 400px;
     text-decoration: none;
 }
-
-                                                            /* DEVICES 
-
-@media (max-width: 395px) {
-    .row-1, .row-2 {
-        
-    }
-}    */    
