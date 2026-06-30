@@ -1,0 +1,270 @@
+<!-- (˘･_･˘) -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=1640px"> 
+        <link rel="stylesheet" type="text/css" href="../test.css">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <title>Sarah's Catalog</title>
+    </head> 
+    <style>
+        body {
+            background-color: #080808 !important;
+        }
+
+        .content, .left-sidebar, .right-sidebar {
+            border: 2px solid #080808 !important;
+            background-color: #0e0d0d;
+        }
+
+        .wrapper {
+            background-color: #080808 !important;
+        }
+        
+        .site-name, .top-nav-btn { 
+            color: #E67E22 !important;
+        }
+
+        .top-nav-btn:hover {
+            color: rgb(255, 115, 0) !important;
+        }
+
+        .sidebar-border, .content-border {
+            border: 5px solid #060606 !important;
+            background-image: url("https://cdn.esahubble.org/archives/images/thumb700x/heic0611b.jpg") !important;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .footer-text {
+            color: #faf8e5 !important;
+        }  
+    </style>
+    <body> 
+        <!--  
+            GRID: a 3 row grid with a varying amount of columns 
+                ROW 1: header
+                ROW 2: wrapper
+                ROW 3: area underneath wrapper
+                ( this also includes empty margin space)
+
+            ROW 1 (row-1): contains the site header, top nav buttons
+                row 1 column 1 (r1c1): (open space)
+                row 1 column 2 (r1c2): site name + top nav buttons        
+                row 1 column 3 (r1c3): (open space)     
+        -->
+        <div class="grid">
+            <div class="row-1">
+                <!-- ROW 1 COLUMN 1 -->
+                <div class="r1-c1">
+                    <!-- ADD GIFS OR IMAGES HERE -->                    
+                </div>  
+
+                <!--  ROW 1 COLUMN 2 -->
+                <div class="r1-c2">
+                    <!-- HEADER: site name + top nav buttons -->
+                    <header>
+                        <h1 class="site-name">Sarah's Catalog</h1>
+                        <!-- TOP NAV BUTTONS -->
+                        <nav class="top-nav-btns">
+                            <a href="../home.html" class="button top-nav-btn">Home</a>
+                            <a href="projects.html" class="button top-nav-btn">Projects</a>
+                            <a href="links.html" class="button top-nav-btn">Links</a>
+                        </nav>    
+                    </header>
+                </div>  
+                
+                <!-- ROW 1 COLUMN 3 -->
+                <div class="r1-c3">
+                    <!-- ADD GIFS OR IMAGES HERE -->
+                </div> 
+            </div> <!-- END OF ROW 1 -->
+
+
+            <!-- 
+                ROW 2 (row-2): contains the wrapper
+                    row 2 column 1 (r2c1): (open space)
+                    row 2 column 2 (r2c2): wrapper + main container        
+                    row 2 column 3 (r2c3): (open space)
+            -->
+            <div class="row-2">
+                <!-- ROW 2 COLUMN 1 -->
+                <div class="r2-c1">
+                    <!-- ADD GIFS OR IMAGES HERE -->
+                </div> 
+                
+                <!-- ROW 2 COLUMN 2-->
+                <div class="r2-c2">
+                    <!-- WRAPPER: wraps the main container -->
+                    <div class="wrapper">  
+                        <!-- MAIN CONTAINER: sidebars, main content (middle), footer --> 
+                        <main>
+                            <!-- Left: left sidebars -->
+                            <div class="left">
+                                <!-- Left Sidebar 1 -->
+                                <nav class="sidebar">
+                                    <div class="sidebar-border">
+                                        <section class="left-sidebar text" style="min-width: 250px; max-width: 250px; height: auto; display: flex;">
+                                            △▼△▼△▼△▼△▼△▼△▼△▼
+                                            △▼△▼△●△●△●△▼△▼△▼
+                                            △▼△▼△●△●△●△▼△▼△▼
+                                        </section>
+                                    </div>
+                                </nav>
+
+                                <!-- Left Sidebar 2 -->
+                                <nav class="sidebar">
+                                    <div class="sidebar-border">
+                                        <section class="left-sidebar text">
+                                            <a href="gallery.html" class="button side-nav-button"><img src="../images/gallery.png" width="50px" height="51px"></a>
+                                            <a href="bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
+                                            <a href="door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
+                                        </section>
+                                    </div>
+                                </nav> 
+                            </div> <!-- END OF LEFT -->
+
+                            <!-- MIDDLE: main content -->
+                            <div class="middle">
+                                <!-- Overview -->
+                                <div class="content-border">
+                                    <section class="content text">
+                                        <h3 class="content-header">Overview</h3>
+                                        <ul class="list">
+                                            <li>Site uses flexbox EVERYWHERE</li>
+                                            <li class=indent>The grid system is a flex item of the body</li>
+                                            <li>Contains unique and component classes</li>
+                                            <li>Utilizes Semantic HTML elements</li>
+                                            <li>Coded in VSCode with GitHub integration</li>
+                                            <li class="indent">Integration is so important because it allows me to easily push any new changes.</li>
+                                            <li>Employs GitHub Actions (Deploy to Neocities) to upload the entire repository to Neocitities for any pushes to main</li>
+                                        </ul>
+                                    </section>
+                                </div>
+
+                                <!-- Layout -->
+                                <div class="content-border">
+                                    <section class="content text">
+                                        <h3 class="content-header">Layout</h3>
+                                        <ul class="list">
+                                            <li>(main containers) </li>
+                                            <li>grid: a 3 row grid with a varying amount of columns</li>
+                                            <li>row-1, row-2, row-3: the rows in the grid</li>
+                                            <li>wrapper: wraps the sidebars (left + right) and middle</li>
+                                            <li>left: contains the left sidebars</li>
+                                            <li>middle: contains the main content</li>
+                                            <li>right: contains the right sidebars</li>
+                                        </ul>
+                                        
+                                        <ul class="list">
+                                            <li>(sidebar layout)</li>
+                                            <li>left/right</li>
+                                            <li>sidebar</li>
+                                            <li>sidebar-border</li>
+                                            <li>left-sidebar/right-sidebar</li>
+                                        </ul>
+
+                                        <ul class="list">
+                                            <li>(content layout)</li>
+                                            <li>middle</li>
+                                            <li>content-border</li>
+                                            <li>content</li>
+                                        </ul>
+                                    </section>
+                                </div>
+                                
+                                <!-- Deploy to Neocities -->
+                                <div class="content-border">
+                                    <section class="content text">
+                                        <h3 class="content-header">Deploy to Neocities</h3>
+                                        <ul class="list">
+                                            <li>Github Actions</li>
+                                            <li>Updates website when a new push is made to the main branch</li>
+                                            <li>For me personally... </li>
+                                            <li class="indent">dist_dir was changed to . so it would copy the entire repository (instead of a folder called public)</li>
+                                            <li class="indent">Used v3 of Deploy to Neocities instead of v2.</li>
+                                            <li></li>
+                                        </ul>
+                                    </section>
+                                </div>
+
+                                <!--  -->
+                                <div class="content-border">
+                                    <section class="content text">
+                                        <h3 class="content-header">Flexbox</h3>
+                                    </section>
+                                    <section>
+
+                                    </section>
+                                </div>
+
+                                <!-- Terms -->
+                                <div class="content-border">
+                                    <section class="content text">
+                                        <h3 class="content-header">Terms/Info</h3>
+                                        <ul class="list">
+                                            <li>Flex container = parent</li>
+                                            <li>Flex item = child</li>
+                                        </ul>
+                                    </section>
+                                </div>
+
+                                <!-- Resources/Links -->
+                                <div class="content-border">
+                                    <section class="content text">
+                                        <h3 class="content-header">Resources/Links</h3>
+                                        <a href="https://www.youtube.com/watch?v=RjKi64rX8w8">Exploring the indie web and finding the COOLEST personal websites! (video)</a>
+                                        <a href="https://github.com/marketplace/actions/deploy-to-neocities">GitHub Repo</a>
+                                        <a href="https://docs.github.com/en/actions/tutorials/create-an-example-workflow">Understand the syntax of a Github Actions workflow file</a>
+                                    </section>
+                                </div>
+             
+                            </div> <!-- END OF MIDDLE -->
+
+                            <!-- RIGHT: right sidebars -->
+                            <div class="right">
+                                <!-- Right Sidebar 1 -->
+                                <nav class="sidebar">
+                                    <div class="sidebar-border">
+                                        <section class= "right-sidebar">
+                                            <img class="gif" src="https://momg.neocities.org/gifs/i-31910.gif" width="50px" height="50px">
+                                        </section>
+                                    </div>
+                                </nav> 
+
+                                <!-- Right Sidebar 2 -->
+                                <nav class="sidebar">
+                                    <div class="sidebar-border">
+                                        <section class="left-sidebar" style="min-width: 250px; max-width: 250px;">
+                                            <image src="../images/ilovethenightsky.gif"></image>
+                                        </section> 
+                                    </div>
+                                </nav> 
+                            </div> <!-- END OF RIGHT --> 
+                        </main> <!-- END OF MAIN CONTAINER -->
+
+                        <!-- FOOTER -->
+                        <footer class="footer footer-text">
+                            <p>Thanks for visiting!</p>
+                            <img src="../images/cat-0491.gif" width="30" height="30"> 
+                        </footer> <!-- END OF FOOTER--> 
+                    </div> <!-- end of wrapper -->
+                </div> <!-- (end of row 2 column 2)-->
+
+                <!-- ROW 2 COLUMN 3 -->
+                <div class="r2-c3">
+                    <!-- ADD GIFS OR IMAGES HERE -->
+                </div> 
+            </div><!-- END OF ROW 2 -->
+
+
+            <!-- 
+                ROW 3: area underneath the wrapper  
+            -->
+            <div class="row-3">
+                <!-- ADD GIFS OR IMAGES HERE -->
+            </div> <!-- END OF ROW 3 -->
+        </div> <!-- END OF GRID -->
+    </body>
+</html>
