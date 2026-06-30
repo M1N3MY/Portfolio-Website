@@ -120,6 +120,7 @@
                                             <a href="gallery.html" class="button side-nav-button"><img src="../images/gallery.png" width="50px" height="51px"></a>
                                             <a href="bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
                                             <a href="door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
+                                            <a href="sticker.html" class="button side-nav-button"><img src="../images/sticker.png"></a>
                                         </section>
                                     </div>
                                 </nav> 
@@ -130,15 +131,12 @@
                                 <!-- Overview -->
                                 <div class="content-border">
                                     <section class="content text">
-                                        <h3 class="content-header">Overview</h3>
+                                        <h2 class="content-header">Overview</h2>
                                         <ul class="list">
-                                            <li>Site uses flexbox EVERYWHERE</li>
-                                            <li class=indent>The grid system is a flex item of the body</li>
+                                            <li>Site uses flexbox almost everywhere</li>
                                             <li>Contains unique and component classes</li>
-                                            <li>Utilizes Semantic HTML elements</li>
-                                            <li>Coded in VSCode with GitHub integration</li>
-                                            <li class="indent">Integration is so important because it allows me to easily push any new changes.</li>
-                                            <li>Employs GitHub Actions (Deploy to Neocities) to upload the entire repository to Neocitities for any pushes to main</li>
+                                            <li>Utilizes Semantic HTML elements to identify and label</li>
+                                            <li>I use GitHub's desktop app and utilize its integration with VSCode to quickly publish my entire repository to Neocities</li>
                                         </ul>
                                     </section>
                                 </div>
@@ -146,53 +144,86 @@
                                 <!-- Layout -->
                                 <div class="content-border">
                                     <section class="content text">
-                                        <h3 class="content-header">Layout</h3>
+                                        <h2 class="content-header">Core Layout</h2>
+                                        <p>The site is flexible and fluid, but hard limits are set to prevent overflow and keep the site dynamic. For example, I use max-widths for the left and sidebars, and middle.</p>
                                         <ul class="list">
-                                            <li>(main containers) </li>
-                                            <li>grid: a 3 row grid with a varying amount of columns</li>
-                                            <li>row-1, row-2, row-3: the rows in the grid</li>
-                                            <li>wrapper: wraps the sidebars (left + right) and middle</li>
-                                            <li>left: contains the left sidebars</li>
-                                            <li>middle: contains the main content</li>
-                                            <li>right: contains the right sidebars</li>
-                                        </ul>
-                                        
-                                        <ul class="list">
-                                            <li>(sidebar layout)</li>
-                                            <li>left/right</li>
-                                            <li>sidebar</li>
-                                            <li>sidebar-border</li>
-                                            <li>left-sidebar/right-sidebar</li>
-                                        </ul>
-
-                                        <ul class="list">
-                                            <li>(content layout)</li>
-                                            <li>middle</li>
-                                            <li>content-border</li>
-                                            <li>content</li>
+                                            <li><u>grid:</u> a 3 row grid with a varying amount of columns</li>
+                                            <li><u>row-1, row-2, row-3:</u> the rows in the grid</li>
+                                            <li><u>wrapper:</u> wraps the sidebars (left + right) and middle</li>
+                                            <li><u>left:</u> contains the left sidebars</li>
+                                            <li><u>middle:</u> contains the main content</li>
+                                            <li><u>right:</u> contains the right sidebars</li>
+                                            <li><u>footer:</u> self-explanatory, it's the section at the bottom of the page</li>
                                         </ul>
                                     </section>
                                 </div>
+
+                                <div class="content-border">
+                                    <section class="content text">
+                                        <h2 class="content-header">Components</h2>
+                                        <ul class="list">
+                                            <li>content</li>
+                                            <li>button</li>
+                                            <li>scrollable</li>
+                                            <li>footer-text</li>
+                                            <li>text</li>
+                                            <li>centered</li>
+                                            <li>content-border</li>
+                                            <li>blinkies</li>
+                                            <li>links</li>
+                                            <li>flex-row</li>
+                                            <li>flex-column</li>
+                                            <li>list</li>
+                                            <li>indent</li>
+                                            <li>top-nav-btn</li>
+                                            <li>sidebar-border</li>
+                                            <li>nav-images</li>
+                                            <li>nav-doors</li>
+
+                                        </ul>
+                                    </section>
+                                </div>
+
+                                <!-- <div class="content-border">
+                                    <section class="content text">
+                                        
+                                    </section>
+                                </div> -->
                                 
                                 <!-- Deploy to Neocities -->
                                 <div class="content-border">
                                     <section class="content text">
-                                        <h3 class="content-header">Deploy to Neocities</h3>
+                                        <h2 class="content-header">Deploy to Neocities</h2>
                                         <ul class="list">
-                                            <li>Github Actions</li>
-                                            <li>Updates website when a new push is made to the main branch</li>
-                                            <li>For me personally... </li>
-                                            <li class="indent">dist_dir was changed to . so it would copy the entire repository (instead of a folder called public)</li>
-                                            <li class="indent">Used v3 of Deploy to Neocities instead of v2.</li>
-                                            <li></li>
+                                            <li>(Created by bcomnes)</li>
+                                            <li>It's a yml file, or Github Actions workflow, which runs a specific version of its repository on a trigger event (e.g push, pull)
+                                            <li>Utilizes a secret to store Neocities' API</li>
+                                            <li>I changed dist_dir to . so it would copy the entire repository, and used the newer version of Deploy to Neocities (v3) instead of the older version</li>
+                                            <li class="indent">(By default, a folder called public will be published to Neocities)
                                         </ul>
                                     </section>
                                 </div>
 
-                                <!--  -->
-                                <div class="content-border">
+                                <!-- Flexbox -->
+                                <div class="content-border"> 
                                     <section class="content text">
-                                        <h3 class="content-header">Flexbox</h3>
+                                        <div class="flex-row" style="width: 100%; height: 100%;">  
+                                            <div class="flex-column" style="width: 50%; height: 50%;">
+                                                <h3 class="content-header">Flexbox</h3>
+                                                <p>Each individual item has a width and height of 50%</p>
+                                            </div>
+                                            <div class="flex-column" style="width: 50%; height: 50%;">
+                                                <p>I was confused by this because I didn't realize that the immediate parent is the only one taken into consideration here</p>
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row"  style="width: 100%; height: 100%;">
+                                            <div class="flex-column" style="width: 50%; height: 50%;">
+                                                <p>Then the entire row here has a</p>
+                                            </div>
+                                            <div class="flex-column" style="width: 50%; height: 50%;">
+                                                <p>width and height of 100%</p>
+                                            </div>
+                                        </div>                                        
                                     </section>
                                     <section>
 

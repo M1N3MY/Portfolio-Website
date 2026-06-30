@@ -59,10 +59,6 @@ body {
     max-width: 100%;
 }
 
-iframe {
-    max-width: 100%;
-}
-
 .content-border {
     display: flex;
     flex-direction: column;
@@ -92,6 +88,11 @@ iframe {
 .flex-row { 
     display: flex;
     flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
 
 .list {
