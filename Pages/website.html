@@ -117,10 +117,10 @@
                                 <nav class="sidebar">
                                     <div class="sidebar-border">
                                         <section class="left-sidebar text">
-                                            <a href="gallery.html" class="button side-nav-button"><img src="../images/gallery.png" width="50px" height="51px"></a>
-                                            <a href="bedroom.html" class="button side-nav-button"><img src="../images/red-door.png"></a>
-                                            <a href="door.html" class="button side-nav-button"><img src="../images/blue-door.png"></a>
-                                            <a href="sticker.html" class="button side-nav-button"><img src="../images/sticker.png"></a>
+                                            <a href="gallery.html" class="side-nav-button"><img src="../images/gallery.png" width="50px" height="51px"></a>
+                                            <a href="bedroom.html" class="side-nav-button"><img src="../images/red-door.png"></a>
+                                            <a href="door.html" class="side-nav-button"><img src="../images/blue-door.png"></a>
+                                            <a href="sticker.html" class="side-nav-button"><img src="../images/sticker.png"></a>
                                         </section>
                                     </div>
                                 </nav> 
@@ -136,7 +136,7 @@
                                             <li>Site uses flexbox almost everywhere</li>
                                             <li>Contains unique and component classes</li>
                                             <li>Utilizes Semantic HTML elements to identify and label</li>
-                                            <li>I use GitHub's desktop app and utilize its integration with VSCode to quickly publish my entire repository to Neocities</li>
+                                            <li>I use VSCode, GitHub, and the Deploy to Neocities repository to quickly publish my entire repository to Neocities</li>
                                         </ul>
                                     </section>
                                 </div>
@@ -158,37 +158,50 @@
                                     </section>
                                 </div>
 
+                                <!-- Components -->
                                 <div class="content-border">
                                     <section class="content text">
                                         <h2 class="content-header">Components</h2>
                                         <ul class="list">
-                                            <li>content</li>
-                                            <li>button</li>
-                                            <li>scrollable</li>
-                                            <li>footer-text</li>
-                                            <li>text</li>
-                                            <li>centered</li>
-                                            <li>content-border</li>
-                                            <li>blinkies</li>
-                                            <li>links</li>
-                                            <li>flex-row</li>
-                                            <li>flex-column</li>
-                                            <li>list</li>
-                                            <li>indent</li>
-                                            <li>top-nav-btn</li>
-                                            <li>sidebar-border</li>
-                                            <li>nav-images</li>
-                                            <li>nav-doors</li>
-
+                                            <li>content: innermost part of the middle where the content actually goes</li>
+                                            <li>button: removes the border, rounds border's corners, boldens text </li>
+                                            <li>scrollable: it's just overflow-y: scroll, so any overlap on the y-axis will become scrollable</li>
+                                            <li>footer-text: changes the color, size, and padding for the text in the footer </li>
+                                            <li>text: changes the color of the text to the default off white color and size</li>
+                                            <li>centered: centers by using margin: 0 auto, allowing the left and right margins to even out, but not too far out to where it would overlap (max-width: 100%)</li>
+                                            <li>content-border: border or frame for the content</li>
+                                            <li>blinkies: spaces and pads the blinkies in a flex row</li>
+                                            <li>links: removes the underline from links</li>
+                                            <li>flex-row: turns a box into a flex row</li>
+                                            <li>flex-column: same thing but flex row</li>
+                                            <li>list: provides padding for lists; prevents the bullet points from overlapping the content border</li>
+                                            <li>indent: creates a single indent</li>
+                                            <li>top-nav-btn: styles the top navigational buttons</li>
+                                            <li>sidebar-border: border or frame for the sidebars</li>
                                         </ul>
                                     </section>
                                 </div>
 
-                                <!-- <div class="content-border">
+                                <!-- Templates -->
+                                <div class="content-border">
                                     <section class="content text">
-                                        
+                                        <h2>Templates</h2>
+                                        <p>The following are general templates I tend to reuse throughout my files and code (parent -> children):</p>
+
+                                        <ul>
+                                            <li><strong><u>Sidebars</u></strong></li>
+                                            <li class="indent">sidebar</li>
+                                            <li class="indent">sidebar-border</li>
+                                            <li class="indent">left-sidebar/right-sidebar</li>
+                                        </ul>
+
+                                        <ul>
+                                            <li><strong><u>Content</u></strong></li>
+                                            <li class="indent">content-border</li>
+                                            <li class="indent">content, text</li>
+                                        </ul>
                                     </section>
-                                </div> -->
+                                </div> 
                                 
                                 <!-- Deploy to Neocities -->
                                 <div class="content-border">
@@ -204,12 +217,12 @@
                                     </section>
                                 </div>
 
-                                <!-- Flexbox -->
+                                <!-- 2x2 Grid Example -->
                                 <div class="content-border"> 
                                     <section class="content text">
                                         <div class="flex-row" style="width: 100%; height: 100%;">  
                                             <div class="flex-column" style="width: 50%; height: 50%;">
-                                                <h3 class="content-header">Flexbox</h3>
+                                                <h3 class="content-header">2x2</h3>
                                                 <p>Each individual item has a width and height of 50%</p>
                                             </div>
                                             <div class="flex-column" style="width: 50%; height: 50%;">
@@ -243,7 +256,7 @@
 
                                 <!-- Resources/Links -->
                                 <div class="content-border">
-                                    <section class="content text">
+                                    <section class="links content text">
                                         <h3 class="content-header">Resources/Links</h3>
                                         <a href="https://www.youtube.com/watch?v=RjKi64rX8w8">Exploring the indie web and finding the COOLEST personal websites! (video)</a>
                                         <a href="https://github.com/marketplace/actions/deploy-to-neocities">GitHub Repo</a>
