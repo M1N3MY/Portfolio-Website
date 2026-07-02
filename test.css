@@ -78,6 +78,7 @@ body {
     flex-direction: row;
     gap: 5px;
     padding: 5px;
+    flex-wrap: wrap;
 }
 
 .links {
@@ -186,9 +187,9 @@ header {
 
 .left-sidebar {
     display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+    flex-direction: row;
     border: 2px solid #96726c;
+    justify-content: center;
     border-radius: 10px;
     background-color: #1e282e;
     align-items: center;
