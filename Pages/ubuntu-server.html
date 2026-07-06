@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=1640px"> 
-        <link rel="stylesheet" type="text/css" href="../test.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
         <link rel="icon" type="image/png" href="images/favicon.png">
         <title>Sarah's Catalog</title>
     </head> 
@@ -163,8 +163,8 @@
                                                 <h2 class="content-header">Caddy</h2>
                                                 <ul class="list">   
                                                 <li>Caddy acts as a reverse proxy</li>
-                                                <li>It also provides internally signed HTTPS for all Docker containers specified in the Caddyfile</li>
-                                                <li class="indent">All of the containers are defined in the Caddyfile with their own .home domain.</li>
+                                                <li>It also provides internally signed HTTPS for any Docker containers specified in the Caddyfile</li>
+                                                <li class="indent">These containers are defined in the Caddyfile with their own .home domain.</li>
                                             </div>
                                             <div> <!-- image -->
                                                 <img src="../images/ubuntu-server-map.jpg" width="259.5px" height="437px">
@@ -174,12 +174,12 @@
                                             <ul>
                                                 <li>I feel like the best way of visualizing my Docker setup with Caddy is by using the apartment or hotel analogy:</li>
                                                 <li><strong><u>Receptionist (Caddy):</u></strong></li>
-                                                <li class="indent">Caddy listens for requests on port 80 and 443 from containers listed in the Caddyfile</li>
-                                                <li class="indent">(In Pi-hole, there's local DNS records for each of the .home domains pointing towards my network's local IP)</li>
+                                                <li class="indent">Caddy listens for requests on port 80 (HTTP) and 443 (HTTPS) from containers listed in the Caddyfile</li>
+                                                <li class="indent">(In Pi-hole, there's local DNS records for each of the .home domains. The records basically direct the domains to my home network's IP)</li>
                                                 <li><strong><u>Elevator (srm_network):</u></strong></li>
-                                                <li class="indent">The Docker network, srm_network, connects all of the containers together. Allowing them to communicate with each other</li>
+                                                <li class="indent">The Docker bridge network connects all of the containers together. Allowing them to communicate with each other</li>
                                                 <li><strong><u>Docker Containers (Apartment/Hotel Rooms):</u></strong></li>
-                                                <li class="indent">All of the containers are self contained, they can only be contacted through their port number. Similar to a door. Otherwise, they operate separately from each other</li>
+                                                <li class="indent">They're self contained, so they can only be contacted through their port number. Similar to a door. Otherwise, they operate separately from each other</li>
                                             </ul>
 
                                             <h2 class="content-header">HTTPS</h2>
