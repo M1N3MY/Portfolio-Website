@@ -81,7 +81,7 @@ body {
     flex-wrap: wrap;
 }
 
-.links {
+a.links {
     color: #edebd5;
     text-decoration: none;
 }
@@ -102,6 +102,10 @@ body {
 
 .indent {
     margin-left: 50px;
+}
+
+.full_width {
+    width: 100%;
 }
 
                                                             /* HEADERS */
@@ -356,6 +360,13 @@ main {
     gap: 15px;
     height: 400px;
     text-decoration: none;
+}
+
+.world {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
 }
 
                                                             /* DEVICES 
