@@ -9,19 +9,25 @@
     </head>
     <style>
         body {
-            background-color: #000000
+            background-color: #000000;
         }
 
         .content {
             padding: 2px;
+            border-color: #160958;
+            border-radius: 0px;
         }
 
         .middle {
             flex-direction: row;
         }
 
-        .site_name {
-            color: #fbc100;
+        .site-name, .top-nav-btn {
+            color: #032c7d;
+        }
+
+        .top-nav-btn:hover {
+            color: #feaf00;
         }
     </style> 
     <body> 
@@ -41,7 +47,7 @@
             <!-- middle: main content -->
             <main class="middle" style="width: 100%;">
                 <!-- left window -->
-                 <section class="content text centered flex-column" style="max-width: 150px; max-height: 242px;">
+                 <section class="content text centered flex-column" style="max-width: 150px; max-height: 235px;">
                     <img src="../images/flower-window.png">
                  </section>
 
@@ -55,8 +61,8 @@
                 </section>
 
                 <!-- right window -->
-                 <section class="content text centered flex-column" style="max-width: 150px; max-height: 242px;">
-                    <img src="../images/flower-window.png" width="150px" height="242px">
+                 <section class="content text centered flex-column" style="max-width: 150px; max-height: 235px;">
+                    <img src="../images/flower-window.png">
                  </section>
             </main>
         </div> <!-- end of main container-->
