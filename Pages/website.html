@@ -210,6 +210,8 @@
                                         <ul class="list">
                                             <li>Two folders: images and pages</li>
                                             <li>Index and home HTML files, and all CSS files are located in the root directory</li>
+                                            <li>I use 1 CSS file with the exception of the test page's CSS page</li>
+                                            <li class="indent">This is used to style the home page while other pages use the style element to re-customize</li>
                                             <li>Open workspace file > Edit in VSCode with Live Server extension > (GitHub Desktop) > Commit files to branch > Publish to origin > Fetch origin</li>
                                             <li>When making huge strucutral changes to the site, I like to create a template, and paste all of the unique content to try to avoid any confusion</li>
                                             <li>And when I need to edit all of the files, I'll usually change it for one file, then paste it across the rest</li>
@@ -232,6 +234,30 @@
                                     </section>
                                 </div>
 
+                                <!-- Style -->
+                                <div class="content-border">
+                                    <section class="content text">
+                                        <h2 class=content-header>Customization</h2>
+                                        <ul class="list">
+                                            <li>Hex values</li>
+                                            <li>What can I customize color-wise? Body, wrapper, content and left/right sidebars, content and sidebar borders, site name, top navigational buttons, footer and general text color</li>
+                                            <li>When picking the colors for each page, I like using hex color palettes you can find on Pinterest and also just eyeballing it</li>
+                                            <li class="indent">How it usually goes is that the background color is the lightest for the content and sidebars, and the border color is usually a brighter color or one of similar value</li>
+                                        </ul>
+
+                                        <img src="../images/sample-color-palette.jpg" class="centered" height="300px" width="220px">
+                                    </section>
+                                </div>
+
+                                <!-- First iteration of Website -->
+                                <div class="content-border">
+                                    <section class="content text">
+                                        <h2 class=content-header>Old Version - 12/5/26</h2>
+                                        <img src="../images/12-5-26.png">
+                                    </section>
+                                </div>
+
+
                                 <!-- 2x2 Grid Example -->
                                 <div class="content-border"> 
                                     <section class="content text">
@@ -240,13 +266,11 @@
                                                 <h3 class="content-header">2x2</h3>
                                                 <p>Each individual item has a width and height of 50%</p>
                                             </div>
-                                            <div class="flex-column" style="width: 50%; height: 50%;">
-                                                <p>I was confused by this because I didn't realize that the immediate parent is the only one taken into consideration here</p>
-                                            </div>
+                                            <div class="flex-column" style="width: 50%; height: 50%;"></div>
                                         </div>
                                         <div style="display: flex; flex-direction: row"  style="width: 100%; height: 100%;">
                                             <div class="flex-column" style="width: 50%; height: 50%;">
-                                                <p>Then the entire row here has a</p>
+                                                <p>Then each row or container has a</p>
                                             </div>
                                             <div class="flex-column" style="width: 50%; height: 50%;">
                                                 <p>width and height of 100%</p>
@@ -309,7 +333,7 @@
                                 <nav class="sidebar">
                                     <div class="sidebar-border">
                                         <section class="left-sidebar" style="min-width: 250px; max-width: 250px;">
-                                            <image src="../images/ilovethenightsky.gif"></image>
+                                            <img src="../images/ilovethenightsky.gif"></img>
                                         </section> 
                                     </div>
                                 </nav> 
