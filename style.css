@@ -125,11 +125,6 @@ header {
     font-weight: bold;
 }
 
-.sidebar-header {
-    color: #edebd5;
-    font-weight: bold; 
-}
-
                                                             /* NAVIGATION COMPONENTS */
 .top-nav-btn {
     display: flex;
