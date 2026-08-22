@@ -143,13 +143,13 @@
                                         <ul class="list">
                                             <li>(There's an image at the bottom of the page about permissions for reference)</li>
                                             <li>Specific directories exist as a user, and belong to a group</li>
-                                            <li class="indent">Some Docker containers utilize UID/GID mapping to set ownership.</li>
+                                            <li class="indent">Some Docker containers utilize UID/GID mapping to set ownership</li>
                                             <li>Meanwhile, other containers are granted more system privileges than the rest</li>
                                             <li>In general, permissions typically aren't granted for others</li>
-                                            <li>Three bash scripts are dedicated to updating ownership and permissions for the script and log, media, and Docker container directories.</li>
+                                            <li>Three bash scripts are dedicated to updating ownership and permissions for the script and log, media, and Docker container directories</li>
                                             <li class="indent">These scripts are automated with Cron</li>
                                             <li class="indent">They're configured to append their output to a log file</li>
-                                            <li class="indent">And scheduled to run at every hour, but spaced out by 5 minutes. So the second and third script will run at the 5 and 10 minute mark at each hour
+                                            <li class="indent">And scheduled to run at every hour, but spaced out by 5 minutes. So the second and third script will run at the 5 and 10 minute mark at each hour</li>
                                         </ul>
                                     </section>
                                 </div>
@@ -163,7 +163,7 @@
                                                 <ul class="list">   
                                                 <li>Caddy acts as a reverse proxy</li>
                                                 <li>It also provides internally signed HTTPS for any Docker containers specified in the Caddyfile</li>
-                                                <li class="indent">These containers are defined in the Caddyfile with their own .home domain.</li>
+                                                <li class="indent">These containers are defined in the Caddyfile with their own .home domain</li>
                                             </div>
                                             <div> <!-- image -->
                                                 <img src="../images/ubuntu-server-map.jpg" width="259.5px" height="437px">
@@ -198,7 +198,7 @@
                                             <li>CrowdSec processes logs from auth.log, or the access logs for all system related activities. It makes decisions based on suspicious activity related to things like failed SSH attempts</li>
                                             <li class="indent">An acquis.yaml file is used to direct it to the the auth.log</li>
                                             <li class="indent">Utilizing CrowdSec means it'll identify IPs that should be banned in its decision list, but it doesn't mean it'll actually take action (It took me awhile to realize this)</li>
-                                            <li class="indent">That's why I've implemented CrowdSec's Firewall Bouncer.</li>
+                                            <li class="indent">That's why I've implemented CrowdSec's Firewall Bouncer</li>
                                             <li>CrowdSec Firewall Bouncer is not in a Docker container, it's on the host, or this server</li>
                                             <li class="indent">The Firewall Bouncer bans IPs on the decision list and community blocklist (CAPI) by adding it to the nftables</li>
                                         </ul>
@@ -253,7 +253,7 @@
                                             <li>UID/GID → user/group ID</li>
                                             <li>Caddy: a web server with the ability to serve as a reverse proxy, and sign HTTPS using Let's Encrypt or it's own private CA</li>
                                             <li>Docker: tool or platform used to containerize applications</li>
-                                            <li>Reverse proxy: a server which intercepts incoming traffic, guilding them to their respective ports.</li>
+                                            <li>Reverse proxy: a server which intercepts incoming traffic, guilding them to their respective ports</li>
 
                                         </ul>
                                         <a href="https://www.reddit.com/r/linux/comments/ayditr/chmod_cheatsheet/"><img src="../images/permissions.png" width="400px"></a>
