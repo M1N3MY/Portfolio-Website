@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=1640px">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <link rel="stylesheet" type="text/css" href="../style.css">
         <link rel="icon" type="image/png" href="images/favicon.png">
         <title>Sarah's Catalog</title>
@@ -101,26 +101,19 @@
                         <main>
                             <!-- Left: left sidebars -->
                             <div class="left">
-                                <!-- Left Sidebar 1 -->
+                                <!-- Left Sidebar -->
                                 <nav class="sidebar">
                                     <div class="sidebar-border">
-                                        <section class="left-sidebar text" style="min-width: 250px; max-width: 250px; height: auto; display: flex;">
-                                            <p>△△△</p>
-                                        </section>
-                                    </div>
-                                </nav>
-
-                                <!-- Left Sidebar 2 -->
-                                <nav class="sidebar">
-                                    <div class="sidebar-border">
-                                        <section class="left-sidebar text">
-                                            <a href="gallery.html" class="side-nav-button"><img src="../images/gallery.png" width="50px" height="51px"></a>
-                                            <a href="splash.html" class="side-nav-button"><img src="../images/red-door.png"></a>
-                                            <a href="door.html" class="side-nav-button"><img src="../images/blue-door.png"></a>
-                                            <a href="sticker.html" class="side-nav-button"><img src="../images/sticker.png"></a>
+                                        <section class="left-sidebar text nav-rail">
+                                            <a href="gallery.html" title="gallery" class="side-nav-button"><img src="../images/gallery.png" width="50px" height="51px"></a>
+                                            <a href="splash.html" title="bedroom" class="side-nav-button"><img src="../images/red-door.png"></a>
+                                            <a href="door.html" title="interactive world" class="side-nav-button"><img src="../images/blue-door.png"></a>
+                                            <a href="sticker.html" title="stickers" class="side-nav-button"><img src="../images/sticker.png"></a>
                                         </section>
                                     </div>
                                 </nav> 
+
+                                <!-- Left Sidebar 2 <nav class="sidebar"><div class="sidebar-border"><section class="left-sidebar text" style="min-width: 250px; max-width: 250px; height: auto; display: flex;"></section></div></nav> -->
                             </div> <!-- END OF LEFT -->
 
                             <!-- MIDDLE: main content -->
@@ -172,26 +165,16 @@
 
                             <!-- RIGHT: right sidebars -->
                             <div class="right">
-                                <!-- Right Sidebar 1 -->
-                                <nav class="sidebar">
-                                    <div class="sidebar-border">
-                                        <section class= "right-sidebar">
-                                            <img class="gif" src="https://momg.neocities.org/gifs/i-31910.gif" width="50px" height="50px">
-                                            <img src="../images/rose-bloom.gif" width="50px" height="50px">
-                                        </section>
-                                    </div>
-                                </nav> 
-
-                                <!-- Right Sidebar 2 -->
+                                <!-- Right Sidebar -->
                                 <nav class="sidebar" style="flex-direction: column;">
                                     <div class="sidebar-border">
-                                        <section class="left-sidebar text" style="min-width: 250px; max-width: 250px;">
+                                        <section class="left-sidebar text">
                                             <p>I'm very proud and excited to share my projects here! These provide relevant experience for my resume, but they also serve a very real purpose in my life</p>
                                         </section> 
                                     </div>
 
                                     <div class="sidebar-border">
-                                        <section class="left-sidebar text" style="min-width: 250px; max-width: 250px;">
+                                        <section class="left-sidebar text">
                                             <p>For example, I constantly use my servers on a daily basis directly and indirectly:</p>
                                             <ul class="list">
                                                 <li>My Ubuntu/media server is my pride and joy. I use it to store and access documents, and to watch/listen to media across all of my devices almost everyday</li>
@@ -200,6 +183,8 @@
                                         </section>
                                     </div>
                                 </nav> 
+
+                                <!-- Right Sidebar 2 <nav class="sidebar"><div class="sidebar-border"><section class= "right-sidebar"></section></div></nav> -->
                             </div> <!-- END OF RIGHT --> 
                         </main> <!-- END OF MAIN CONTAINER -->
 

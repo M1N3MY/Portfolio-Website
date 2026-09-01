@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=1640px"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
         <link rel="stylesheet" type="text/css" href="../style.css">
         <link rel="icon" type="image/png" href="images/favicon.png">
         <title>Sarah's Catalog</title>
@@ -38,7 +38,11 @@
 
         .footer-text {
             color: #faf8e5 !important;
-        }  
+        }
+        
+        a:hover {
+            color: rgb(183, 142, 229);
+        }
     </style>
     <body> 
         <!--  
@@ -101,28 +105,19 @@
                         <main>
                             <!-- Left: left sidebars -->
                             <div class="left">
-                                <!-- Left Sidebar 1 -->
+                                <!-- Left Sidebar -->
                                 <nav class="sidebar">
                                     <div class="sidebar-border">
-                                        <section class="left-sidebar text" style="min-width: 250px; max-width: 250px; height: auto; display: flex;">
-                                            △▼△▼△▼△▼△▼△▼△▼△▼
-                                            △▼△▼△●△●△●△▼△▼△▼
-                                            △▼△▼△●△●△●△▼△▼△▼
-                                        </section>
-                                    </div>
-                                </nav>
-
-                                <!-- Left Sidebar 2 -->
-                                <nav class="sidebar">
-                                    <div class="sidebar-border">
-                                        <section class="left-sidebar text">
-                                            <a href="gallery.html" class="side-nav-button"><img src="../images/gallery.png" width="50px" height="51px"></a>
-                                            <a href="splash.html" class="side-nav-button"><img src="../images/red-door.png"></a>
-                                            <a href="door.html" class="side-nav-button"><img src="../images/blue-door.png"></a>
-                                            <a href="sticker.html" class="side-nav-button"><img src="../images/sticker.png"></a>
+                                        <section class="left-sidebar text nav-rail">
+                                            <a href="gallery.html" title="gallery" class="side-nav-button"><img src="../images/gallery.png" width="50px" height="51px"></a>
+                                            <a href="splash.html" title="bedroom" class="side-nav-button"><img src="../images/red-door.png"></a>
+                                            <a href="door.html" title="interactive world" class="side-nav-button"><img src="../images/blue-door.png"></a>
+                                            <a href="sticker.html" title="stickers" class="side-nav-button"><img src="../images/sticker.png"></a>
                                         </section>
                                     </div>
                                 </nav> 
+
+                                <!-- Left Sidebar 2 <nav class="sidebar"><div class="sidebar-border"><section class="left-sidebar text" style="min-width: 250px; max-width: 250px; height: auto; display: flex;"></section></div></nav> -->
                             </div> <!-- END OF LEFT -->
 
                             <!-- MIDDLE: main content -->
@@ -149,9 +144,9 @@
                                             <li><u>grid:</u> a 3 row grid with a varying amount of columns</li>
                                             <li><u>row-1, row-2, row-3:</u> the rows in the grid</li>
                                             <li><u>wrapper:</u> wraps the sidebars (left + right) and middle</li>
-                                            <li><u>left:</u> contains the left sidebars</li>
+                                            <li><u>left:</u> contains the nav rail and left sidebar</li>
                                             <li><u>middle:</u> holds all of the main content</li>
-                                            <li><u>right:</u> contains the right sidebars</li>
+                                            <li><u>right:</u> contains the right sidebar</li>
                                             <li><u>footer:</u> section at the very bottom of the page</li>
                                         </ul>
                                     </section>
@@ -177,6 +172,7 @@
                                             <li><u>indent:</u> creates an indentation with margin-left</li>
                                             <li><u>top-nav-btn:</u> styles the top navigational buttons</li>
                                             <li><u>sidebar-border:</u> border or frame for the sidebars</li>
+                                            <li><u>full-width:</u> width is 100%; fills in the space</li>
                                         </ul>
                                     </section>
                                 </div>
@@ -294,7 +290,7 @@
 
                                 <!-- Resources/Links -->
                                 <div class="content-border">
-                                    <section class="links content text">
+                                    <section class="links content">
                                         <h2 class="content-header">Resources/Links</h2>
                                         <a href="https://www.youtube.com/watch?v=RjKi64rX8w8">Exploring the indie web and finding the COOLEST personal websites! (video)</a>
                                         <a href="https://github.com/marketplace/actions/deploy-to-neocities">GitHub Repo</a>
@@ -305,13 +301,9 @@
                                 <!-- What could be done better? -->
                                 <div class="content-border">
                                     <section class="content text">
-                                        <h3>What could be done better? What's done well? And future plans</h3>
+                                        <h3>What could be done better? What's done well? And future plans (Updated: 9/1/26)</h3>
                                         <ul class="list">
-                                            <li>I feel like the weakest point of the website is the fact that it's pretty empty, could use more folders, and it doesn't use JavaScript (JS)</li>
-                                            <li>But the site finally feels like it's really come together. It's really cool to see it working on my phone because I wasn't sure how I was going to do this. When testing it seemed like it was going to be annoying to have to account for different devices</li>
-                                            <li>Using JS would upgrade what can be done because there's only so much you can do with pure HTML and CSS</li>
-                                            <li>However, I can still do a lot without JS. So for now I'd like to add artwork and add arrows beneath it so it feels interactive world or series of rooms</li>
-                                            <li>And re-learn JS so I could create or implement a simple game</li>
+                                            <p>Next priorities are filling out the rest of empty space, ensuring the site looks professional and easy to navigate, learning JavaScript (JS), and adding a folder or two for better organization. I'm incredibly happy to announce that the site is mobile friendly and will scale to any device. Also, I removed a rail and sidebar because there's too much pressure to fill out the space. It also looked unprofessional and unfinished with all of that empty space.</p>
                                         </ul>
                                     </section>
                                 </div>
@@ -319,23 +311,16 @@
 
                             <!-- RIGHT: right sidebars -->
                             <div class="right">
-                                <!-- Right Sidebar 1 -->
+                                <!-- Right Sidebar -->
                                 <nav class="sidebar">
                                     <div class="sidebar-border">
-                                        <section class= "right-sidebar">
-                                            <img class="gif" src="https://momg.neocities.org/gifs/i-31910.gif" width="50px" height="50px">
-                                        </section>
-                                    </div>
-                                </nav> 
-
-                                <!-- Right Sidebar 2 -->
-                                <nav class="sidebar">
-                                    <div class="sidebar-border">
-                                        <section class="left-sidebar" style="min-width: 250px; max-width: 250px;">
+                                        <section class="left-sidebar">
                                             <img src="../images/ilovethenightsky.gif"></img>
                                         </section> 
                                     </div>
                                 </nav> 
+
+                                <!-- Right Sidebar 2 <nav class="sidebar"><div class="sidebar-border"><section class= "right-sidebar"></section></div></nav> -->
                             </div> <!-- END OF RIGHT --> 
                         </main> <!-- END OF MAIN CONTAINER -->
 

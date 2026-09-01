@@ -29,6 +29,7 @@ body {
     padding: 10px;
     width: 100%;
     height: auto;
+    max-width: 100%
     min-width: 0;
     overflow-wrap: break-word;
 }
@@ -50,7 +51,7 @@ body {
 }
 
 .text {
-    color: #edebd5;
+    color: #f5dbd1;
     font-size: 20px;
 }
 
@@ -81,7 +82,8 @@ body {
     flex-wrap: wrap;
 }
 
-a.links {
+a, .links {
+    font-size: 20px;
     color: #edebd5;
     text-decoration: none;
 }
@@ -121,7 +123,7 @@ header {
 }
 
 .content-header {
-    color: #edebd5;
+    color: #f5dbd1;
     font-weight: bold;
 }
 
@@ -167,8 +169,7 @@ header {
     gap: 10px; 
 }
 
-                                                            /* NAVIGATION */ 
-                    
+                                                            /* NAVIGATION */                 
 .top-nav-btns {
     display: flex;
     justify-content: center;
@@ -182,6 +183,7 @@ header {
   display: flex;
   flex-shrink: 0; 
   flex-direction: column; 
+  gap: 10px;
 }
 
 .left-sidebar {
@@ -196,8 +198,8 @@ header {
     gap: 15px 10px;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 75px;
-    min-width: 0;
+    max-width: 250px;
+    min-width: 250px;
     overflow-wrap: break-word;
 }
 
@@ -216,6 +218,11 @@ header {
     overflow-wrap: break-word;
 }
 
+.nav-rail {
+    max-width: 75px;
+    min-width: 0px;
+}
+
                                                             /* CORE LAYOUT*/
 .wrapper {
     display: flex;
@@ -231,6 +238,7 @@ header {
 main {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     margin: 10px;
 }
 
@@ -243,10 +251,10 @@ main {
 .middle {
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    gap: 35px;
+    padding: 0px 10px 0px 10px;
+    gap: 10px 0px;
     margin: 0 auto;
-    max-width: 600px;
+    max-width: 650px;
 }
 
 .right {
@@ -357,17 +365,45 @@ main {
     text-decoration: none;
 }
 
-.world {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
+.world-nav {
+    display: none;
 }
+                                                        /* DEVICES */ 
 
-                                                            /* DEVICES 
-
-@media (max-width: 395px) {
-    .row-1, .row-2 {
-        
+@media (max-width: 768px) {
+    img {
+        max-width: 100%;
     }
-}    */    
+
+    main {
+        flex-direction: column;
+        gap: 10px;
+    } 
+
+    .sidebar {
+        flex-shrink: 1;
+    }
+
+    .left-sidebar, .nav-rail {
+        flex-direction: row;
+        max-width: 100%;
+        align-items: flex-end;
+    }
+
+    .left, .right {
+        justify-content: center;
+    }
+
+    .world-nav {
+        display: flex;
+        justify-content: center;
+        gap: 0px 5px;
+    }
+
+    .world-nav button {
+        font-size: 50px;
+        color: white;
+        background-color: black;
+        border: none;
+    }
+}      
