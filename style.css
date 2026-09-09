@@ -21,7 +21,7 @@ body {
 }
 
                                                             /* COMPONENTS */
-.content {
+.content, .content div, .content section, .content ul {
     display: flex;
     flex-direction: column;
     border: 2px solid #96726c;
