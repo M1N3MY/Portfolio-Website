@@ -120,7 +120,7 @@
                             <div class="middle">
                                 <!-- Storage -->
                                 <div class="content-border">
-                                    <section class="content text p">
+                                    <section class="content text">
                                         <h2 class="content-header">Storage</h2>
                                         <ul class="list">
                                             <li>Root and boot partitons (SSD), and hard drive are automatically mounted on startup using the fstab file</li>
@@ -131,7 +131,7 @@
 
                                 <!-- Permissions -->
                                 <div class="content-border">
-                                    <section class="content text p">
+                                    <section class="content text">
                                         <h2 class="content-header">Permissions</h2>
                                         <ul class="list">
                                             <li>(There's an image at the bottom of the page about permissions for reference)</li>
@@ -149,39 +149,37 @@
 
                                 <!-- Caddy -->
                                 <div class="content-border">
-                                    <section class="content text flex-column"> <!-- creates a section for the image and text beside it -->
-                                        <div>
-                                            <h2 class="content-header">Caddy</h2>
-                                            <ul class="list">   
-                                                <li>Caddy acts as a reverse proxy</li>
-                                                <li>It also provides internally signed HTTPS for any Docker containers specified in the Caddyfile</li>
-                                                <li class="indent">These containers are defined in the Caddyfile with their own .home domain</li>
-                                            </ul>
+                                    <section class="content text">
+                                        <h2 class="content-header">Caddy</h2>
+                                        <ul class="list">   
+                                            <li>Caddy acts as a reverse proxy</li>
+                                            <li>It also provides internally signed HTTPS for any Docker containers specified in the Caddyfile</li>
+                                            <li class="indent">These containers are defined in the Caddyfile with their own .home domain</li>
+                                        </ul>
 
-                                            <img src="../images/ubuntu-server-map.jpg">           
-                                            <ul class="list">
-                                                <li>I feel like the best way of visualizing my Docker setup with Caddy is by using the apartment or hotel analogy:</li>
-                                                <li><strong><u>Receptionist (Caddy):</u></strong></li>
-                                                <li class="indent">Caddy listens for requests on port 80 (HTTP) and 443 (HTTPS) from containers listed in the Caddyfile</li>
-                                                <li class="indent">(In Pi-hole, there's local DNS records for each of the .home domains. The records basically direct the domains to my home network's IP)</li>
-                                                <li><strong><u>Elevator (srm_network):</u></strong></li>
-                                                <li class="indent">The Docker bridge network connects all of the containers together. Allowing them to communicate with each other</li>
-                                                <li><strong><u>Docker Containers (Apartment/Hotel Rooms):</u></strong></li>
-                                                <li class="indent">They're self contained, so they can only be contacted through their port number. Similar to a door. Otherwise, they operate separately from each other</li>
-                                            </ul>
+                                        <img src="../images/ubuntu-server-map.jpg">           
+                                        <ul class="list">
+                                            <li>I feel like the best way of visualizing my Docker setup with Caddy is by using the apartment or hotel analogy:</li>
+                                            <li><strong><u>Receptionist (Caddy):</u></strong></li>
+                                            <li class="indent">Caddy listens for requests on port 80 (HTTP) and 443 (HTTPS) from containers listed in the Caddyfile</li>
+                                            <li class="indent">(In Pi-hole, there's local DNS records for each of the .home domains. The records basically direct the domains to my home network's IP)</li>
+                                            <li><strong><u>Elevator (srm_network):</u></strong></li>
+                                            <li class="indent">The Docker bridge network connects all of the containers together. Allowing them to communicate with each other</li>
+                                            <li><strong><u>Docker Containers (Apartment/Hotel Rooms):</u></strong></li>
+                                            <li class="indent">They're self contained, so they can only be contacted through their port number. Similar to a door. Otherwise, they operate separately from each other</li>
+                                        </ul>
 
-                                            <h2 class="content-header">HTTPS</h2>
-                                            <ul class="list">
-                                                <li>All of the domains use HTTPS instead of HTTP because Caddy internally signs each of my domains using its own private certificate authority (CA)</li>
-                                                <li class="indent">This provides end-to-end encryption without having to expose services to the internet</li>
-                                            </ul> 
-                                        </div>
+                                        <h2 class="content-header">HTTPS</h2>
+                                        <ul class="list">
+                                            <li>All of the domains use HTTPS instead of HTTP because Caddy internally signs each of my domains using its own private certificate authority (CA)</li>
+                                            <li class="indent">This provides end-to-end encryption without having to expose services to the internet</li>
+                                        </ul> 
                                     </section>
                                 </div>
 
                                 <!-- CrowdSec -->
                                 <div class="content-border">
-                                    <section class="content text p">
+                                    <section class="content text">
                                         <h2 class="content-header">CrowdSec</h2>
                                         <ul class="list">
                                             <li>CrowdSec processes logs from auth.log, or the access logs for all system related activities. It makes decisions based on suspicious activity related to things like failed SSH attempts</li>
@@ -196,7 +194,7 @@
 
                                 <!-- Docker -->
                                 <div class="content-border">
-                                    <section class="content text p">
+                                    <section class="content text">
                                         <h2 class="content-header">Docker Containers</h2>
                                         <ul class="list">
                                             <li>(At the beginning of the year, I did a serious overhaul of my server by switching to bind mounts and using specific image versions instead of the latest)</li>
@@ -214,7 +212,7 @@
 
                                 <!-- Backup -->
                                 <div class="content-border">
-                                    <section class="content text p">
+                                    <section class="content text">
                                         <h2 class="content-header">Backup</h2>
                                         <ul class="list">
                                             <li>Docker Registry is sometimes used to store the container images</li>
@@ -232,7 +230,7 @@
 
                                 <!-- Terms -->
                                 <div class="content-border">
-                                    <section class="content text p" style="gap:10px;">
+                                    <section class="content text" style="gap:10px;">
                                         <h3>Information + Terms</h3>
                                         <ul class="list">
                                             <li>Fstab: a configuration file, located in /etc/fstab, which is used to automate the mounting of persistent storage and swap space at boot</li>
@@ -245,7 +243,7 @@
                                             <li>Reverse proxy: a server which intercepts incoming traffic, guiding them to their respective ports</li>
 
                                         </ul>
-                                        <a href="https://www.reddit.com/r/linux/comments/ayditr/chmod_cheatsheet/"><img src="../images/permissions.png"></a>
+                                        <a class href="https://www.reddit.com/r/linux/comments/ayditr/chmod_cheatsheet/"><img src="../images/permissions.png"></a>
                                     </section>
                                 </div>
                             </div> <!-- END OF MIDDLE -->

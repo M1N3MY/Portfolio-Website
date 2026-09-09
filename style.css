@@ -15,13 +15,13 @@ body {
     width: 100%;
     height: 100%;
     background-color: #1b1a1e;
-    font-family: monospace;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
     font-weight: 500;
     max-width: 100%;
 }
 
                                                             /* COMPONENTS */
-.content, .content div, .content section, .content ul {
+.content {
     display: flex;
     flex-direction: column;
     border: 2px solid #96726c;
@@ -87,7 +87,6 @@ a, .links {
     font-size: 20px;
     color: #edebd5;
     text-decoration: none;
-    overflow-wrap: anywhere;
 }
 
 .flex-row { 
@@ -101,7 +100,11 @@ a, .links {
 }
 
 .list {
-    padding: 15px;
+    list-style-position: inside;
+}
+
+.list li {
+    margin-bottom: 5px;
 }
 
 .indent {
@@ -110,11 +113,6 @@ a, .links {
 
 .full_width {
     width: 100%;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
 }
 
                                                             /* HEADERS */
@@ -166,7 +164,7 @@ header {
 .nav-images {
     display: flex;
     flex-direction: row;
-    overflow-x: wrap;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -258,7 +256,6 @@ main {
 .middle {
     display: flex;
     flex-direction: column;
-    padding: 0px 10px 0px 10px;
     gap: 10px 0px;
     margin: 0 auto;
     max-width: 650px;
@@ -413,5 +410,9 @@ main {
         color: white;
         background-color: black;
         border: none;
+    }
+
+    .indent {
+        margin-left: 18px !important;
     }
 }      
