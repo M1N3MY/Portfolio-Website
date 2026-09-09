@@ -17,6 +17,7 @@ body {
     background-color: #1b1a1e;
     font-family: monospace;
     font-weight: 500;
+    max-width: 100%;
 }
 
                                                             /* COMPONENTS */
@@ -29,7 +30,7 @@ body {
     padding: 10px;
     width: 100%;
     height: auto;
-    max-width: 100%
+    max-width: 100%;
     min-width: 0;
     overflow-wrap: break-word;
 }
@@ -86,6 +87,7 @@ a, .links {
     font-size: 20px;
     color: #edebd5;
     text-decoration: none;
+    overflow-wrap: anywhere;
 }
 
 .flex-row { 
@@ -108,6 +110,11 @@ a, .links {
 
 .full_width {
     width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
                                                             /* HEADERS */
@@ -373,6 +380,7 @@ main {
 @media (max-width: 768px) {
     img {
         max-width: 100%;
+        height: auto;
     }
 
     main {
