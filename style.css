@@ -415,4 +415,8 @@ main {
     .indent {
         margin-left: 18px !important;
     }
+
+    .text {
+        font-size: 18px;
+    }
 }      
