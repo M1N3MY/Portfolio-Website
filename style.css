@@ -116,7 +116,8 @@ a, .links {
 }
 
 img {
-    max-width: 100%
+    max-width: 100%;
+    height: auto;
 }
 
                                                             /* HEADERS */
@@ -249,12 +250,12 @@ main {
     flex-direction: row;
     justify-content: center;
     margin: 10px;
+    gap: 10px;
 }
 
 .left {
     display: flex;
     flex-direction: row;
-    gap: 10px;
 }
 
 .middle {
@@ -268,7 +269,6 @@ main {
 .right {
     display: flex;
     flex-direction: row;
-    gap: 10px;
 }
 
 .footer {
@@ -375,6 +375,12 @@ main {
 
 .world-nav {
     display: none;
+}
+
+.stickers {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
 }
                                                         /* DEVICES */ 
 
