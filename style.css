@@ -115,6 +115,10 @@ a, .links {
     width: 100%;
 }
 
+img {
+    max-width: 100%
+}
+
                                                             /* HEADERS */
 header {
     display: flex;
