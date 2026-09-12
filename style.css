@@ -378,9 +378,22 @@ main {
 }
 
 .stickers {
+    display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.door {
+    display: flex;
+    flex-direction: row;
+}
+
+.door img {
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: 100%;
+    align-items: flex-end;
 }
                                                         /* DEVICES */ 
 
@@ -388,6 +401,14 @@ main {
     img {
         max-width: 100%;
         height: auto;
+    }
+
+    .site-name {
+        font-size: 40px;
+    }
+
+    .top-nav-btn {
+        font-size: 20px; 
     }
 
     main {
